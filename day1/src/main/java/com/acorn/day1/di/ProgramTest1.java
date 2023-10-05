@@ -1,0 +1,16 @@
+package com.acorn.day1.di;
+
+public class ProgramTest1 {
+public static void main(String[] args) {
+	
+	Calculator calculator = new ACalculator();
+	
+	Program program = new Program();
+	
+	program.setCalculator(calculator);
+	int result = program.addP(4, 3);
+	System.out.println(result); 
+	
+	
+}
+}

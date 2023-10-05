@@ -1,0 +1,11 @@
+package com.acorn.web;
+
+import org.springframework.stereotype.Controller;
+@Controller
+public class HelloController {
+
+	public String hi() {
+		return "hi";
+	}
+	
+}

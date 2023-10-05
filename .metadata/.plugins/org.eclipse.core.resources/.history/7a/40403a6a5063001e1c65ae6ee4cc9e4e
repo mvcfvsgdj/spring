@@ -1,0 +1,15 @@
+package com.acorn.day1.di;
+
+import java.util.ArrayList;
+
+public class TestDao {
+	public ArrayList<String> getList() {
+
+		ArrayList<String> list = new ArrayList<>();
+		list.add("1");
+		list.add("2");
+		list.add("3");
+
+		return list;
+	}
+}

@@ -1,0 +1,16 @@
+package com.acorn.day1.di;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class pController3 {
+
+	//매서드단위
+	
+	@GetMapping("/list")
+	public String test1() {
+		return "memberList";
+		
+	}
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4142261827.index
+\day1\src\main\java
+C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\843690767.index
+\helloPrj\src\main\java
+C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1937528655.index
+\day1\src\main\java

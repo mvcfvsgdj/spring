@@ -1,0 +1,17 @@
+package com.acorn.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+@Controller
+public class HelloController {
+
+	@GetMapping("/hello")
+	public String hi() {
+		return "hi"; // WEB-INF/views/hi.jsp ¿¿¥‰
+	}
+	@GetMapping("/hi") //hi?id=test&pw=0000
+	public String h2(String id, String pw) {
+		System.out.println(id + pw);
+		return "hi2";
+	}
+}

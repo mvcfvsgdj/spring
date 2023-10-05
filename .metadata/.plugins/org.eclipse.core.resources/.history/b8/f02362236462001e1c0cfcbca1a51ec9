@@ -1,0 +1,9 @@
+package com.acorn.web;
+
+
+@Data
+public class User {
+
+	String id;
+	String pw;
+}

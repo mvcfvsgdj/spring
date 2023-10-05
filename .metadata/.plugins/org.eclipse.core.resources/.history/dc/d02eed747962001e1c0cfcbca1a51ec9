@@ -1,0 +1,6 @@
+package com.acorn.web;
+
+public class Book {
+	String name;
+	String num;
+}

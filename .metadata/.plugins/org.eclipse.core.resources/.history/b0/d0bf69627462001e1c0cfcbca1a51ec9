@@ -1,0 +1,19 @@
+package com.acorn.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class Hello3Controller {
+
+	@ResponseBody
+	@GetMapping("/model1")
+	public String method1(Model model) {
+		model.addAttribute("message","spring");
+		return "model1";
+
+	}
+
+}

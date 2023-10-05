@@ -1,0 +1,12 @@
+package com.acorn.di;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class Program {
+
+	@Autowired
+	Program p ;
+	
+}

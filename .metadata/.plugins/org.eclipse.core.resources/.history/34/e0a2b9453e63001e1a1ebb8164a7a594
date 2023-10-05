@@ -1,0 +1,38 @@
+package com.acorn.di;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class Program {
+	Calculator calculator;
+	public Program() {
+		// TODO Auto-generated constructor stub
+	}
+	public Program(Calculator calculator) {
+		super();
+		this.calculator = calculator;
+	}
+	public Calculator getCalculator() {
+		return calculator;
+	}
+	public void setCalculator(Calculator calculator) {
+		this.calculator = calculator;
+	}
+	public int addP(int num1, int num2) {
+		int result;
+		result=calculator.daa(num1, num2);
+		return result;
+		
+	}
+	@Override
+	public String toString() {
+		return "Program [calculator=" + calculator + "]";
+	}
+	
+
+		
+	
+		
+	
+}

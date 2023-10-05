@@ -1,0 +1,15 @@
+package com.acorn.web;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+public class Ex01 {
+
+
+	@GetMapping("/ex1")
+	public String method1(Model model) {
+		model.addAttribute("message1","spring");
+		return "ex1";
+
+	}
+}
