@@ -4,3 +4,4 @@
 10월 05, 2023 16:04:25.186 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
 10월 05, 2023 16:06:31.861 [1005/160631.861:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\hbi1\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\cbce7cce-562a-448a-8044-80defb687b67: 지정된 파일을 찾을 수 없습니다. (0x2)
 10월 05, 2023 16:06:31.861 [1005/160631.861:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\hbi1\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\cbce7cce-562a-448a-8044-80defb687b67: 지정된 파일을 찾을 수 없습니다. (0x2)
+10월 06, 2023 10:08:12.387 [9344:3276:1006/100812.387:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
