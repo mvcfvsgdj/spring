@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="day5Exception"/>
+<aop-project name="uploadSample"/>
 <aop-project name="helloPrj"/>
+<aop-project name="day5Cookie"/>
 <aop-project name="day1"/>
 <aop-project name="day2"/>
+<aop-project name="day4"/>
+<aop-project name="day5Test"/>
+<aop-project name="dbtest"/>
 </aop-reference-model>

@@ -1,9 +1,0 @@
-package com.acorn.day1.di;
-
-public class ProgramTest2 {
-public static void main(String[] args) {
-	
-	ApplicationContext ac = new GenericXmlApplicationContext( "com/acron/di/setting.xml"  );
-	
-}
-}
