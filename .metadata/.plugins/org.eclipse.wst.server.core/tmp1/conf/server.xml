@@ -160,7 +160,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\dbtest" path="/sample" reloadable="true" source="org.eclipse.jst.jee.server:dbtest"/></Host>
+      <Context docBase="C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\dbtest" path="/sample" reloadable="true" source="org.eclipse.jst.jee.server:dbtest"/><Context docBase="C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\batisPrj" path="/batis" reloadable="true" source="org.eclipse.jst.jee.server:batisPrj"/><Context docBase="C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\batisPrac" path="/prac" reloadable="true" source="org.eclipse.jst.jee.server:batisPrac"/></Host>
     </Engine>
   </Service>
 </Server>
