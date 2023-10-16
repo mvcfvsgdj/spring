@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="acorn.CartMapper">
+ 	<!--  resultMap을 사용하면  테이블의 컬럼명과 객체의 속성명을 다르게 설정할 수 있다.  -->
+ 
+
+	<resultMap id="cartResult" type="CartDTO">
+		<result property="cartNO" column="cartNO" />
+		<result property="memberId" column="memberId" />
+		<result property="goodsNo" column="goodsNo" />
+		<result property="cartQty" column="cartQty" />
+	</resultMap>
+
+
+
+    <!-- 고객 id 전달받으면 고객의 장바구니 정보 List로 반환 -->
+ 
+	<select id="selectCart" resultMap="cartResult" 	parameterType="String">
+		SELECT *
+		FROM cart_tbl
+		where memberId =#{id}
+	</select>
+
+
+
+    <!--  장바구니리스트를 넘기면 해당하는 상품에 대한 상품정보를  List로 반환 함  -->
+	<select id="selectGoods" resultType="GoodsDTO"
+		parameterType="java.util.List">
+      <![CDATA[
+          select *
+          from  goods_tbl
+          where goodsNo  in
+      ]]>
+		<foreach item="item" collection="list" open="(" separator=","
+			close=")">
+			#{item.goodsNo}
+		</foreach>
+		order by goodsNo desc
+	</select> 
+	
+	
+</mapper>

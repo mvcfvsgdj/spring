@@ -28,7 +28,7 @@ public class MemberRepositoryTest {
 	
 	@Test
 	public void test2() {
-	log.info(dao.select("a111"));
+		log.info(dao.select("a111"));
 	
 	}
 }

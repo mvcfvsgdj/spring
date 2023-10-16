@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.acorn.MemberMapper">
+    <select id="count" resultType="int">
+        SELECT count(*) FROM  membertb
+    </select>
+    
+    <select id="selectAll" resultType="Member">
+        SELECT *
+        FROM membertb       
+    </select>
+
+     
+     <insert id="insert" parameterType="Member">
+      INSERT INTO membertb
+          (id, pwd, name)
+      VALUES
+          (#{id}, #{pwd}, #{name})
+    </insert>
+  
+    
+     <update id="update" parameterType="Member">
+        UPDATE membertb
+        SET   name = #{name} ,
+              pwd=   #{pwd)     
+        WHERE id = #{id}
+    </update>
+    
+     <delete id="deleteAll">
+        DELETE FROM membertb
+    </delete>
+
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM membertb  WHERE id = #{id} 
+    </delete>
+</mapper>

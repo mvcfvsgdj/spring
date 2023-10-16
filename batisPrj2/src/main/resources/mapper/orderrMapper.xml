@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.acorn.OrderMapper">  
+
+
+
+<!-- 
+public class OrderDTO {	
+	String orderNo;  //주문번호
+	String userid;   //사용자id
+	String name;    //이름
+	String tel;
+	String price ;//  총주문금액  
+}
+
+  
+  * // 조인된 쿼리를 저장할 테이블
+ create table ordera(
+     orderno varchar2(10) primary key, 
+     userid  varchar2(10),
+     price  varchar2(10) 
+ );
+insert into ordera  values(  'o001', 'm01', '25000');
+
+
+create table membera(
+   userid varchar2(20) primary key, 
+   username varchar2(20),
+   tel varchar2(20)
+);
+ -->
+ 
+ <!--  resultMap 사용하는 경우  테이블의 컬러명과 DTO객체의 속성명이 다른경우 -->
+
+	<resultMap id="orderResult"  type="OrderDTO">
+		<result property="orderNo" column="orderno" />
+		<result property="userid"  column="userid" />
+		<result property="name"    column="username" />
+		<result property="tel"     column="tel" />
+		<result property="price"   column="price" />
+	</resultMap>
+
+
+    
+    <select id="selectAll" resultType="OrderDTO">
+        SELECT orderno,  o.userid , username  ,  tel ,  price
+        FROM   ordera      o
+        JOIN   membera    m
+        ON  o.userid = m.userid            
+    </select>
+     
+       <insert id="insert" parameterType="OrderDTO">
+      INSERT INTO orderna
+          (orderno, userid, price)
+      VALUES
+          (#{orderno}, #{userid}, #{price})
+    </insert>
+        
+    <select id="selectAll2" resultMap="orderResult">
+        SELECT orderno,  o.userid     , username,  tel , price
+        FROM   ordera      o
+        JOIN   membera    m
+        ON  o.userid = m.userid            
+    </select>
+     
+</mapper>

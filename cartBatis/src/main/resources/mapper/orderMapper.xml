@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="acorn.OrderMapper">
+  
+	<insert id="insertNewOrder" parameterType="orderDTO"  >
+	   	
+	    <selectKey resultType="int" keyProperty="orderNo" order="BEFORE">
+	    	select order_seq_num.nextval from dual
+	    </selectKey>
+	    
+	    <![CDATA[
+			insert into ordertbl(orderNo,  memberId,  goodsNo, goodsName,  qty,  amount  ,addr1, addr2, tel, name )
+							     values(#{orderNo},		
+							            #{memberId},					           
+									    #{goodsNo},
+									    #{goodsName},
+									    #{qty},
+									    #{amount} ,
+									    #{addr1},
+									    #{addr2},
+									    #{tel}, 
+									    #{name})
+    	]]>
+	</insert>
+</mapper>
