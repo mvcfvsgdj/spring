@@ -23,5 +23,10 @@ public class MemberController {
 		service.registerMember(member); 
 		return "home";
 	}
-	
+
+	@PostMapping("/deleteT")
+	public String  delelte(String id) {	
+		service.deleteMember(id);
+		return "home";
+	}
 }

@@ -14,7 +14,14 @@
 <form  action ='<c:url  value="/memberT" />'  method="post">
  <input type="text"  name="id">
  <input type="text"  name="name">
+ 
  <button>등록</button>
+</form>
+<form  action ='<c:url  value="/deleteT" />'  method="post">
+ <input type="text"  name="id">
+
+ 
+ <button>삭제</button>
 </form>
 
 </body>

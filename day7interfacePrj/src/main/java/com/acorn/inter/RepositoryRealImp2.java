@@ -32,9 +32,9 @@ public class RepositoryRealImp2  implements MemberRepositoryI {
 	}
 
 	@Override
-	public int delete(String userId) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(String id) {
+		
+		return session.delete(namespace+"delete", id);
 	} 
 	
 

@@ -17,5 +17,9 @@
           (#{id}, #{name}, #{latitude} , #{longitude})
     </insert>
   
+  	<delete id="delete" parameterType="String">
+  		delete from membertbtest2 where id= #{id}
+  	
+  	</delete>
      
 </mapper>
