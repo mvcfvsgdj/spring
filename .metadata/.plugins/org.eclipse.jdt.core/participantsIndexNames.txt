@@ -1,6 +1,8 @@
 INDEX VERSION 1.131
 C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2712203951.index
 \batisPrj2\src\main\java
+C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1517102481.index
+\uploadTestPrj\src\main\java
 C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2305221031.index
 \uploadSample\src\main\java
 C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1398535697.index
