@@ -5518,3 +5518,1262 @@ java.lang.IllegalStateException: Conflicting handlers: {[ActionHandler(org.eclip
 
 !ENTRY Activator 1 0 2023-10-24 11:53:48.364
 !MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2023-10-25 07:25:17.211
+!MESSAGE Connection to https://spring.io/blog.atom failed on 알려진 호스트가 없습니다 (spring.io). Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: 알려진 호스트가 없습니다 (spring.io)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1530)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1520)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1378)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1302)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1003)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:995)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:991)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2023-10-25 07:25:17.979
+!MESSAGE Connection to https://dist.springsource.com/release/STS/doc/updates.xml failed on 알려진 호스트가 없습니다 (dist.springsource.com). Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: 알려진 호스트가 없습니다 (dist.springsource.com)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1530)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1520)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1378)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1302)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1003)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:995)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:991)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY Activator 1 0 2023-10-25 10:33:59.992
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:34:00.130
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:34:00.133
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:34:00.139
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 10:34:29.173
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:34:29.290
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:34:29.293
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:34:29.303
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 10:34:40.313
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:34:40.424
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:34:40.426
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:34:40.441
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 10:35:15.847
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:35:16.438
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:35:16.439
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:35:16.442
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 10:36:18.986
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:36:19.128
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:36:19.131
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:36:19.146
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 10:36:28.268
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:36:28.377
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:36:28.378
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:36:28.387
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 10:37:30.810
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:37:30.949
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:37:30.951
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:37:30.962
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 10:38:14.217
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:38:14.342
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:38:14.344
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:38:14.351
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 10:38:53.505
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:38:53.669
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:38:53.670
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:38:53.677
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 10:40:56.494
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:40:56.603
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:40:56.604
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:40:56.609
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 10:41:30.157
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:41:30.266
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:41:30.267
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:41:30.275
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 10:41:31.426
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:41:32.299
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:41:32.300
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:41:32.305
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 10:42:02.599
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:42:02.717
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:42:02.718
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:42:14.497
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:42:14.618
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:42:14.619
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:43:52.068
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:43:52.242
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:43:52.244
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:44:14.113
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:44:14.252
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:44:14.254
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 10:48:35.422
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:48:35.565
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 10:48:35.566
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:04:05.603
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:04:05.774
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:04:05.778
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:04:05.786
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:04:22.666
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:04:23.211
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:04:23.213
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:04:23.216
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:05:59.082
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:05:59.646
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:05:59.648
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:05:59.651
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:10:17.504
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:10:17.614
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:10:17.616
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:10:17.635
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:11:19.329
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:11:19.902
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:11:19.903
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:11:19.906
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:12:07.042
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:12:07.165
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:12:07.167
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:12:07.177
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:13:26.587
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:13:27.162
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:13:27.164
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:13:27.167
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:19:32.715
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:19:32.840
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:19:32.841
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:19:33.283
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:20:44.201
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:20:44.326
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:20:44.327
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:20:44.333
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:21:10.677
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:21:10.792
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:21:10.793
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:21:10.798
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:21:21.723
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:21:21.831
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:21:21.832
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:21:21.839
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:22:06.635
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:22:07.170
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:22:07.448
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:22:07.453
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:22:07.463
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:22:07.655
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:22:28.703
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:22:28.856
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:22:28.858
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:22:37.972
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:22:38.603
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:22:38.670
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:22:38.676
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:22:38.680
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:22:38.913
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:25:23.954
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:25:24.096
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:25:24.099
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:25:24.116
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:25:43.965
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:25:44.077
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:25:44.078
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:25:44.085
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:29:07.361
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:29:07.471
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:29:07.472
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:29:07.479
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:29:14.221
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:29:14.330
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:29:14.331
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:29:14.340
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:29:55.564
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:29:55.674
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:29:55.676
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:29:55.696
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:30:01.028
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:30:01.594
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:30:01.681
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:30:01.686
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:30:01.690
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:30:01.896
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:33:32.654
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:33:33.229
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:33:33.231
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:33:33.233
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.ui 4 0 2023-10-25 14:36:07.055
+!MESSAGE The proxied handler for 'org.springframework.ide.eclipse.beans.ui.refactoring.actions.BeansMoveRefactorAction' could not be loaded
+!STACK 1
+org.eclipse.core.runtime.CoreException: Plug-in "org.springframework.ide.eclipse.config.ui" was unable to instantiate class "org.springframework.ide.eclipse.beans.ui.refactoring.actions.BeansMoveRefactorAction".
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:212)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:206)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:920)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:246)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.loadHandler(HandlerProxy.java:342)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.setEnabled(HandlerProxy.java:227)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.setEnabled(E4HandlerProxy.java:133)
+	at jdk.internal.reflect.GeneratedMethodAccessor8.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:319)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:253)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:173)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.setEnabled(HandlerServiceHandler.java:84)
+	at org.eclipse.core.commands.Command.setEnabled(Command.java:856)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.canExecute(HandlerServiceImpl.java:179)
+	at org.eclipse.ui.internal.quickaccess.providers.CommandProvider.retrieveCommand(CommandProvider.java:102)
+	at org.eclipse.ui.internal.quickaccess.providers.CommandProvider.getElements(CommandProvider.java:85)
+	at org.eclipse.ui.internal.quickaccess.QuickAccessProvider.getElementsSorted(QuickAccessProvider.java:83)
+	at org.eclipse.ui.internal.quickaccess.QuickAccessContents$3.runInUIThread(QuickAccessContents.java:397)
+	at org.eclipse.ui.progress.UIJob.lambda$0(UIJob.java:95)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/jdt/internal/corext/refactoring/reorg/JavaMoveProcessor
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3137)
+	at java.base/java.lang.Class.getConstructor0(Class.java:3342)
+	at java.base/java.lang.Class.getDeclaredConstructor(Class.java:2553)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:204)
+	... 46 more
+Caused by: java.lang.ClassNotFoundException: org.eclipse.jdt.internal.corext.refactoring.reorg.JavaMoveProcessor cannot be found by org.springframework.ide.eclipse.beans.ui.refactoring_3.9.17.202106211030-RELEASE
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:467)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:170)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 51 more
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2023-10-25 14:36:07.056
+!MESSAGE Plug-in "org.springframework.ide.eclipse.config.ui" was unable to instantiate class "org.springframework.ide.eclipse.beans.ui.refactoring.actions.BeansMoveRefactorAction".
+!STACK 0
+java.lang.NoClassDefFoundError: org/eclipse/jdt/internal/corext/refactoring/reorg/JavaMoveProcessor
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3137)
+	at java.base/java.lang.Class.getConstructor0(Class.java:3342)
+	at java.base/java.lang.Class.getDeclaredConstructor(Class.java:2553)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:204)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:920)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:246)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.loadHandler(HandlerProxy.java:342)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.setEnabled(HandlerProxy.java:227)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.setEnabled(E4HandlerProxy.java:133)
+	at jdk.internal.reflect.GeneratedMethodAccessor8.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:319)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:253)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:173)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.setEnabled(HandlerServiceHandler.java:84)
+	at org.eclipse.core.commands.Command.setEnabled(Command.java:856)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.canExecute(HandlerServiceImpl.java:179)
+	at org.eclipse.ui.internal.quickaccess.providers.CommandProvider.retrieveCommand(CommandProvider.java:102)
+	at org.eclipse.ui.internal.quickaccess.providers.CommandProvider.getElements(CommandProvider.java:85)
+	at org.eclipse.ui.internal.quickaccess.QuickAccessProvider.getElementsSorted(QuickAccessProvider.java:83)
+	at org.eclipse.ui.internal.quickaccess.QuickAccessContents$3.runInUIThread(QuickAccessContents.java:397)
+	at org.eclipse.ui.progress.UIJob.lambda$0(UIJob.java:95)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.jdt.internal.corext.refactoring.reorg.JavaMoveProcessor cannot be found by org.springframework.ide.eclipse.beans.ui.refactoring_3.9.17.202106211030-RELEASE
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:467)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:170)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 51 more
+
+!ENTRY Activator 1 0 2023-10-25 14:43:08.335
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:43:08.907
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:43:08.909
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:43:08.911
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 14:44:17.457
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:44:17.586
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 14:44:17.588
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 14:44:18.033
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 15:00:11.986
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:00:12.113
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:00:12.114
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:00:12.132
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 15:01:44.107
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:01:44.216
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:01:44.217
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:01:44.228
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 15:01:56.089
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:01:56.206
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:01:56.208
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:01:56.220
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 15:02:05.398
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:02:05.524
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:02:05.525
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:02:05.535
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 15:02:09.752
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:02:09.861
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:02:09.862
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:02:09.872
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 15:05:46.896
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:05:47.005
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:05:47.006
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:05:47.015
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 15:06:56.684
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:06:56.811
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:06:56.812
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:06:57.249
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 15:12:50.434
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 15:12:50.522
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:12:50.634
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:12:50.635
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:13:14.748
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:13:14.906
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:13:14.907
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:16:49.187
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:16:49.387
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:16:49.388
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:26:52.079
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:26:52.256
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:26:52.257
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:37:11.647
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:37:11.758
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:37:11.758
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:41:24.380
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:41:24.513
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:41:24.514
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:50:09.520
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:50:09.631
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:50:09.632
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:51:27.199
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:51:27.321
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:51:27.322
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:52:37.371
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:52:37.480
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:52:37.481
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:54:31.347
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:54:31.472
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:54:31.472
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 15:54:52.057
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:54:52.182
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 15:54:52.183
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 16:12:19.696
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:24.522
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:24.523
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:24.525
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 16:12:24.591
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.jst.j2ee 4 0 2023-10-25 16:12:25.098
+!MESSAGE C:\Users\hbi1\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4.jar
+!STACK 0
+org.eclipse.jst.jee.archive.ArchiveOpenFailureException: C:\Users\hbi1\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4.jar
+	at org.eclipse.jst.j2ee.internal.componentcore.JavaEEBinaryComponentLoadAdapter.<init>(JavaEEBinaryComponentLoadAdapter.java:56)
+	at org.eclipse.jst.j2ee.internal.archive.JavaEEArchiveUtilities.openBinaryArchive(JavaEEArchiveUtilities.java:254)
+	at org.eclipse.jst.j2ee.internal.componentcore.JavaEEBinaryComponentHelper$ArchiveCache.openArchive(JavaEEBinaryComponentHelper.java:612)
+	at org.eclipse.jst.j2ee.internal.componentcore.JavaEEBinaryComponentHelper.openArchive(JavaEEBinaryComponentHelper.java:470)
+	at org.eclipse.jst.j2ee.internal.componentcore.JavaEEBinaryComponentHelper.getUniqueArchive(JavaEEBinaryComponentHelper.java:422)
+	at org.eclipse.jst.j2ee.internal.componentcore.JavaEEBinaryComponentHelper.getArchive(JavaEEBinaryComponentHelper.java:415)
+	at org.eclipse.jst.j2ee.internal.componentcore.JavaEEBinaryComponentHelper.getJavaEEQuickPeek(JavaEEBinaryComponentHelper.java:98)
+	at org.eclipse.jst.j2ee.project.JavaEEProjectUtilities.getJ2EEComponentType(JavaEEProjectUtilities.java:273)
+	at org.eclipse.jst.j2ee.internal.common.exportmodel.JEEHeirarchyExportParticipant.isChildModule(JEEHeirarchyExportParticipant.java:42)
+	at org.eclipse.wst.common.componentcore.internal.flat.GlobalHeirarchyParticipant.isChildModule(GlobalHeirarchyParticipant.java:41)
+	at org.eclipse.wst.common.componentcore.internal.flat.FlatVirtualComponent.isChildModule(FlatVirtualComponent.java:367)
+	at org.eclipse.wst.common.componentcore.internal.flat.FlatVirtualComponent.addUsedReferences(FlatVirtualComponent.java:305)
+	at org.eclipse.wst.common.componentcore.internal.flat.FlatVirtualComponent.treeWalk(FlatVirtualComponent.java:235)
+	at org.eclipse.wst.common.componentcore.internal.flat.FlatVirtualComponent.cacheResources(FlatVirtualComponent.java:188)
+	at org.eclipse.wst.common.componentcore.internal.flat.FlatVirtualComponent.fetchResources(FlatVirtualComponent.java:118)
+	at org.eclipse.wst.web.internal.deployables.FlatComponentDeployable.members(FlatComponentDeployable.java:236)
+	at org.eclipse.jst.j2ee.internal.deployables.J2EEFlexProjDeployable.members(J2EEFlexProjDeployable.java:272)
+	at org.eclipse.wst.server.core.internal.ModulePublishInfo.hasDelta(ModulePublishInfo.java:437)
+	at org.eclipse.wst.server.core.internal.ServerPublishInfo.hasDelta(ServerPublishInfo.java:442)
+	at org.eclipse.wst.server.core.internal.Server.hasPublishedResourceDelta(Server.java:1602)
+	at org.eclipse.wst.server.core.internal.Server$ResourceChangeJob$1.visit(Server.java:219)
+	at org.eclipse.wst.server.core.internal.Server.visitModule(Server.java:3067)
+	at org.eclipse.wst.server.core.internal.Server.visit(Server.java:3051)
+	at org.eclipse.wst.server.core.internal.Server$ResourceChangeJob.run(Server.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.nio.file.NoSuchFileException: C:\Users\hbi1\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4.jar
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53)
+	at java.base/sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:198)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1764)
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1250)
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:733)
+	at java.base/java.util.zip.ZipFile$CleanableResource$FinalizableResource.<init>(ZipFile.java:849)
+	at java.base/java.util.zip.ZipFile$CleanableResource.get(ZipFile.java:838)
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:248)
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:177)
+	at org.eclipse.jst.common.internal.modulecore.util.ManifestUtilities$1.<init>(ManifestUtilities.java:259)
+	at org.eclipse.jst.common.internal.modulecore.util.ManifestUtilities.newZipFile(ManifestUtilities.java:259)
+	at org.eclipse.jst.jee.archive.internal.ArchiveUtil.newZipFile(ArchiveUtil.java:248)
+	at org.eclipse.jst.jee.archive.internal.ArchiveUtil.newZipFile(ArchiveUtil.java:234)
+	at org.eclipse.jst.j2ee.internal.componentcore.JavaEEBinaryComponentLoadAdapter.resetZipFile(JavaEEBinaryComponentLoadAdapter.java:67)
+	at org.eclipse.jst.j2ee.internal.componentcore.JavaEEBinaryComponentLoadAdapter.<init>(JavaEEBinaryComponentLoadAdapter.java:51)
+	... 24 more
+
+!ENTRY Activator 1 0 2023-10-25 16:12:25.232
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 16:12:27.192
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2023-10-25 16:12:27.215
+!MESSAGE Could not download sources for net.sf.json-lib:json-lib:2.4
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not resolve artifact net.sf.json-lib:json-lib:jar:sources:2.4
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:804)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:114)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:772)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:749)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:330)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:304)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:269)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:233)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:161)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Missing net.sf.json-lib:json-lib:jar:sources:2.4
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2023-10-25 16:12:27.215
+!MESSAGE Could not resolve artifact net.sf.json-lib:json-lib:jar:sources:2.4
+!SUBENTRY 2 org.eclipse.m2e.core 4 -1 2023-10-25 16:12:27.215
+!MESSAGE Missing net.sf.json-lib:json-lib:jar:sources:2.4
+
+!ENTRY org.eclipse.wst.server.core 4 0 2023-10-25 16:12:27.340
+!MESSAGE Error reading file C:\Users\hbi1\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4.jar
+!STACK 0
+java.io.FileNotFoundException: C:\Users\hbi1\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4.jar (지정된 파일을 찾을 수 없습니다)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at org.eclipse.wst.server.core.util.PublishHelper.copyFile(PublishHelper.java:503)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:437)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:461)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:461)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.publishDir(PublishOperation2.java:143)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.execute(PublishOperation2.java:84)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.performTasks(ServerBehaviourDelegate.java:1337)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:956)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:776)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3184)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:357)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:27.452
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:27.456
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:27.460
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 16:12:28.132
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 16:12:28.473
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.wst.server.core 4 0 2023-10-25 16:12:28.535
+!MESSAGE Error reading file C:\Users\hbi1\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4.jar
+!STACK 0
+java.io.FileNotFoundException: C:\Users\hbi1\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4.jar (지정된 파일을 찾을 수 없습니다)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at org.eclipse.wst.server.core.util.PublishHelper.copyFile(PublishHelper.java:503)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:437)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:461)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:461)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.publishDir(PublishOperation2.java:143)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.execute(PublishOperation2.java:84)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.performTasks(ServerBehaviourDelegate.java:1337)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:956)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:776)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3184)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:357)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2023-10-25 16:12:28.998
+!MESSAGE Could not download javadoc for net.sf.json-lib:json-lib:2.4
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not resolve artifact net.sf.json-lib:json-lib:jar:javadoc:2.4
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:804)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:114)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:772)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:749)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:330)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:316)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:269)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:233)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:161)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1374)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:161)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Missing net.sf.json-lib:json-lib:jar:javadoc:2.4
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2023-10-25 16:12:28.999
+!MESSAGE Could not resolve artifact net.sf.json-lib:json-lib:jar:javadoc:2.4
+!SUBENTRY 2 org.eclipse.m2e.core 4 -1 2023-10-25 16:12:28.999
+!MESSAGE Missing net.sf.json-lib:json-lib:jar:javadoc:2.4
+
+!ENTRY Activator 1 0 2023-10-25 16:12:29.112
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 16:12:29.149
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:29.586
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:29.587
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 16:12:29.588
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 16:12:52.022
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 16:12:52.609
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:52.672
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:52.677
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:52.681
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 16:12:53.294
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.wst.server.core 4 0 2023-10-25 16:12:53.792
+!MESSAGE Error reading file C:\Users\hbi1\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4.jar
+!STACK 0
+java.io.FileNotFoundException: C:\Users\hbi1\.m2\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4.jar (지정된 파일을 찾을 수 없습니다)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at org.eclipse.wst.server.core.util.PublishHelper.copyFile(PublishHelper.java:503)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:437)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:461)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:461)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.publishDir(PublishOperation2.java:143)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.execute(PublishOperation2.java:84)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.performTasks(ServerBehaviourDelegate.java:1337)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:956)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:776)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3184)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:357)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY Activator 1 0 2023-10-25 16:12:53.797
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 16:12:57.166
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:57.547
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:57.548
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:57.550
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 16:12:57.608
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 16:12:57.655
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:58.940
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:12:58.946
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 16:12:58.950
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 16:46:49.619
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 16:46:51.101
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:46:51.127
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:46:51.128
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 16:49:57.415
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:49:57.524
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:49:57.525
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 16:58:07.374
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:58:07.540
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 16:58:07.542
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 17:02:33.793
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:02:33.936
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:02:33.938
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 17:03:07.555
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:03:07.683
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:03:07.685
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 17:04:57.130
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:04:57.239
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:04:57.240
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 17:07:45.181
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:07:45.306
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:07:45.306
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 17:10:17.171
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:10:17.281
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:10:17.281
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 17:10:51.325
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:10:51.499
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:10:51.500
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 17:11:08.211
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:11:08.320
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:11:08.321
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 17:11:27.411
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:11:27.537
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:11:27.538
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 17:32:40.725
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:32:41.244
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:32:41.246
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 17:32:41.257
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 17:34:06.250
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:34:06.810
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:34:06.812
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 17:34:06.815
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 17:34:33.960
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:34:34.541
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:34:34.543
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 17:34:34.546
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY Activator 1 0 2023-10-25 17:34:39.195
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:34:39.767
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2023-10-25 17:34:39.769
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY Activator 1 0 2023-10-25 17:34:39.782
+!MESSAGE Has main method computation for project 'kakaopay-sample-master'

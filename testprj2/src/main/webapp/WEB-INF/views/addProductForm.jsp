@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+       <%@ page import="com.test.category.category" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,18 +9,6 @@
 <title>Insert title here</title>
 </head>
 <script>
-
-
-/*$("#boardImg").change(function(){
-	   if(this.files && this.files[0]) {
-	    var reader = new FileReader;
-	    reader.onload = function(data) {
-	     $(".select_img img").attr("src", data.target.result).width(500);        
-	    }
-	    reader.readAsDataURL(this.files[0]);
-	   }
-	  });*/
-
 
 </script>
 <body>
@@ -30,7 +20,19 @@
 
         <label for="board_Price">가격:</label>
         <input type="number" id="board_Price" name="board_Price" required><br>
-
+	  <label for="cate_Area">지역:</label>
+        <select name="cate_Area" id="cate_Area">
+    <option value="서울">서울</option>
+    <option value="인천">인천</option>
+    <option value="부산">부산</option>
+  </select>
+        <label for="cateName">Category:</label>
+        <select name="cateName" id="cateName">
+            <c:forEach var="cat" items="${category}">
+                <option value="${cat.cateCode}">${cat.cateName}</option>
+            </c:forEach>
+        </select>
+  
         <label for="board_Text">내용:</label>
         <textarea id="board_Text" name="board_Text" required></textarea><br>
 

@@ -15,6 +15,7 @@
                 <th>제목</th>
                 <th>시간</th>
                 <th>작성자</th>
+                <th>지역</th>
                 <th>가격</th>
                 <th>게시글</th>
                 <th>조회수</th>
@@ -27,6 +28,7 @@
                     <td><a href="/prac/products/detail?boardId=${product.board_Id}">${product.board_Title}</a></td>
                     <td>${product.board_Date}</td>
                     <td>${product.board_Id }</td>
+                    <td>${product.cate_Area }</td>
                     <td>${product.board_Price}</td>
                     <td>${product.board_Text}</td>
                     <td>${product.board_Click }</td>

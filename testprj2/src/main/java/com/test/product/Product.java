@@ -24,6 +24,7 @@ public class Product {
 	 */
 	 private String board_Id;
 	    private String board_Date;
+	    private String cate_Area;
 	    private String board_Title;
 	    private int board_Price;
 	    private String board_Text;

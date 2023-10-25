@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.test.category.category;
+
 
 @Repository
 public class ProductService {
@@ -31,6 +33,9 @@ public class ProductService {
     }
     public Product selectProImagesById(String boardId) {
         return session.selectOne(namespace + "selectProImagesById", boardId);
+    }
+    public List<category> category(){
+    	return session.selectList(namespace+"category");
     }
 }
 

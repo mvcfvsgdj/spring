@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.List;
 
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.test.category.category;
 
 @Controller
 public class ProductController {
@@ -54,7 +57,8 @@ public class ProductController {
         return "productDetail";
     }
 
-
+//상품등록 
+    
     @PostMapping("/products/add")
     public String addProduct(Product product ,Model model , MultipartFile file) throws IllegalStateException, IOException {
         // ProductService를 통해 상품 추가
@@ -62,6 +66,16 @@ public class ProductController {
      	
     	System.out.println(product);
     	System.out.println(file);
+    	
+    	//카테고리 부분 
+    	List<category> category =null;
+    	category= productService.category();
+    	
+    	
+    	System.out.println("category"  + category );
+    	
+    	
+    	model.addAttribute("category",category);
     	
     	String fileRealName ="";
 		if(!file.isEmpty()) {
@@ -73,7 +87,7 @@ public class ProductController {
 		}
 		
 		
-		product.setBoard_Id("test48");
+		product.setBoard_Id("test58");
 		product.setBoard_Img(fileRealName);
         productService.insertProData(product);
         
