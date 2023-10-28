@@ -34,8 +34,11 @@ public class ProductService {
     public Product selectProImagesById(String boardId) {
         return session.selectOne(namespace + "selectProImagesById", boardId);
     }
-    public List<category> category(){
-    	return session.selectList(namespace+"category");
+    public List<cate> getCategory(){
+    	return session.selectList(namespace+"getAllCategory");
+    }
+    public List<cate> getAllCategories( String loc_code) {
+        return session.selectList(namespace+"getAllCategories" , loc_code);
     }
 }
 

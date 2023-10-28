@@ -6,23 +6,24 @@
 
 <!-- 게시글 작성 -->
    <insert id="insertProduct" parameterType="Product">
-         INSERT INTO user_board (board_id, cate_area, board_date, board_title, board_price, board_text, board_img, board_likes, board_soldout, board_click)
-        VALUES (#{board_Id}, #{cate_Area}, sysdate  , #{board_Title}, #{board_Price}, #{board_Text}, #{board_Img}, #{board_Likes}, #{ board_Soldout}, #{board_Click})
+         INSERT INTO user_board (board_id, board_date, board_title, board_price, board_text, board_img, board_likes, board_soldout, board_click , loc_code , detail_loc)
+        VALUES (#{board_Id},  sysdate  , #{board_Title}, #{board_Price}, #{board_Text}, #{board_Img}, #{board_Likes}, #{board_Soldout}, #{board_Click} , #{loc_code}, #{detail_loc})
 
     </insert>
-    
+
  <select id="selectAll" resultType="Product">
     SELECT 
         board_id,
         TO_CHAR(board_date, 'MM/DD HH24:MI') AS board_date,
         board_title,
-        cate_area,
         board_price,
         board_text,
         board_img,
         board_likes,
         board_soldout,
-        board_click
+        board_click,
+        loc_code,
+        detail_loc
     FROM user_board
 </select>
 	 <!--  <select id="selectImagesById" resultType="Product">
@@ -43,24 +44,28 @@
     SELECT 
         ub.board_id,
         TO_CHAR(ub.board_date, 'MM/DD HH24:MI') AS board_date,
-        ub.cate_area,
         ub.board_title,
         ub.board_price,
         ub.board_text,
         ub.board_img,
         ub.board_likes,
         ub.board_soldout,
-        ub.board_click
+        ub.board_click,
+        ub.loc_code,
+        ub.detail_loc
     FROM user_board ub
     WHERE ub.board_id = #{boardId}
 </select>
 <!-- 카테고리영역 -->
 
 
-<select id="category" resultType="category">
-select level , cateName, CATECODE , CATECODEREF from goods_category
-start with CATECODEREF is null connect by prior cateCode=cateCodeREF
-</select>
+	<select id="getAllCategory" resultType="cate" parameterType="String"> 
+	 SELECT loc_code, detail_loc FROM cate where loc_code= #{loc_code}
+	 </select>
+    <select id="getAllCategories" resultType="cate"  parameterType="String">  
+     SELECT loc_code, detail_loc FROM cate where loc_code= #{loc_code}
+    </select>
 
 
 </mapper>
+

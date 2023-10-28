@@ -24,7 +24,7 @@
                 <tr>
                     <td>${product.board_Title}</td>
                     <td>${product.board_Date}</td>
-                    <td>${product.cate_Area }</td>
+        			 <td>${product.loc_code}/${product.detail_loc}</td>
                     <td>${product.board_Price}</td>
                     <td>${product.board_Text}</td>
                      <td>${product.board_Click }</td>

@@ -24,7 +24,7 @@ public class Product {
 	 */
 	 private String board_Id;
 	    private String board_Date;
-	    private String cate_Area;
+
 	    private String board_Title;
 	    private int board_Price;
 	    private String board_Text;
@@ -32,6 +32,9 @@ public class Product {
 	    private int board_Likes = 0;
 	    private int board_Soldout = 0;
 	    private int board_Click = 0;
+	    private String board_Category;
+	    private String loc_code;
+	    private String detail_loc;
 
     // getters and setters
 }

@@ -4,8 +4,7 @@ import lombok.Data;
 
 @Data
 public class KakaoUserDTO {
-
-	private String id;
+	private String user_kakao;
 	private String nickname;
 	private String profile_image;
 }
