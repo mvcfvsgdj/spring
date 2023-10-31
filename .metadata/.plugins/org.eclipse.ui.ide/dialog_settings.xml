@@ -121,6 +121,10 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\hbi1\Documents\javafullstack\spring_workspace\SecondHandPrj"/>
+			<item value="C:\Users\hbi1\Downloads\ProjectTest (1)\ProjectTest"/>
+			<item value="C:\Users\hbi1\Desktop\batisTran\batisTran"/>
+			<item value="C:\Users\hbi1\Documents\javafullstack\spring_workspace\uploadTestPrj"/>
 			<item value="C:\Users\hbi1\Downloads\ShoppingMall-main"/>
 			<item value="C:\Users\hbi1\Downloads\kakaopay-sample-master(java)"/>
 			<item value="C:\Users\hbi1\Downloads\kakaopay-sample-master(java)\kakaopay-sample-master"/>
@@ -129,5 +133,7 @@
 			<item value="C:\Users\hbi1\Documents\javafullstack\spring_workspace\batisPrj"/>
 			<item value="C:\Users\hbi1\Documents\javafullstack\spring_workspace\uploadSample"/>
 		</list>
+	</section>
+	<section name="NewWizardAction">
 	</section>
 </section>

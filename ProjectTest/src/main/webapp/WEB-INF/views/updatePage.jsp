@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="com.sh.login.LoginDTO"%>
 <%@ page import="com.sh.address.AddressDTO"%>
+<%@ page import="com.acorn.testing.KakaoUserDTO"%>
 
 <!DOCTYPE html>
 <html>

@@ -6,7 +6,7 @@ public interface LoginServiceI {
 	
     public boolean checkLogin(LoginDTO loginDTO);
 	
-    LoginDTO selectAll(LoginDTO loginDTO);
+    List<Object> selectAll(LoginDTO loginDTO);
     
     public int updateUser(LoginDTO loginDTO);
 }

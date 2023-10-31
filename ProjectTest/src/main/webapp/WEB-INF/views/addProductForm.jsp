@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
      <%@ page import="com.sh.login.LoginDTO"%>
+     <%@ page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +14,10 @@
 <body>
 <%
     LoginDTO user = (LoginDTO) session.getAttribute("user");
-    LoginDTO selectedUser = (LoginDTO) session.getAttribute("selectedUser");
-    if (user != null && selectedUser != null) {
-    	%>
+    List<LoginDTO> selectedUserList = (List<LoginDTO>) session.getAttribute("selectedUser");
+    if (user != null && selectedUserList != null && !selectedUserList.isEmpty()) {
+        LoginDTO selectedUser = selectedUserList.get(0); 
+%>
     <h2>Add Product</h2>
     
     <form action="/testing/products/add" method="post" enctype="multipart/form-data">

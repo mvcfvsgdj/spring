@@ -3,6 +3,7 @@
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
      <%@ page import="com.sh.login.LoginDTO"%>
           <%@ page import="com.sh.product.ProductDTO"%>
+           <%@ page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,22 +14,22 @@
     
 <body>
 <%
-	ProductDTO pro = (ProductDTO) session.getAttribute("pro");
     LoginDTO user = (LoginDTO) session.getAttribute("user");
-    LoginDTO selectedUser = (LoginDTO) session.getAttribute("selectedUser");
-    if (user != null && selectedUser != null) {
-    	%>
-    <h2>Add Product</h2>
+    List<LoginDTO> selectedUserList = (List<LoginDTO>) session.getAttribute("selectedUser");
+    if (user != null && selectedUserList != null && !selectedUserList.isEmpty()) {
+        LoginDTO selectedUser = selectedUserList.get(0); 
+%>
+    <h2>상품수정</h2>
     
     <form action="/testing/products/update" method="post" enctype="multipart/form-data">
         <label for="board_Title">제목:</label>
-        <input type="text" id="board_Title" name="board_Title" required><br>
+        <input type="text" id="board_Title" name="board_Title" required  value="${product.board_Title}"><br>
 
         <label for="board_Price">가격:</label>
-        <input type="number" id="board_Price" name="board_Price" required><br>
+        <input type="number" id="board_Price" name="board_Price" required value="${product.board_Price}"><br>
 		
 		
-	  <label for="board_Category">Category:</label>
+	  <label for="board_Category">카테고리</label>
      <select id="loc_code" name="loc_code">
     <option value="서울시">서울</option>
     <option value="제주도">제주도</option>
@@ -42,19 +43,19 @@
 
 <!--  지역에 따른 중분류 -->
 <select id="detail_loc" name="detail_loc">
-    <!-- 중분류 옵션은 JavaScript에서 처리 -->
+    <!-- 중분류 옵션은 자바 스크립트에서 처리하고 받아옴 -->
 </select><br>
 
   
         <label for="board_Text">내용:</label>
-        <textarea id="board_Text" name="board_Text" required></textarea><br>
+        <textarea id="board_Text" name="board_Text" required  >${product.board_Text}</textarea><br>
   <input type="hidden" name="boardId" value="${product.board_Id}">
         <label for="board_Img">이미지:</label>
         <input type="file" id="board_Img" name="file" required><br>
  <input type="text" name="user_code" id="user_code" value="<%= selectedUser.getUser_code() %>" required>
 		 <input type="text" name="user_nickname" id="user_nickname" value="<%= selectedUser.getUser_nickname() %>" required>
         <button type="submit"> Product</button>
-        <%=request.getRealPath("/") %>
+ 
     </form>
 
  <script>

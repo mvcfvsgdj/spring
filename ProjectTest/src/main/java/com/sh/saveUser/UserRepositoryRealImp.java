@@ -18,4 +18,12 @@ public class UserRepositoryRealImp implements UserMemberRepositoryI {
 
 		return session.insert(namespace + "insertUser", userDTO);
 	}
+
+	@Override
+	public boolean getUserById(String user_id) {
+
+		UserDTO user = session.selectOne(namespace + "getUserById", user_id);
+
+		return user != null;
+	}
 }

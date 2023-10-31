@@ -37,9 +37,9 @@ public class LoginRepositoryImp implements LoginRepositoryI {
 	
 	
 	@Override
-	public LoginDTO selectAll(LoginDTO loginDTO){
+	public List<Object> selectAll(LoginDTO loginDTO){
 		
-		LoginDTO user1 = session.selectOne(namespace + "selectAllU", loginDTO);
+		List<Object> user1 = session.selectList(namespace + "selectAllU", loginDTO);
 		return user1;
 	}
 

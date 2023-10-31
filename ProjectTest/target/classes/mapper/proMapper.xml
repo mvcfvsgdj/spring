@@ -6,9 +6,34 @@
 
 <!-- 게시글 작성 -->
    <insert id="insertProduct" parameterType="ProductDTO">
-         INSERT INTO user_board (board_id, board_date, board_title, board_price, board_text, board_img, board_likes, board_soldout, board_click , loc_code , detail_loc ,user_code ,user_nickname)
+         INSERT INTO user_board (
+         board_id,
+         board_date,
+         board_title,
+         board_price,
+         board_text,
+         board_img,
+         board_likes,
+         board_soldout,
+         board_click ,
+         loc_code ,
+         detail_loc ,
+         user_code ,
+         user_nickname
+         )
         VALUES (seq_board_id.nextval,
-          sysdate  , #{board_Title}, #{board_Price}, #{board_Text}, #{board_Img}, #{board_Likes}, #{board_Soldout}, #{board_Click} , #{loc_code}, #{detail_loc},#{user_code}, #{user_nickname})
+          sysdate,
+           #{board_Title} ,
+           #{board_Price} ,
+           #{board_Text} ,
+           #{board_Img} ,
+           #{board_Likes} ,
+           #{board_Soldout} ,
+           #{board_Click} ,
+           #{loc_code} ,
+           #{detail_loc} ,
+           #{user_code} ,
+           #{user_nickname})
 
     </insert>
     
@@ -17,14 +42,12 @@
     <update id="updateProduct" parameterType="ProductDTO">
     UPDATE user_board
     SET
-        board_date = sysdate,
+      
         board_title = #{board_Title},
         board_price = #{board_Price},
         board_text = #{board_Text},
         board_img = #{board_Img},
-        board_likes = #{board_Likes},
-        board_soldout = #{board_Soldout},
-        board_click = #{board_Click},
+
         loc_code = #{loc_code},
         detail_loc = #{detail_loc},
         user_code = #{user_code},
@@ -95,7 +118,23 @@
     <select id="getAllCategories" resultType="cateDTO"  parameterType="String">  
      SELECT loc_code, detail_loc FROM cate where loc_code= #{loc_code}
     </select>
+<!-- 좋아요 영역 -->
+<update id="addLike" parameterType="map">
+    UPDATE user_board
+    SET board_likes = 1
+    WHERE board_id = #{boardId}
+</update>
 
+<update id="removeLike" parameterType="map">
+    UPDATE user_board
+    SET board_likes = 0
+    WHERE board_id = #{boardId}
+</update>
 
+<select id="getLikeCount" parameterType="map" resultType="int">
+    SELECT COUNT(*) AS likeCount
+    FROM user_board
+    WHERE board_likes = 1 AND board_id = #{boardId}
+</select>
 </mapper>
 

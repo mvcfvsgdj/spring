@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server at localhost" name="Tomcat v9.0 Server at localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="71">
-    <list key="modules" value0="uploadTestPrj::org.eclipse.jst.jee.server:uploadTestPrj::jst.web::2.5" value1="testprj2::org.eclipse.jst.jee.server:testprj2::jst.web::2.5" value2="day9::org.eclipse.jst.jee.server:day9::jst.web::2.5" value3="batisTran::org.eclipse.jst.jee.server:batisTran::jst.web::2.5" value4="ProjectTest::org.eclipse.jst.jee.server:ProjectTest::jst.web::2.5"/>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server at localhost" name="Tomcat v9.0 Server at localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="86">
+    <list key="modules" value0="ProjectTest::org.eclipse.jst.jee.server:ProjectTest::jst.web::2.5"/>
   </server>
 </servers>

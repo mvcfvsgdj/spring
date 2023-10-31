@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="com.sh.login.LoginDTO"%>
+    <%@ page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,10 +10,11 @@
 </head>
 <body>
     <h2>Product List</h2>
-    <%
+   <%
     LoginDTO user = (LoginDTO) session.getAttribute("user");
-    LoginDTO selectedUser = (LoginDTO) session.getAttribute("selectedUser");
-    if (user != null && selectedUser != null) {
+    List<LoginDTO> selectedUserList = (List<LoginDTO>) session.getAttribute("selectedUser");
+    if (user != null && selectedUserList != null && !selectedUserList.isEmpty()) {
+        LoginDTO selectedUser = selectedUserList.get(0); 
 %>
     <h2>Welcome, <%= selectedUser.getUser_nickname() %></h2>
 <%
@@ -27,9 +29,9 @@
                 <th>작성자</th>
                 <th>지역</th>
                 <th>가격</th>
-                <th>게시글</th>
                 <th>조회수</th>
                 <th>사진</th>
+                <th>좋아요</th>
             </tr>
         </thead>
         <tbody>
@@ -40,9 +42,9 @@
                     <td>${product.user_nickname}</td>
                     <td>${product.loc_code}/${product.detail_loc}</td>
                     <td>${product.board_Price}</td>
-                    <td>${product.board_Text}</td>
                     <td>${product.board_Click }</td>
                     <td><img src="<c:url value="/images/${product.board_Img}" />" alt="Product Image" style="max-width: 100px; max-height: 100px;"></td>
+                	<td><span id="likeCount">${product.board_Likes}</span></td>
                 </tr>
             </c:forEach>
         </tbody>

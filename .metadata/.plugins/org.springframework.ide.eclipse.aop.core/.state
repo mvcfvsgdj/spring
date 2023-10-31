@@ -9,14 +9,17 @@
 <aop-project name="batisPrac"/>
 <aop-project name="batisPrj2"/>
 <aop-project name="kakaopay-sample-master"/>
+<aop-project name="uploadTestPrj"/>
 <aop-project name="batisPrj"/>
 <aop-project name="day1"/>
 <aop-project name="day5Test"/>
+<aop-project name="day9"/>
 <aop-project name="dbtest"/>
 <aop-project name="testprj2"/>
 <aop-project name="cartBatis"/>
 <aop-project name="helloPrj"/>
 <aop-project name="day5Cookie"/>
+<aop-project name="batisTran"/>
 <aop-project name="batisPrj3"/>
 <aop-project name="day2"/>
 <aop-project name="day4"/>

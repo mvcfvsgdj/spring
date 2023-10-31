@@ -59,8 +59,12 @@ C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.ec
 \batisTran\src\main\java
 C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4142261827.index
 \day1\src\main\java
+C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1590019507.index
+\ProjectTest2\src\main\java
 C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\476534543.index
 \batisPratice\src\main\java
+C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1197190182.index
+\ProjectTest2\src\main\java
 C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1701778127.index
 \testprj3\src\main\java
 C:\Users\hbi1\Documents\javafullstack\spring_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\622866302.index

@@ -1,6 +1,9 @@
 package com.sh.product;
 
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,9 +46,31 @@ public class ProductRepository {
     public void deleteProduct(String boardId) {
         session.delete(namespace + "deleteProduct", boardId);
     }
-   
-    public int updateProduct(String boardId) {
-        return session.update(namespace + "updateProduct", boardId);
+    public int updateProduct(ProductDTO product) {
+        return session.update(namespace + "updateProduct", product);
+    }
+
+    public void addLike(String boardId, String user_code) {
+        Map<String, String> likeInfo = new HashMap<>();
+        likeInfo.put("board_Id", boardId);
+        likeInfo.put("user_code", user_code);
+        session.update(namespace + "addLike", likeInfo);
+    }
+
+    // 좋아요 취소
+    public void removeLike(String boardId, String user_code) {
+        Map<String, String> likeInfo = new HashMap<>();
+        likeInfo.put("board_Id", boardId);
+        likeInfo.put("user_code", user_code);
+        session.update(namespace + "removeLike", likeInfo);
+    }
+
+    // 좋아요 개수 조회
+    public int getLikeCount(String boardId) {
+        return session.selectOne(namespace + "getLikeCount", boardId);
     }
 }
+   
+
+    
 

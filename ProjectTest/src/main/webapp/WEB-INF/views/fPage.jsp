@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.sh.login.LoginDTO"%>
+    <%@ page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +14,9 @@
  	
 <%
     LoginDTO user = (LoginDTO) session.getAttribute("user");
-    LoginDTO selectedUser = (LoginDTO) session.getAttribute("selectedUser");
-    if (user != null && selectedUser != null) {
+    List<LoginDTO> selectedUserList = (List<LoginDTO>) session.getAttribute("selectedUser");
+    if (user != null && selectedUserList != null && !selectedUserList.isEmpty()) {
+        LoginDTO selectedUser = selectedUserList.get(0); 
 %>
     <h2>Welcome, <%= selectedUser.getUser_nickname() %></h2>
 <%

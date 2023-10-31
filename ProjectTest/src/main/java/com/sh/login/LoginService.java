@@ -18,7 +18,7 @@ public class LoginService implements LoginServiceI {
 	}
 
 	@Override
-	public LoginDTO selectAll(LoginDTO loginDTO) {
+	public List<Object> selectAll(LoginDTO loginDTO) {
 		// TODO Auto-generated method stub
 		return userRepository.selectAll(loginDTO);
 	}

@@ -1,5 +1,7 @@
 package com.sh.login;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -35,7 +37,7 @@ public class LoginController {
 			// System.out.println("Logged in user: " + loggedInUser);
 
 			// selectAll 메소드 호출하여 유저 정보 가져오기
-			LoginDTO selectedUser = loginService.selectAll(loginDTO);
+			List<Object> selectedUser = loginService.selectAll(loginDTO);
 			// System.out.println("Selected user: " + selectedUser);
 
 			// 세션에 selectedUser 저장
@@ -60,7 +62,7 @@ public class LoginController {
 	        // 업데이트 성공
 	        HttpSession session = request.getSession();
 	        // 업데이트 후 사용자 정보를 다시 조회
-	        LoginDTO updatedUser = loginService.selectAll(loginDTO);
+	        List<Object> updatedUser = loginService.selectAll(loginDTO);
 	        // 세션에 업데이트된 사용자 정보 저장
 	        session.setAttribute("selectedUser", updatedUser);
 	        return "redirect:/fPage"; 
