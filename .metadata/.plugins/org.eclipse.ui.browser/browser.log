@@ -40,3 +40,68 @@
 10월 20, 2023 13:31:13.664 [12780:14084:1020/133113.664:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
 10월 20, 2023 13:32:16.739 [12780:14084:1020/133216.738:ERROR:device_event_log_impl.cc(225)] [13:32:16.738] Bluetooth: bluetooth_adapter_winrt.cc:1058 Getting Default Adapter failed.
 10월 20, 2023 13:32:27.94 [12780:14084:1020/133227.094:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+
+11월 02, 2023 10:11:51.136 NEW SESSION
+11월 02, 2023 10:11:51.136 [5880:17600:1102/101151.121:ERROR:CONSOLE(1)] "Uncaught (in promise) RangeError: Invalid line number 16 in 1-line document", source: devtools://devtools/bundled/devtools-frontend/front_end/third_party/codemirror.next/chunk/codemirror.js (1)
+11월 02, 2023 10:14:14.429 [5880:17600:1102/101414.429:ERROR:CONSOLE(1)] "Uncaught (in promise) RangeError: Invalid line number 16 in 1-line document", source: devtools://devtools/bundled/devtools-frontend/front_end/third_party/codemirror.next/chunk/codemirror.js (1)
+11월 02, 2023 10:45:33.347 [5880:17600:1102/104533.347:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 02, 2023 10:47:16.08 [5880:17600:1102/104716.007:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 02, 2023 10:50:40.421 [5880:1812:1102/105040.421:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+11월 02, 2023 10:50:40.421 ERROR: Couldn't read tbsCertificate as SEQUENCE
+11월 02, 2023 10:50:40.421 ERROR: Failed parsing Certificate
+11월 02, 2023 10:50:40.421 
+11월 02, 2023 10:50:40.437 [5880:1812:1102/105040.437:ERROR:cert_verify_proc_builtin.cc(696)] CertVerifyProcBuiltin for abcabd.com failed:
+11월 02, 2023 10:50:40.437 ----- Certificate i=0 (CN=abcabd.com) -----
+11월 02, 2023 10:50:40.437 ERROR: Time is after notAfter
+11월 02, 2023 10:50:40.437 
+11월 02, 2023 10:50:40.437 
+11월 02, 2023 11:12:49.836 [5880:17600:1102/111249.836:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 02, 2023 13:31:27.80 [5880:17600:1102/133127.080:ERROR:web_contents_delegate.cc(246)] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+11월 02, 2023 13:31:27.81 [5880:17600:1102/133127.080:ERROR:web_contents_delegate.cc(246)] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+11월 02, 2023 13:31:43.29 [5880:17600:1102/133143.029:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
+11월 02, 2023 17:10:08.199 [5880:17600:1102/171008.199:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 02, 2023 18:50:28.723 [5880:9588:1102/185028.723:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 02, 2023 18:50:51.47 [5880:9588:1102/185051.046:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 02, 2023 18:53:16.739 [5880:9588:1102/185316.739:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 02, 2023 18:53:57.45 [5880:9588:1102/185357.044:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 02, 2023 18:56:24.264 [5880:9588:1102/185624.264:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 02, 2023 18:58:08.46 [5880:9588:1102/185808.046:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 02, 2023 19:00:35.101 [5880:9588:1102/190035.101:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 02, 2023 19:01:42.33 [5880:9588:1102/190142.033:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 02, 2023 19:04:09.115 [5880:9588:1102/190409.115:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 02, 2023 19:08:22.81 [5880:9588:1102/190822.081:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 02, 2023 19:10:49.446 [5880:9588:1102/191049.446:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 02, 2023 19:11:10.32 [5880:9588:1102/191110.031:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 02, 2023 19:13:36.367 [5880:9588:1102/191336.367:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 02, 2023 19:14:54.50 [5880:9588:1102/191454.049:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 02, 2023 19:17:21.356 [5880:9588:1102/191721.356:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 02, 2023 19:17:41.26 [5880:9588:1102/191741.026:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 02, 2023 19:20:08.203 [5880:9588:1102/192008.203:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 02, 2023 19:20:35.53 [5880:9588:1102/192035.053:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 02, 2023 19:23:01.737 [5880:9588:1102/192301.737:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 02, 2023 19:24:22.44 [5880:9588:1102/192422.043:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 02, 2023 19:26:49.381 [5880:9588:1102/192649.381:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 02, 2023 19:41:01.149 [5880:9588:1102/194101.149:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 02, 2023 19:41:05.738 [5880:22300:1102/194101.150:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+11월 02, 2023 19:43:27.948 [5880:9588:1102/194327.948:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 02, 2023 19:54:00.63 [5880:9588:1102/195400.062:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 02, 2023 19:56:27.155 [5880:9588:1102/195627.155:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 03, 2023 07:20:57.849 [5880:9588:1103/072052.668:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 03, 2023 07:20:59.386 [5880:9588:1103/072054.690:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 03, 2023 07:21:00.510 [5880:20120:1103/072054.692:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+11월 03, 2023 08:21:18.441 [5880:9588:1103/082118.441:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 03, 2023 08:44:46.132 [5880:9588:1103/084446.132:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 03, 2023 08:47:13.53 [5880:9588:1103/084713.053:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 03, 2023 08:51:03.49 [5880:9588:1103/085103.049:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 03, 2023 10:09:35.205 [5880:17600:1103/100935.205:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
+11월 03, 2023 14:16:11.544 [5880:17600:1103/141611.544:ERROR:web_contents_delegate.cc(246)] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+11월 03, 2023 14:16:11.545 [5880:17600:1103/141611.544:ERROR:web_contents_delegate.cc(246)] WebContentsDelegate::CheckMediaAccessPermission: Not supported.
+11월 03, 2023 15:19:30.126 [5880:1812:1103/151930.125:ERROR:cert_verify_proc_builtin.cc(696)] CertVerifyProcBuiltin for kyky1211.dothome.co.kr failed:
+11월 03, 2023 15:19:30.126 ----- Certificate i=0 (CN=localhost,O=Default Company Ltd,L=Default City,C=XX) -----
+11월 03, 2023 15:19:30.126 ERROR: No matching issuer found
+11월 03, 2023 15:19:30.127 
+11월 03, 2023 15:19:30.127 
+11월 03, 2023 15:45:45.114 [5880:17600:1103/154545.114:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 03, 2023 15:48:45.530 [5880:17600:1103/154845.530:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 03, 2023 16:28:34.680 [1103/162834.663:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\hbi1\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\cbce7cce-562a-448a-8044-80defb687b67: 지정된 파일을 찾을 수 없습니다. (0x2)
+11월 03, 2023 16:28:34.680 [1103/162834.680:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\hbi1\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\cbce7cce-562a-448a-8044-80defb687b67: 지정된 파일을 찾을 수 없습니다. (0x2)
