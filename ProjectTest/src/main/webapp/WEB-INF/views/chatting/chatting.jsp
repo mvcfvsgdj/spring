@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"
    trimDirectiveWhitespaces="true"%>
-   <%@ page import="com.sh.product.domain.ProductDTO"%>
-      <%@ page import="com.sh.login.domain.LoginDTO"%>
+
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
    
       <%@ page import="java.util.*" %>
@@ -22,7 +21,7 @@
 
     // WebSocket으로 서버에 연결
 function connect() {
-    wsocket = new WebSocket("ws://localhost:8090/webchat/chat-sh");
+    wsocket = new WebSocket("ws://localhost:8090/testing/chat-sh");
     wsocket.onopen = onOpen;
     wsocket.onmessage = onMessage;
     wsocket.onclose = onClose;
@@ -134,7 +133,8 @@ function connect() {
 </style>
 </head>
 <body>
-    <c:forEach items="${chatCode}" var="chat">
+   
+ <c:forEach items="${chatCode}" var="chat">
 
  <input type="text" id="nickname" value="${chat}">
  <input type="text" id="targetNickname" value="${chat}">
@@ -148,5 +148,6 @@ function connect() {
 <input type="text" id="message">
 <input type="button" id="sendBtn" value="전송" onclick="send()">
     </c:forEach>
+
 </body>
 </html>

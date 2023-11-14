@@ -18,7 +18,8 @@
 		member_addr,
 		detailed_address,
 		delivery_req,
-		order_date
+		order_date,
+		sell_code
 		)
 		VALUES (
 		seq_order_code.NEXTVAL,
@@ -33,7 +34,8 @@
 		#{member_addr},
 		#{detailed_address},
 		#{delivery_req},
-		sysdate
+		sysdate,
+		#{sell_code}
 		)
 	</insert>
 

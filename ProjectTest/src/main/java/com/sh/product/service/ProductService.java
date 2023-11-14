@@ -116,4 +116,9 @@ public class ProductService implements ProductServiceI {
 		public int likeNum(String userId) {
 			return productRepository.likeNum(userId);
 		}
+		@Override
+	      public List<ProductDTO> getLocalProducts(String detail_loc) {
+	         // TODO Auto-generated method stub
+	         return productRepository.getLocalProducts(detail_loc);
+	      }
 }

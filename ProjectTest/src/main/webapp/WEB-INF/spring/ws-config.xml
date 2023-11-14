@@ -13,7 +13,7 @@
 
 
   <websocket:handlers>
-      <websocket:mapping handler="chatHandler" path="/chat-ws" />
+      <websocket:mapping handler="chatHandler" path="/chat-sh" />
   </websocket:handlers>
 
   <bean id="chatHandler" class="com.sh.chatting.ChatWebSocketHandler" />

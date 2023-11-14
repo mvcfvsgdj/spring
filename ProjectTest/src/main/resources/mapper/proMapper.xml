@@ -77,7 +77,7 @@
 		ub.board_cate
 		FROM user_board ub
 		WHERE
-		ub.board_id = #{boardId}
+		ub.board_id = #{boardId, jdbcType=VARCHAR}
 	</select>
 
 
@@ -169,6 +169,11 @@
 	<select id="getLikeNum" resultType="int">
 		select count(*) from board_like where user_id = #{userId}
 	</select>
+    
+       <!-- 동네인증 지역 목록 -->
+   <select id="getLocalProducts" resultType="ProductDTO" parameterType="String">
+      SELECT * FROM user_board WHERE detail_loc = #{detail_loc}
+   </select>
     
     
 </mapper>

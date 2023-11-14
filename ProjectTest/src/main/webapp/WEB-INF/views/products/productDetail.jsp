@@ -256,12 +256,6 @@ header.menu-open h2 {
 }
 
 
-#showPasswordCheckbox {
-    position: absolute;
-    top: 32%;
-    right: -41%;
-    transform: translateY(-50%);
-}
 
 button {
 	padding: 5px;
@@ -288,69 +282,6 @@ button:hover {
     display: inline-block;
 }
 
-#user_id,
-#user_pw,
-#user_pw_confirm,
-#address,
-#phone_num,
-#member_post,
-#member_addr,
-#detailed_address,
-#user_birth,
-#user_nickname {
-    width: 100%; /* 입력란의 너비를 100%로 설정 */
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-#address {
-    width: calc(100% - 120px); /* 주소 입력란의 너비를 조절하세요. */
-}
-
-
-#verification_code {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1.5px solid #ddd;
-    border-radius: 4px;
-    color: #333; /* 글자 색상을 추가 */
-}
-
-#verification-result {
-    margin-top: 10px;
-    color: red;
-}
-
-
-
-#userIdMessage,
-#passwordValidityMessage,
-#passwordMatchResult,
-#verification-result,
-#verification_code {
-    font-size: 12px;
-    font-weight: bold;
-    text-align: center; /* 텍스트를 중앙으로 정렬 */
-    margin-top: 10px; /* 위 여백 조절 */
-}
-#user_pw,
-#user_pw_confirm,
-#passwordValidityMessage,
-#passwordMatchResult {
-    width: 100%;
-
-}
-
-#member_post {
-	width: 400px;
-}
-
-#member_addr {
-	width: 400px;
-}
 
 
 
@@ -381,14 +312,60 @@ footer {
 </head>
 <body>
 
+	<script>
+   let loading = false; // 추가 데이터 로딩 중 여부
+   let onClick = ${onClick};
+   console.log("jsp확인 = " + onClick);
+   //좋아요
+   function like(boardId, userId) {
+       if (!loading) {
+           loading = true;
+           $.ajax({
+               url: "${path}/products/like", // 서버측 엔드포인트 설정
+               type: "POST",              
+               data: {boardId:boardId,
+                     userId:userId
+                  },
+               success: function (data) {
+                   $("#likes").empty();
+                   $("#likes").append("관심 : " + data.likenum + " 개");
+                    liketoggle();
+                   loading = false;
+               },
+               error: function (error) {
+                   console.log("Error:", error);
+                   loading = false;
+               }
+           });
+         
+      }
+   }
+   function liketoggle(){
+      if(onClick == false){
+         $("#like").empty();
+         //빈하트
+         $("#like").append(`<img id="likeImg" src="${path}/resources/product/heart.png">`);
+      }else if(onClick == true){
+         $("#like").empty();
+         //꽉찬 하트
+         $("#like").append(`<img id="likeImg" src="${path}/resources/product/hfull.png">`);
+      }
+      
+   }
+   
+   $(document).ready(function(){
+      liketoggle();
+       $("#like").click(function(){
+          console.log("토글 " + onClick);
+          like(${product.board_Id},"${user.user_id}");
+          onClick = !onClick;
+       });
+       
+   });
+</script>
 	<%
 	List<ProductDTO> products = (List<ProductDTO>) session.getAttribute("products");
 	List<LoginDTO> selectedUserList = (List<LoginDTO>) session.getAttribute("selectedUser");
-	ProductDTO a = (ProductDTO) request.getAttribute("product");
-
-	out.println(a);
-
-	LoginDTO user = (LoginDTO) session.getAttribute("user");
 	if (selectedUserList != null && !selectedUserList.isEmpty() && products != null && !products.isEmpty()) {
 		// 수정: selectedUserList에서 selectedUser 가져오기
 		LoginDTO selectedUser = selectedUserList.get(0);
@@ -396,6 +373,25 @@ footer {
 		// 수정: products의 첫 번째 아이템 가져오기
 		ProductDTO product = products.get(0);
 	%>
+
+<c:if test="${selectedUser[0].user_code ne product.user_code}">
+    <form action="/testing/checkCode" method="post">
+        Buy Code: <input type="text" name="buy_code" value="${selectedUser[0].user_code}" required><br>
+        Sell Code: <input type="text" name="sell_code" value="${product.user_code}" required><br>
+        Board Id: <input type="text" name="board_id" value="${product.board_Id}" required><br>
+        <button type="submit">채팅신청하기</button>
+    </form>
+    
+        <c:if test="${not empty isCodeValid and isCodeValid eq false}">
+    <p style="color: red;">이미 신청한 채팅입니다.</p>
+</c:if>
+</c:if>
+
+    
+    
+
+
+
 
 
 
@@ -406,16 +402,8 @@ footer {
 	<h2><%=selectedUser.getUser_nickname()%>
 		님
 	</h2>
-   <form action="/testing/checkCode" method="post" >
-    Buy Code: <input type="text" name="buy_code" value="<%= selectedUser.getUser_code() %>" required><br>
-    Sell Code: <input type="text" name="sell_code" value="${product.user_code}" required><br>
-    Board Id: <input type="text" name="board_id" value="${product.board_Id}" required><br>
-    <button type="submit">채팅신청하기</button>
 
-</form>
-<c:if test="${not empty isCodeValid and isCodeValid eq false}">
-    <p style="color: red;">이미 신청한 채팅입니다.</p>
-</c:if>
+
 
 	<form action="/testing/products" method="get"
 		enctype="multipart/form-data">
@@ -479,10 +467,9 @@ footer {
 		<button id="likeButton">좋아요 추가</button>
 	</form>
 	<%
-	} else {
-	// products나 selectedUserList가 비어있을 때 예외 처리
-	out.println("상품 정보를 찾을 수 없습니다.");
 	}
+	// products나 selectedUserList가 비어있을 때 예외 처리
+	
 	%>
 	<form action="/testing/products">
 		<button type="submit">상품</button>
@@ -490,12 +477,13 @@ footer {
 
 	<form action="/testing/order">
 		<input type="hidden" name="boardId" value="${product.board_Id}">
-		
+		<input type="text" name="sell_code" value="${product.user_code}" required>
 		<button type="submit">상품 구매</button>
 	</form>
 
 	<form action="/testing/logout" method="post">
 		<button type="submit">로그아웃</button>
 	</form>
+
 </body>
 </html>

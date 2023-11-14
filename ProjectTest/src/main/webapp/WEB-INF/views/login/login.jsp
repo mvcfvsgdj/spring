@@ -144,7 +144,7 @@ color: darkslategrey;
 	/* 여기에 해당 버튼에 대한 스타일을 추가하세요 */
 	font-weight: bold;
 	background-color: #fee500;
-	margin: 20px 0px 56px 0px;
+	margin: 20px 0px 30px 0px;
 	width: 100%;
 	padding: 15px;
 	color: black;
@@ -316,7 +316,6 @@ footer {
 					type="hidden" id="profile_image" name="profile_image" value="" />
 			</form>
 
-			<br>
 
 			<form action="/testing/login" method="post">
 				<div>
@@ -327,6 +326,11 @@ footer {
 					<label for="user_pw"></label> <input type="password"
 						placeholder="비밀번호" id="user_pw" name="user_pw">
 				</div>
+				<c:if test="${ not empty param.error}">
+					<p style="color: red;">
+						잘못된 아이디/비밀번호입니다.<br>다시 입력해주세요.
+					</p>
+				</c:if>
 
 				<button class="loginbtn" type="submit">로그인</button>
 				     <div class="hr-sect">또는</div>
@@ -340,11 +344,7 @@ footer {
 
 				</ul>
 
-				<c:if test="${ not empty param.error}">
-					<p style="color: red;">
-						잘못된 아이디/비밀번호입니다.<br>다시 입력해주세요.
-					</p>
-				</c:if>
+		
 			</form>
 <form id="saveForm" method="post" action="/testing/saveForm" style="text-align: right;">
     <a href="/testing/shSaveUser" style="text-decoration: none; color: #4d4d4d; font-weight: bold;">회원가입</a>

@@ -352,55 +352,57 @@ footer {
 
 /* 모달 스타일 */
 #find-me {
-	margin-top: 520px;
-	margin-right: 440px;
+   margin-top: 520px;
+   margin-right: 440px;
 }
 
 .modal {
-	display: none; /* 기본적으로 숨겨진 상태로 시작 */
-	position: fixed; /* 고정 위치 */
-	z-index: 1; /* 모달 위에 다른 요소가 올라오지 않도록 설정 */
-	left: 0;
-	top: 0;
-	width: 100%; /* 너비 100% */
-	height: 100%; /* 높이 100% */
-	overflow: auto; /* 콘텐츠가 너무 길어질 경우 스크롤 가능하도록 설정 */
-	background-color: rgba(0, 0, 0, 0.4); /* 반투명한 검정 배경색 */
+   display: none; /* 기본적으로 숨겨진 상태로 시작 */
+   position: fixed; /* 고정 위치 */
+   z-index: 1; /* 모달 위에 다른 요소가 올라오지 않도록 설정 */
+   left: 0;
+   top: 0;
+   width: 100%; /* 너비 100% */
+   height: 100%; /* 높이 100% */
+   overflow: auto; /* 콘텐츠가 너무 길어질 경우 스크롤 가능하도록 설정 */
+   background-color: rgba(0, 0, 0, 0.4); /* 반투명한 검정 배경색 */
 }
 
 #status {
-	font-size: 30px;
-	margin-top: 10px;
-	font-weight: 900;
-	margin-bottom: 15px;
+   font-size: 30px;
+   margin-top: 10px;
+   font-weight: 900;
+   margin-bottom: 15px;
 }
 
 .modal-content {
-	background-color: #fefefe;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	padding: 20px;
-	border: 1px solid #888;
-	width: 600px;
-	height: 600px;
-	text-align: center;
-	color: black;
+   background-color: #fefefe;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding: 20px;
+   border: 1px solid #888;
+   width: 600px;
+   height: 600px;
+   text-align: center;
+   color: black;
 }
 
 .close {
-	color: #aaa;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
+   color: #aaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
 }
 
 .close:hover, .close:focus {
-	color: black;
-	text-decoration: none;
-	cursor: pointer;
+   color: black;
+   text-decoration: none;
+   cursor: pointer;
 }
+
+
 </style>
 <script>
 	//맨위로 올리기
@@ -476,7 +478,7 @@ footer {
 </form>
 </li>
 				<li>
-					<form action="/testing/scrollHome">
+					<form action="/testing/qna">
 						<button type="submit">문의하기</button>
 					</form>
 				</li>
@@ -503,29 +505,48 @@ footer {
 		<form action="/testing/products">
 			<button type="submit">중고거래</button>
 		</form>
-		<form action="/testing/scrollHome">
-			<button type="submit">동네거래</button>
-		</form>
-		
-		<!-- 동네 인증 -->
-		<form id="location-form" method="post" action="location-form">
-			<!-- 모달요소 -->
-			<div id="myModal" class="modal">
-				<div class="modal-content">
-					<span class="close" onclick="closeModal()">&times;</span>
+		<%
+      if (user != null && selectedUser != null && !selectedUser.isEmpty()) {
+      %>
+      <form action="/testing/localproductList" method="post">
+         <input type="hidden" name="newLocation" value="${detail_loc}" />
+         <button id="loginAlertButton" type="submit">동네거래</button>
+      </form>
+      <%
+      } else {
+      %>
+      <!-- Display a message when the user is not logged in -->
 
-					<div id="modal-content"></div>
-					<input type="submit" value="Submit" id="submit-btn" disabled />
-				</div>
-			</div>
+      <button id="loginAlertButton" type="submit">동네거래</button>
+      <script>
+        document.getElementById("loginAlertButton").addEventListener("click", function() {
+            alert("로그인이 필요한 서비스 입니다.");
+            window.location.href = "/testing/login"; 
+        });
+    </script>
+      <%
+      }
+      %>
+      <!-- 동네 인증 -->
+      <form id="location_form" method="post" action="location_form">
+         <!-- 모달요소 -->
+         <div id="myModal" class="modal">
+            <div class="modal-content">
+               <span class="close" onclick="closeModal()">&times;</span>
 
-			<button id="find-me">Show my location</button>
-			<br />
-			<p id="status"></p>
-			<a id="map-link" target="_blank"></a>
-			<div id="map" style="width: 500px; height: 500px; margin-left: 50px"></div>
-			<input type="text" id="location-input" name="detail_loc" value="" />
-		</form>
+               <div id="modal-content"></div>
+               <input type="submit" value="Submit" id="submit-btn" disabled />
+            </div>
+         </div>
+
+         <button id="find-me">동네인증</button>
+         <br />
+         <p id="status"></p>
+         <a id="map-link" target="_blank"></a>
+         <div id="map" style="width: 500px; height: 500px; margin-left: 50px"></div>
+         <input type="hidden" id="location-input" name="newLocation"
+            value="${detail_loc}" />
+      </form>
 
 
 		<%
@@ -654,7 +675,7 @@ footer {
 
 
 
-	<script>
+<script>
       function success(position) {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
@@ -720,36 +741,40 @@ footer {
         });
 
         kakao.maps.event.addListener(map, "click", function (mouseEvent) {
-        	  const newLatitude = mouseEvent.latLng.getLat();
-        	  const newLongitude = mouseEvent.latLng.getLng();
+             const newLatitude = mouseEvent.latLng.getLat();
+             const newLongitude = mouseEvent.latLng.getLng();
 
-        	  const newLocation = checkLocation(newLatitude, newLongitude);
-        	  console.log("New location:", newLocation);
+             const newLocation = checkLocation(newLatitude, newLongitude);
+             console.log("New location:", newLocation);
 
-        	  const modalContent = document.getElementById("modal-content");
-        	  let newLocationElement = modalContent.querySelector("#new-location");
-        	  if (!newLocationElement) {
-        	    newLocationElement = document.createElement("div");
-        	    newLocationElement.id = "new-location";
-        	    modalContent.appendChild(newLocationElement);
-        	  }
+             const modalContent = document.getElementById("modal-content");
+             let newLocationElement = modalContent.querySelector("#new-location");
+             if (!newLocationElement) {
+               newLocationElement = document.createElement("div");
+               newLocationElement.id = "new-location";
+               modalContent.appendChild(newLocationElement);
+             }
 
-        	  if (typeof newLocation === "object" && Object.keys(newLocation).length !== 0) {
-        	    newLocationElement.textContent =
-        	      "인증되었습니다. 현재위치:" +
-        	      newLocation.locCode +
-        	      " - " +
-        	      newLocation.detail_loc +
-        	      ". 클릭한 위치의 위도는 " +
-        	      newLatitude +
-        	      "이고, 경도는 " +
-        	      newLongitude +
-        	      "입니다.";
-        	  } else {
-        	    console.log("New location:", newLocation);
-        	    newLocationElement.textContent = newLocation;
-        	  }
-        	});
+             if (typeof newLocation === "object" && Object.keys(newLocation).length !== 0) {
+                const detailLoc = newLocation.detail_loc;
+               newLocationElement.textContent =
+                 "인증되었습니다. 현재위치:" +
+                 newLocation.locCode +
+                 " - " +
+                 newLocation.detail_loc +
+                 ". 클릭한 위치의 위도는 " +
+                 newLatitude +
+                 "이고, 경도는 " +
+                 newLongitude +
+                 "입니다.";
+            // newLocation 값을 input에 할당
+               document.getElementById("location-input").value = newLocation.locCode + " - " + newLocation.detail_loc;
+             } else {
+               console.log("New location:", newLocation);
+               newLocationElement.textContent = newLocation;
+               document.getElementById("location-input").value = newLocation;
+             }
+           });
 
         kakao.maps.event.addListener(map, "idle", function () {
           searchAddrFromCoords(map.getCenter(), displayCenterInfo);
@@ -1217,8 +1242,8 @@ footer {
         const desiredRange = 3; // 변경하고자 하는 거리 범위 (단위: km)
 
         for (let location of locations) {
-        	
-        	console.log("location"+  location.locCode);
+           
+           console.log("location"+  location.locCode);
           const distance = getDistanceFromLatLonInKm(
             latitude,
             longitude,
@@ -1240,10 +1265,10 @@ footer {
           }
         }
         
-
+        
         if (locationsWithinRange.length > 0) {
             if (locationsWithinRange.length === 1) {
-                return locationsWithinRange[0].locCode + "-" + locationsWithinRange[0].detail_loc;
+                return locationsWithinRange[0].detail_loc;
             } else {
                 let userChoice = prompt(
                     "여러 지역이 " + desiredRange + "km 이내에 있습니다. 아래에서 선택해주세요:\n " +
@@ -1252,7 +1277,8 @@ footer {
 
                 userChoice = parseInt(userChoice);
                 if (userChoice && userChoice <= locationsWithinRange.length) {
-                    return locationsWithinRange[userChoice - 1].locCode + "-" + locationsWithinRange[userChoice - 1].detail_loc;
+                   console.log(locationsWithinRange[userChoice - 1].detail_loc);
+                    return locationsWithinRange[userChoice - 1].detail_loc;
                 }
           }
         }
@@ -1261,9 +1287,10 @@ footer {
       }
 
       document.querySelector("#find-me").addEventListener("click", geoFindMe);
+     
     </script>
 
-	<script>
+   <script>
       // 모달 열기
       function openModal() {
         document.getElementById("myModal").style.display = "block";
@@ -1287,7 +1314,8 @@ footer {
       });
     </script>
 
-	<script>
+
+   <script>
     const findMeButton = document.getElementById('find-me');
     const submitButton = document.getElementById('submit-btn');
 
@@ -1311,7 +1339,7 @@ footer {
         submitButton.disabled = false;
     }
 
-    const form = document.getElementById('location-form');
+    const form = document.getElementById('location_form');
     form.addEventListener('submit', (event) => {
         if (submitButton.disabled) {
             event.preventDefault(); // 제출 버튼이 비활성화된 경우 폼 제출 방지

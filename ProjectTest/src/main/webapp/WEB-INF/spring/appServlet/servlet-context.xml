@@ -56,7 +56,10 @@
 		<context:component-scan
 		base-package="com.sh.chatting" />
 	
-
+		<context:component-scan
+		base-package="com.sh.qna" />
+	
+	<context:component-scan base-package="com.sh.kakaopay" />
 
 
 

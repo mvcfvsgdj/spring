@@ -102,6 +102,9 @@ public class ProductRepository {
   	 public int likeNum(String userId) {
   		 return session.selectOne(namespace + "getLikeNum", userId);
   	 }
+  	public List<ProductDTO> getLocalProducts(String detail_loc) {
+        return session.selectList(namespace + "getLocalProducts", detail_loc);
+    }
   
 }
     

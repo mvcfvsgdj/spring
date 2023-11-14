@@ -500,7 +500,7 @@ footer {
 		<table style="border: 1px solid black;">
 			<thead>
 				<tr>
-					<td>주문 코드</td>
+								<td>주문아이디</td>
 					<!-- <td>사용자 코드</td>
 					<td>사용자 아이디</td>
 					<td>사용자 닉네임</td>
@@ -514,18 +514,20 @@ footer {
 					<td>배송 요청</td>
 					<td>주문 날짜</td>
 					<td>평점</td>
+					<td>결제</td>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${orderList}" var="order">
 
 					<tr>
-					<td>${order.order_code}</td>
-						<!--	<td>${order.user_code}</td>
-						<td>${order.user_id}</td>
+					<!-- <td>${order.order_code}</td>
+						${order.user_code}</td>
 						<td>${order.user_nickname}</td>
-						<td>${order.phone_num}</td>
-						<td>${order.board_id}</td>  -->
+						<td>${order.user_nickname}</td>
+						<td>${order.phone_num}</td> -->
+						
+						<td>${order.board_id}</td>
 						<td>${order.board_title}</td>
 						<td>${order.board_price}</td>
 						<td>${order.member_addr}</td>
@@ -533,7 +535,8 @@ footer {
 						<td>${order.detailed_address}</td>
 						<td>${order.delivery_req}</td>
 						<td>${order.order_date}</td>
-						<td></td>
+						<td>    <input type="text" name="sell_code" value="${order.sell_code}" required></td>
+						<td>		</td>
 					</tr>
 
 				</c:forEach>

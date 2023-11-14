@@ -7,5 +7,6 @@
         <typeAlias alias="Test" type="com.test.car.Test"/>
         <typeAlias alias="cate" type="com.test.product.cate"/>
           <typeAlias alias="Product" type="com.test.product.Product"/>
+ 
     </typeAliases>    
 </configuration>

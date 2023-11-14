@@ -151,7 +151,7 @@
             font-weight: bold;
         }
 
-        .menu-container Button:hover {
+        .menu-container button:hover {
             background-color: #f9f9f9;
             color: #ff6f0f;
         }
@@ -293,6 +293,7 @@
             color: white;
         }
     </style>
+ 
     <script>
         function findAddr() {
             new daum.Postcode({
@@ -470,13 +471,13 @@
 		%>
 	</header>
 <div class="main-top">
-        <form id="saveForm" method="post" action="/testing/orderForm" onsubmit="return validateForm()">
+
+        <form id="saveForm" method="post" action="/testing/kakaoPayGo" onsubmit="return validateForm()">
            	   <div style="text-align: center;justify-content: center;"> 
             <h2>구 매</h2>
         </div>
-                   <c:forEach items="${products}" var="singleProduct">
-
-    <input type="hidden" name="board_id" value="${singleProduct.board_Id}" readonly>
+      <c:forEach items="${products}" var="singleProduct"> 
+    <input type="text" name="board_id" value="${singleProduct.board_Id}" readonly>
    <div style="display: flex"> <label for="board_title">상품명</label>
     <input type="text" name="board_title" 
 
@@ -496,9 +497,9 @@ value="${singleProduct.board_Title}" readonly>
                 <option value="배송 전 연락 부탁드립니다">배송 전 연락 부탁드립니다</option>
                 <option value="파손의 위험이 있는 상품입니다">파손의 위험이 있는 상품입니다</option>
             </select>
-        </div>
+        </div>      </c:forEach>
           
-</c:forEach>
+
             	   <div style="text-align: center;justify-content: center;"> 
             <h3>배송 주소</h3>
         </div>
@@ -515,8 +516,12 @@ style=" width: 100px; padding: 8px 12px;" >주소찾기</button>
            <input type="hidden" id="user_code" name="user_code" value="${selectedUser.user_code}" readonly/>
             <input type="hidden" id="user_id" name="user_id" value="${selectedUser.user_id}" readonly/>
               <input type="hidden" id="phone_num" name="phone_num" value="${selectedUser.phone_num}" readonly/>
-           <button type="submit" form="saveForm" style="margin: 40px; width: 100px; padding: 8px 12px;"
-           >주문하기</button>
+         <input type="text" name="sell_code" value="${product.user_code}" required>
+          
+          <button type="submit"  style="margin: 40px; width: 100px; padding: 8px 12px;">
+    주문하기
+</button>
+     
         </form>
 		<button id="myBtn" title="Go to top">Top</button>
 	</div>

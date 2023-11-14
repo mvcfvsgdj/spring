@@ -1,6 +1,9 @@
 package com.sh.order.domain;
 
+import org.springframework.stereotype.Component;
+
 import lombok.Data;
+
 
 @Data
 public class OrderDTO {
@@ -17,5 +20,5 @@ public class OrderDTO {
     private String detailed_address;
     private String delivery_req;
     private String order_date;
-    
+    private String sell_code;
 }
