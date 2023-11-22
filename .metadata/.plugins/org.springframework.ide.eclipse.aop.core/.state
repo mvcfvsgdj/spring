@@ -5,7 +5,6 @@
 <aop-project name="testprj3"/>
 <aop-project name="ProjectTest"/>
 <aop-project name="batisPrj2"/>
-<aop-project name="kakaopay-sample-master"/>
 <aop-project name="batisPrj"/>
 <aop-project name="day1"/>
 <aop-project name="day9"/>
@@ -15,6 +14,7 @@
 <aop-project name="day2"/>
 <aop-project name="day5Exception"/>
 <aop-project name="intercepterPrj"/>
+<aop-project name="SecondHands"/>
 <aop-project name="batisPrac"/>
 <aop-project name="uploadTestPrj"/>
 <aop-project name="day5Test"/>

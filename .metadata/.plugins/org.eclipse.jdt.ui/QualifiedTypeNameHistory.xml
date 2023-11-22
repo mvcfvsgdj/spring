@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.acorn.mybatis2.OrderDTO"/>
-    <fullyQualifiedTypeName name="com.acorn.service.MyRepository"/>
-    <fullyQualifiedTypeName name="com.acorn.service.MyService"/>
-    <fullyQualifiedTypeName name="com.acorn.inter.GoogleApi"/>
     <fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
     <fullyQualifiedTypeName name="java.net.URL"/>
@@ -26,7 +22,6 @@
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="org.springframework.transaction.PlatformTransactionManager"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="org.springframework.transaction.TransactionStatus"/>
     <fullyQualifiedTypeName name="org.springframework.transaction.support.DefaultTransactionDefinition"/>
     <fullyQualifiedTypeName name="com.acorn.day9.User"/>
@@ -45,7 +40,6 @@
     <fullyQualifiedTypeName name="com.sh.product.ProductDTO"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
@@ -58,6 +52,12 @@
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="com.sh.order.domain.OrderDTO"/>
+    <fullyQualifiedTypeName name="com.sh.kakaopay.KakaoPayReadyVO"/>
+    <fullyQualifiedTypeName name="com.sh.kakaopay.service.KakaoPayService"/>
+    <fullyQualifiedTypeName name="com.sh.kakaopay.domain.KakaoPayReadyVO"/>
+    <fullyQualifiedTypeName name="com.sh.kakaopay.domain.KakaoPayApprovalVO"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
 </qualifiedTypeNameHistroy>

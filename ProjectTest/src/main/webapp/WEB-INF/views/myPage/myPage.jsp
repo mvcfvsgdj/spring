@@ -540,7 +540,10 @@ footer {
 	if (user != null && selectedUserList != null && !selectedUserList.isEmpty()) {
 	%>
 
-
+	<tr>
+				<th>회원 사진</th>
+				<td><img src="<%=selectedUser.getUser_image()%>"></td>
+			</tr>
 	<div class="main-top">
 		<table style="border: 1px solid black;">
 			<tr>
@@ -556,10 +559,7 @@ footer {
 				<th>닉네임</th>
 				<td><%=selectedUser.getUser_nickname()%></td>
 			</tr>
-			<tr>
-				<th>회원 사진</th>
-				<td><%=selectedUser.getUser_image()%></td>
-			</tr>
+		
 			<tr>
 				<th>평점</th>
 				<td><%=selectedUser.getUser_heat()%></td>

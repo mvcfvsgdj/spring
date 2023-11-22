@@ -105,3 +105,55 @@
 11월 03, 2023 15:48:45.530 [5880:17600:1103/154845.530:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
 11월 03, 2023 16:28:34.680 [1103/162834.663:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\hbi1\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\cbce7cce-562a-448a-8044-80defb687b67: 지정된 파일을 찾을 수 없습니다. (0x2)
 11월 03, 2023 16:28:34.680 [1103/162834.680:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\hbi1\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\cbce7cce-562a-448a-8044-80defb687b67: 지정된 파일을 찾을 수 없습니다. (0x2)
+
+11월 15, 2023 13:44:21.915 NEW SESSION
+11월 15, 2023 13:44:21.915 [16004:15776:1115/134421.815:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 15, 2023 14:57:40.353 [16004:15776:1115/145740.348:ERROR:interface_endpoint_client.cc(702)] Message 5 rejected by interface blink.mojom.WidgetHost
+11월 15, 2023 18:48:15.764 [16004:18480:1115/184815.764:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 15, 2023 18:48:28.183 [16004:18480:1115/184828.183:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 18:48:33.175 [16004:18480:1115/184828.656:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 18:50:55.322 [16004:18480:1115/185055.322:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 15, 2023 18:52:48.172 [16004:18480:1115/185248.172:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 18:52:52.900 [16004:18480:1115/185248.657:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 18:55:16.297 [16004:18480:1115/185516.297:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 15, 2023 18:57:31.248 [16004:18480:1115/185731.248:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 18:57:36.49 [16004:18480:1115/185731.722:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 18:59:58.965 [16004:18480:1115/185958.965:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 15, 2023 19:00:47.185 [16004:18480:1115/190047.185:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 19:00:52.103 [16004:18480:1115/190047.671:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 19:03:14.900 [16004:18480:1115/190314.900:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 15, 2023 19:04:12.258 [16004:18480:1115/190412.258:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 19:04:17.408 [16004:18480:1115/190412.753:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 19:06:40.53 [16004:18480:1115/190640.053:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 15, 2023 19:29:42.822 [16004:17572:1115/192938.222:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_NETWORK_IO_SUSPENDED)
+11월 15, 2023 19:29:42.822 [16004:18480:1115/192938.250:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 19:29:42.822 [16004:4716:1115/192938.253:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+11월 15, 2023 19:29:42.822 [16004:18480:1115/192938.733:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 19:32:06.84 [16004:18480:1115/193206.084:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 15, 2023 19:44:34.163 [16004:18480:1115/194434.162:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 19:44:34.653 [16004:18480:1115/194434.653:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 19:47:02.200 [16004:18480:1115/194702.200:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 15, 2023 19:59:09.502 [16004:18480:1115/195909.501:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 15, 2023 19:59:14.520 [16004:18480:1115/195909.692:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+
+11월 17, 2023 10:17:09.557 NEW SESSION
+11월 17, 2023 10:17:09.557 [6368:12304:1117/101709.529:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 17, 2023 19:04:10.287 [6368:6644:1117/190410.287:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 18, 2023 08:43:51.713 [6368:6644:1118/084346.013:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 18, 2023 08:43:51.714 [6368:6644:1118/084348.031:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 18, 2023 08:43:51.714 [6368:13736:1118/084348.031:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+11월 18, 2023 08:43:51.714 [6368:6644:1118/084348.542:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 18, 2023 08:46:14.128 [6368:6644:1118/084614.128:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 18, 2023 08:47:38.93 [6368:6644:1118/084733.331:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 18, 2023 08:50:00.891 [6368:6644:1118/085000.891:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 18, 2023 08:56:49.13 [6368:6644:1118/085644.085:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 18, 2023 10:26:12.244 [6368:6644:1118/102612.244:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 18, 2023 10:45:07.107 [6368:6644:1118/104507.107:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+11월 18, 2023 10:47:34.748 [6368:6644:1118/104734.748:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+11월 18, 2023 11:25:25.579 [6368:12304:1118/112525.579:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 18, 2023 12:30:55.389 [6368:12304:1118/123055.388:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 18, 2023 12:30:59.250 [6368:12304:1118/123059.250:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 18, 2023 14:25:56.87 [6368:12304:1118/142556.086:ERROR:CONSOLE(1)] "Request Storage.getStorageKeyForFrame failed. {"code":-32602,"message":"Frame tree node for given frame not found"}", source: devtools://devtools/bundled/devtools-frontend/front_end/core/protocol_client/protocol_client.js (1)
+11월 18, 2023 14:25:56.87 [6368:12304:1118/142556.086:ERROR:CONSOLE(1)] "Request Storage.getStorageKeyForFrame failed. {"code":-32602,"message":"Frame tree node for given frame not found"}", source: devtools://devtools/bundled/devtools-frontend/front_end/core/protocol_client/protocol_client.js (1)
+11월 18, 2023 14:25:56.311 [6368:12304:1118/142556.311:ERROR:CONSOLE(1)] "Request Storage.getStorageKeyForFrame failed. {"code":-32602,"message":"Frame tree node for given frame not found"}", source: devtools://devtools/bundled/devtools-frontend/front_end/core/protocol_client/protocol_client.js (1)
+11월 18, 2023 14:25:56.312 [6368:12304:1118/142556.311:ERROR:CONSOLE(1)] "Request Storage.getStorageKeyForFrame failed. {"code":-32602,"message":"Frame tree node for given frame not found"}", source: devtools://devtools/bundled/devtools-frontend/front_end/core/protocol_client/protocol_client.js (1)
