@@ -196,6 +196,7 @@ public class ProductController {
 	@PostMapping("/products/delete")
 	public String productDelete(@RequestParam String boardId, Model model) {
 		ProductDTO product = productservice.getProductById(boardId);
+		productservice.deleteProduct2(boardId);
 		productservice.deleteProduct(boardId);
 		model.addAttribute("product", product);
 		return "redirect:/scrollHome";

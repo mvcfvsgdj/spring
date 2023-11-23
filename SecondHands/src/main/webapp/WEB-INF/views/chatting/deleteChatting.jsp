@@ -15,14 +15,14 @@
     		<c:forEach items="${chatList}" var="chat">
     
 
-    <form action="/testing/deleteChatting" method="post">
+    <form action="/secondHands/deleteChatting" method="post">
         <label for="chat_code">채팅 코드:</label>
         <input type="text" name="chat_code" id="chat_code" value="${chat.chat_code}" required />
         <button type="submit">채팅 삭제</button>
     </form>
     </c:forEach>
 
-    <form action="/testing/homePage">
+    <form action="/secondHands/homePage">
         <button type="submit">홈으로 돌아가기</button>
     </form>
 </body>

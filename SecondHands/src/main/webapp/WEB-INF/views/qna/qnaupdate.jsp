@@ -47,7 +47,7 @@
 
 
 <div>
-	<form action = "/testing/qna/qup" method="post" >
+	<form action = "/secondHands/qna/qup" method="post" >
 		<input type= "hidden" value="${user.q_code }" name = "code">
 		<table>
 			<tr>
@@ -81,7 +81,7 @@
 </div>
 
 <div>
-	<form action="/testing/qna" method="get" >
+	<form action="/secondHands/qna" method="get" >
 		<input type="submit" value="목록으로" onclick="return backcheck()"/>
 	</form>
 </div>

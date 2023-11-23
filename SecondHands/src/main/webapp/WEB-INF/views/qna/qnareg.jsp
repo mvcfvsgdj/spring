@@ -38,7 +38,7 @@
 
 
 <div>
-	<form action = "/testing/qna/reg" method="post" >
+	<form action = "/secondHands/qna/reg" method="post" >
 		<input type="hidden" name="id" value="${id }">
 		<input type="hidden" name="writer" value="${writer }" >
 		<table>
@@ -73,7 +73,7 @@
 </div>
 
 <div>
-	<form action="/testing/qna" method="get">
+	<form action="/secondHands/qna" method="get">
 		<button> 목록으로 </button>
 	</form>
 </div>

@@ -22,7 +22,7 @@
 <%
     }
 %>
-    <form action="/testing/products" method ="post">
+    <form action="/secondHands/products" method ="post">
     <table border="1">
         <thead>
             <tr>
@@ -41,7 +41,7 @@
             <c:forEach var="product" items="${products}">
                 <tr>
                 	<td>[${product.board_cate}]</td>
-                    <td><a href="/testing/products/detail?boardId=${product.board_Id}">${product.board_Title}</a></td>
+                    <td><a href="/secondHands/products/detail?boardId=${product.board_Id}">${product.board_Title}</a></td>
                     <td>${product.board_Date}</td>
                     <td>${product.user_nickname}</td>
                     <td>${product.loc_code}/${product.detail_loc}</td>
@@ -58,22 +58,22 @@
 
    
     </form>
-    <form action="/testing/products/add">
+    <form action="/secondHands/products/add">
       <button type="submit">게시글작성</button>
    </form>
-       <form action="/testing/myPage">
+       <form action="/secondHands/myPage">
       <button type="submit">마이페이지이동</button>
    </form>
 
-   <form action="/testing/products">
+   <form action="/secondHands/products">
       <button type="submit">상품</button>
    </form>
 
-   <form action="/testing/login">
+   <form action="/secondHands/login">
       <button type="submit">가입 및 로그인</button>
    </form>
    
-<form action="/testing/logout" method="post">
+<form action="/secondHands/logout" method="post">
     <button type="submit">로그아웃</button>
 </form>
 </body>

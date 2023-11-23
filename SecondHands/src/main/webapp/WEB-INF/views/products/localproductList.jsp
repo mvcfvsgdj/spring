@@ -110,8 +110,9 @@ header.menu-open h2 {
 
 .header-btn {
    display: flex;
-   margin: 0px 0px 0px 500px;
+   margin: 0px 0px 0px 0px;
 }
+
 
 header.menu-open {
    flex-direction: column;
@@ -315,7 +316,9 @@ border-radius: 12px;
    background: none;
    margin-right: 20px;
 }
-
+.footer {
+   margin-top: 300px;
+}
 
 .footer a {
    text-decoration: none; /* 텍스트 데코레이션 제거 */
@@ -396,7 +399,7 @@ border-radius: 12px;
    <header>
       <div class="header-logo">
          <div class="menu-icon">&#9776;</div>
-         <form action="/testing/homePage">
+         <form action="/secondHands/homePage">
             <button type="submit">Second Hands</button>
          </form>
       </div>
@@ -406,7 +409,7 @@ border-radius: 12px;
       <% if ("admin".equals(selectedUser.getUser_id())) {
 %>
       <li>
-            <form action="/testing/admin" method="post">
+            <form action="/secondHands/admin" method="post">
             <button type="submit">관리자 페이지</button>
         </form>
    </li>     <%
@@ -423,14 +426,14 @@ border-radius: 12px;
                   <%=firstSelectedUser.getUser_nickname()%>님
                </h2></li>
             <li>
-               <form action="/testing/myPage" method="post">
+               <form action="/secondHands/myPage" method="post">
                   <input type="hidden" name="user_code"
                      value="<%=firstSelectedUser.getUser_code()%>">
                   <button type="submit">마이페이지</button>
                </form>
             </li>
             <li>
-               <form action="/testing/chattingList" method="post">
+               <form action="/secondHands/chattingList" method="post">
                   <input type="hidden" name="buy_code" placeholder="채팅 코드 입력"
                      value="<%=firstSelectedUser.getUser_code()%>">
                   <button type="submit">채팅 ${fn:length(chatList)} 개</button>
@@ -439,27 +442,27 @@ border-radius: 12px;
                </form>
             </li>
             <li>
-               <form action="/testing/products/add">
+               <form action="/secondHands/products/add">
                   <button type="submit">게시글작성</button>
                </form>
             </li>
                  <li>
-               <form action="/testing/sellProducts">
+               <form action="/secondHands/sellProducts">
                   <button type="submit">판매내역</button>
                </form>
             </li>
             <li>
-               <form action="/testing/showOrder">
+               <form action="/secondHands/showOrder">
                   <button type="submit">주문내역</button>
                </form>
             </li>
             <li>
-               <form action="/testing/qna">
+               <form action="/secondHands/qna">
                   <button type="submit">문의하기</button>
                </form>
             </li>
             <li>
-               <form action="/testing/logout" method="post">
+               <form action="/secondHands/logout" method="post">
                   <button type="submit">로그아웃</button>
                </form>
             </li>
@@ -468,7 +471,7 @@ border-radius: 12px;
             %>
             <li><h2>로그인이 필요한 서비스입니다.</h2></li>
             <li>
-               <form action="/testing/login">
+               <form action="/secondHands/login">
                   <button type="submit">가입 및 로그인</button>
                </form>
             </li>
@@ -479,10 +482,10 @@ border-radius: 12px;
          </ul>
       </div>
       <div class="header-btn">
-         <form action="/testing/scrollHome">
+         <form action="/secondHands/scrollHome">
             <button type="submit">중고거래</button>
          </form>
-         <form action="/testing/localproductList" method="post">
+         <form action="/secondHands/localproductList" method="post">
             <input type="hidden" name="newLocation" value="${detail_loc}" />
             <button type="submit">동네거래</button>
          </form>
@@ -491,14 +494,14 @@ border-radius: 12px;
       if (user != null && selectedUser != null) {
       %>
       <div class="header-btn2">
-         <form action="/testing/logout" method="post">
+         <form action="/secondHands/logout" method="post">
             <button type="submit">로그아웃</button>
          </form>
       </div>
       <%
       } else {
       %>
-      <form action="/testing/login">
+      <form action="/secondHands/login">
          <button type="submit">로그인</button>
       </form>
       <%
@@ -514,7 +517,7 @@ border-radius: 12px;
          <button id="srClick">인기순</button>|
            <button id="srLike">관심상품</button>
          |
-             <form action="/testing/products/add">
+             <form action="/secondHands/products/add">
                   <button type="submit">게시글작성</button>
                </form>
          <div class="search">
@@ -619,7 +622,7 @@ border-radius: 12px;
                  }
                  else{
                     alert("해당 지역 내 상품이 없습니다.");
-                     window.location.href = "/testing/homePage";
+                     window.location.href = "/secondHands/homePage";
                  }
                  loading = false;
              },
@@ -637,7 +640,7 @@ border-radius: 12px;
                str += `         
                    <article class="card_wrap">
                 <div class="card_image" style="background-image: url('${path}/images/<%="${item.board_img}" %>')"></div>
-                   <h2 class="card_title">    <a class="card_a" href="/testing/products/detail?boardId=<%="${item.board_id}" %>&user_code=<%="${item.user_code}"%>">
+                   <h2 class="card_title">    <a class="card_a" href="/secondHands/products/detail?boardId=<%="${item.board_id}" %>&user_code=<%="${item.user_code}"%>">
                      <%="${item.board_title}"%>
                      </a></h2>
                 <div class = "card_date"><%="${item.board_date}"%> </div>
@@ -738,7 +741,7 @@ border-radius: 12px;
                 }
                 else{
                    alert("해당 지역 내 상품이 없습니다.");
-                    window.location.href = "/testing/homePage";
+                    window.location.href = "/secondHands/homePage";
                 }
                 loading = false;
             },
@@ -803,6 +806,30 @@ border-radius: 12px;
       }
       
    });
+   //관심목록 출력
+   function LikeList(){
+      if (!loading) {
+        loading = true;
+        $.ajax({
+           url: "${path}/likeList",
+           type: "POST",
+           data: {userId:userId},
+           success: function(data) {
+              let list = data;
+              let sql = pageToString(list);
+              $(".scrollWrap").empty();
+              $(".scrollWrap").append(sql);
+  
+              loading = false;
+           },
+           error: function(error) {
+              console.log("Error:", error);
+              loading = false;
+           }
+        });
+     }
+      
+   }
 </script>
    <%
    }

@@ -181,24 +181,6 @@ color: darkslategrey;
 
 
 
-#myBtn {
-	position: fixed;
-	bottom: 20px;
-	right: 30px;
-	z-index: 99;
-	border: none;
-	outline: none;
-	background-color: #ff6f0f;
-	color: white;
-	cursor: pointer;
-	padding: 15px;
-	border-radius: 10px;
-}
-
-#myBtn:hover {
-	background-color: #d55500; /* 마우스를 올렸을 때의 배경 색상을 흰색으로 변경 */
-	color: white; /* 마우스를 올렸을 때의 텍스트 색상을 주황색으로 변경 */
-}
 
 footer {
    background-color: #333;
@@ -225,7 +207,7 @@ footer a:hover {
 	<header>
 
 
-		<form action="/testing/homePage">
+		<form action="/secondHands/homePage">
 			<button type="submit" >Second Hands</button>
 		</form>
 		
@@ -321,14 +303,14 @@ footer a:hover {
 		<div class="inner-div">
 			<h2>LOGIN</h2>
 
-			<form id="kakaoForm" method="post" action="/testing/kakaoForm">
+			<form id="kakaoForm" method="post" action="/secondHands/kakaoForm">
 				<input type="hidden" id="user_kakao" name="user_kakao" value="" />
 				<input type="hidden" id="nickname" name="nickname" value="" /> <input
 					type="hidden" id="profile_image" name="profile_image" value="" />
 			</form>
 
 
-			<form action="/testing/login" method="post">
+			<form action="/secondHands/login" method="post">
 				<div>
 					<label for="user_id"></label> <input type="text" id="user_id"
 					placeholder="아이디"	name="user_id">
@@ -357,13 +339,13 @@ footer a:hover {
 
 		
 			</form>
-<form id="saveForm" method="post" action="/testing/saveForm" style="text-align: right;">
-    <a href="/testing/shSaveUser" style="text-decoration: none; color: #4d4d4d; font-weight: bold;">회원가입</a>
+<form id="saveForm" method="post" action="/secondHands/saveForm" style="text-align: right;">
+    <a href="/secondHands/shSaveUser" style="text-decoration: none; color: #4d4d4d; font-weight: bold;">회원가입</a>
 </form>
 			
 		</div>
 	</div>
-	<button id="myBtn" title="Go to top">Top</button>
+
 
    <footer>
       &copy; 2023 에이콘아카데미 최종프로젝트 <br>

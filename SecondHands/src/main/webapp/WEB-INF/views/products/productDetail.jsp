@@ -97,8 +97,9 @@ header.menu-open h2 {
 
 .header-btn {
    display: flex;
-   margin: 0px 0px 0px 500px;
+   margin: 0px 0px 0px 0px;
 }
+
 
 header.menu-open {
    flex-direction: column;
@@ -579,7 +580,7 @@ footer a:hover {
    <header>
       <div class="header-logo">
          <div class="menu-icon">&#9776;</div>
-         <form action="/testing/homePage">
+         <form action="/secondHands/homePage">
          <button type="submit" >Second Hands</button>
       </form>
       </div>
@@ -589,7 +590,7 @@ footer a:hover {
                  <% if ("admin".equals(selectedUser.getUser_id())) {
 %>
       <li>
-            <form action="/testing/admin" method="post">
+            <form action="/secondHands/admin" method="post">
             <button type="submit">관리자 페이지</button>
         </form>
    </li>     <%
@@ -606,13 +607,13 @@ footer a:hover {
                </h2>
             </li>
             <li>
-                        <form action="/testing/myPage" method="post">
+                        <form action="/secondHands/myPage" method="post">
                <input type="hidden" name="user_code" value="<%=firstSelectedUser.getUser_code()%>">
                   <button type="submit">마이페이지</button>
                </form>
             </li>
                              <li>
-         <form action="/testing/chattingList" method="post">
+         <form action="/secondHands/chattingList" method="post">
                   <input type="hidden" name="buy_code" placeholder="채팅 코드 입력"
                      value="<%=firstSelectedUser.getUser_code()%>">
                   <button type="submit">채팅 ${fn:length(chatList)} 개</button>
@@ -621,27 +622,27 @@ footer a:hover {
                </form>
 </li>
                        <li>
-              <form action="/testing/products/add">
+              <form action="/secondHands/products/add">
       <button type="submit">게시글작성</button>
             </form>
    </li>
        <li>
-               <form action="/testing/sellProducts">
+               <form action="/secondHands/sellProducts">
                   <button type="submit">판매내역</button>
                </form>
             </li>
             <li>
-               <form action="/testing/showOrder">
+               <form action="/secondHands/showOrder">
                   <button type="submit">주문내역</button>
                </form>
             </li>
             <li>
-               <form action="/testing/qna">
+               <form action="/secondHands/qna">
                   <button type="submit">문의하기</button>
                </form>
             </li>
             <li>
-               <form action="/testing/logout" method="post">
+               <form action="/secondHands/logout" method="post">
                   <button type="submit">로그아웃</button>
                </form>
             </li>
@@ -650,7 +651,7 @@ footer a:hover {
             %>
             <li><h2>로그인이 필요한 서비스입니다.</h2></li>
             <li>
-               <form action="/testing/login">
+               <form action="/secondHands/login">
                   <button type="submit">가입 및 로그인</button>
                </form>
             </li>
@@ -661,13 +662,13 @@ footer a:hover {
          </ul>
       </div>
       <div class="header-btn">
-          <form action="/testing/scrollHome">
+          <form action="/secondHands/scrollHome">
          <button type="submit">중고거래</button>
       </form>
                 <%
       if (user != null && selectedUser != null) {
       %>
-      <form action="/testing/localproductList" method="post">
+      <form action="/secondHands/localproductList" method="post">
          <input type="hidden" name="newLocation" value="${detail_loc}" />
          <button id="localTransactionButton" type="submit">동네거래</button>
       </form>
@@ -688,7 +689,7 @@ footer a:hover {
       <script>
         document.getElementById("loginAlertButton").addEventListener("click", function() {
             alert("로그인이 필요한 서비스 입니다.");
-            window.location.href = "/testing/login"; 
+            window.location.href = "/secondHands/login"; 
         });
     </script>
       <%
@@ -699,14 +700,14 @@ footer a:hover {
       if (user != null && selectedUser != null) {
       %>
       <div class="header-btn2">
-         <form action="/testing/logout" method="post">
+         <form action="/secondHands/logout" method="post">
             <button type="submit">로그아웃</button>
          </form>
       </div>
       <%
       } else {
       %>
-      <form action="/testing/login">
+      <form action="/secondHands/login">
          <button type="submit">로그인</button>
       </form>
       <%
@@ -731,7 +732,7 @@ footer a:hover {
 
    <div class="main-top">
       <div id="saveForm">
-         <form action="/testing/products" method="get"
+         <form action="/secondHands/products" method="get"
             enctype="multipart/form-data"></form>
          <!-- 로그인한 유저 코드와 게시글 유저코드를 불러옴 -->
          <input type="hidden" name="user_code1" id="user_code1"
@@ -814,7 +815,7 @@ footer a:hover {
 
             <c:if test="${selectedUser.user_code ne product.user_code}">
                <div class="buy_product">
-                  <form action="/testing/order">
+                  <form action="/secondHands/order">
                      <input type="hidden" name="boardId" value="${product.board_Id}">
                      <input type="hidden" name="sell_code"
                         value="${product.user_code}" required>
@@ -828,7 +829,7 @@ footer a:hover {
 
 
                   <div class="chat_likes">
-                     <form action="/testing/checkCode" method="post">
+                     <form action="/secondHands/checkCode" method="post">
                         <input type="hidden" name="buy_code"
                            value="${selectedUser.user_code}" required><br>
                         <input type="hidden" name="sell_code"
@@ -843,7 +844,7 @@ footer a:hover {
                         <button type="submit">채팅신청하기</button>
 
                      </form>
-                     <form action="/testing/scrollHome">
+                     <form action="/secondHands/scrollHome">
          <button type="submit">리스트로 돌아가기</button>
       </form>
                      <div class="like1">
@@ -864,7 +865,7 @@ footer a:hover {
              <c:if test="${owner}">
                   <!-- 수정부분 -->
 
-                  <form action="/testing/products/update" method="get">
+                  <form action="/secondHands/products/update" method="get">
                      <div>
                         <span class="title">가격: <span style="color: #ff6f0f;">${product.board_Price}</span>
                            원
@@ -878,7 +879,7 @@ footer a:hover {
                      <button type="submit">수정</button>
                   </form>
                   <!-- 삭제부분 -->
-                  <form action="/testing/products/delete" method="post" onsubmit="return confirm('게시글을 삭제하시겠습니까?');">
+                  <form action="/secondHands/products/delete" method="post" onsubmit="return confirm('게시글을 삭제하시겠습니까?');">
                      <input type="hidden" name="user_code1" id="user_code1"
                         value="<%=firstSelectedUser.getUser_code()%>" required> <input
                         type="hidden" name="user_code3" id="user_code3"
@@ -886,14 +887,14 @@ footer a:hover {
                         type="hidden" name="boardId" value="${product.board_Id}">
                      <button type="submit">삭제</button>
                   </form>
-                  <form action="/testing/products/updateDate" method="post"
+                  <form action="/secondHands/products/updateDate" method="post"
                      id="updateDateForm">
                      <input type="hidden" name="boardId" value="${product.board_Id}">
                      <button type="submit">끌어올리기</button>
                   </form>
                   
                   
-           <form action="/testing/scrollHome">
+           <form action="/secondHands/scrollHome">
          <button type="submit">리스트로 돌아가기</button>
       </form>
       
@@ -907,7 +908,7 @@ footer a:hover {
             </div>
          </div>
        <c:if test="${'admin' == user.user_id}">
-   <form action="/testing/products/delete" method="post" onsubmit="return confirm('게시글을 삭제하시겠습니까?');"
+   <form action="/secondHands/products/delete" method="post" onsubmit="return confirm('게시글을 삭제하시겠습니까?');"
    style="margin-top: 460px;">
       <input type="hidden" name="user_code1" id="user_code1" value="<%=firstSelectedUser.getUser_code()%>" required>
       <input type="hidden" name="user_code3" id="user_code3" value="<%=product.getUser_code()%>" required>

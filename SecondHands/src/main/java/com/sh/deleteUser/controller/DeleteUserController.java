@@ -37,9 +37,10 @@ public class DeleteUserController {
 	private OrderServiceI orderService;
 	
 	@PostMapping("/delete")
-	public String processDelete(@ModelAttribute LoginDTO loginDTO, @RequestParam String user_id, @RequestParam String user_code ,HttpServletRequest request) {
+	public String processDelete(@ModelAttribute LoginDTO loginDTO, @RequestParam String boardId,@RequestParam String user_id, @RequestParam String user_code ,HttpServletRequest request) {
 	  
 		System.out.println(loginDTO);
+		productService.deleteProduct2(boardId);
 		productService.deleteProduct4(user_id);
 		productService.deleteProduct3(user_code);
 		orderService.deleteProduct5(user_id);
@@ -60,9 +61,9 @@ public class DeleteUserController {
 	@PostMapping("/admindelete")
 	public String adminDelete(@ModelAttribute LoginDTO loginDTO,
 			@ModelAttribute ProductDTO productDTO
-			, @RequestParam String user_id, @RequestParam String user_code,
+			, @RequestParam String user_id, @RequestParam String user_code, @RequestParam String boardId,
 	       Model model, HttpServletRequest request) {
-
+		productService.deleteProduct2(boardId);
 	    productService.deleteProduct4(user_id);
 	    productService.deleteProduct3(user_code);
 	    orderService.deleteProduct5(user_id);
@@ -86,6 +87,7 @@ public class DeleteUserController {
 			Model model) {
 		
 		
+		productService.deleteProduct2(boardId);
 		productService.deleteProduct(boardId);
 		ProductDTO product = productService.getProductById(boardId);
 	    List<LoginDTO> userList = loginService.selectAllUsers();

@@ -105,7 +105,7 @@ header.menu-open h2 {
 
 .header-btn {
    display: flex;
-   margin: 0px 0px 0px 500px;
+   margin: 0px 0px 0px 0px;
 }
 
 header.menu-open {
@@ -410,7 +410,7 @@ button[type="submit"][form="saveForm"]:hover {
 
 
    <header>
-      <form action="/testing/homePage">
+      <form action="/secondHands/homePage">
          <button type="submit">Second Hands</button>
       </form>
       <div class="menu-icon">&#9776;</div>
@@ -428,7 +428,7 @@ if (user != null && selectedUser != null) {
   
 %>
            <li>
-            <form action="/testing/admin" method="post">
+            <form action="/secondHands/admin" method="post">
             <button type="submit">관리자 페이지</button>
         </form>
    </li>     <%
@@ -443,24 +443,24 @@ if (user != null && selectedUser != null) {
                   <%=firstSelectedUser.getUser_nickname()%>님
                </h2></li>
             <li>
-               <form action="/testing/myPage" method="post">
+               <form action="/secondHands/myPage" method="post">
                   <input type="hidden" name="user_code"
                      value="<%=firstSelectedUser.getUser_code()%>">
                   <button type="submit">마이페이지</button>
                </form>
             </li>
             <li>
-               <form action="/testing/sellProducts">
+               <form action="/secondHands/sellProducts">
                   <button type="submit">판매내역</button>
                </form>
             </li>
             <li>
-               <form action="/testing/showOrder">
+               <form action="/secondHands/showOrder">
                   <button type="submit">구매내역</button>
                </form>
             </li>
             <li>
-               <form action="/testing/chattingList" method="post">
+               <form action="/secondHands/chattingList" method="post">
                   <input type="hidden" name="buy_code" placeholder="채팅 코드 입력"
                      value="<%=firstSelectedUser.getUser_code()%>">
                   <button type="submit">채팅 ${fn:length(chatList)} 개</button>
@@ -469,12 +469,12 @@ if (user != null && selectedUser != null) {
                </form>
             </li>
             <li>
-               <form action="/testing/qna">
+               <form action="/secondHands/qna">
                   <button type="submit">문의하기</button>
                </form>
             </li>
             <li>
-               <form action="/testing/logout" method="post">
+               <form action="/secondHands/logout" method="post">
                   <button type="submit">로그아웃</button>
                </form>
             </li>
@@ -483,7 +483,7 @@ if (user != null && selectedUser != null) {
             %>
             <li><h2>로그인이 필요한 서비스입니다.</h2></li>
             <li>
-               <form action="/testing/login">
+               <form action="/secondHands/login">
                   <button type="submit">가입 및 로그인</button>
                </form>
             </li>
@@ -493,7 +493,7 @@ if (user != null && selectedUser != null) {
          </ul>
       </div>
 
-      <form action="/testing/scrollHome">
+      <form action="/secondHands/scrollHome">
          <button type="submit">중고거래</button>
       </form>
 
@@ -501,7 +501,7 @@ if (user != null && selectedUser != null) {
       <%
       if (user != null && selectedUser != null) {
       %>
-      <form action="/testing/localproductList" method="post">
+      <form action="/secondHands/localproductList" method="post">
          <input type="hidden" name="newLocation" value="${detail_loc}" />
          <button id="localTransactionButton" type="submit">동네거래</button>
       </form>
@@ -522,7 +522,7 @@ if (user != null && selectedUser != null) {
       <script>
         document.getElementById("loginAlertButton").addEventListener("click", function() {
             alert("로그인이 필요한 서비스 입니다.");
-            window.location.href = "/testing/login"; 
+            window.location.href = "/secondHands/login"; 
         });
     </script>
       <%
@@ -546,7 +546,7 @@ if (user != null && selectedUser != null) {
       <script>
          document.getElementById("find-me1").addEventListener("click", function() {
             alert("로그인이 필요한 서비스 입니다.");
-            window.location.href = "/testing/login"; 
+            window.location.href = "/secondHands/login"; 
         });
          </script>
       <%
@@ -559,13 +559,13 @@ if (user != null && selectedUser != null) {
       if (user != null && selectedUser != null) {
          LoginDTO firstSelectedUser = selectedUser;
       %>
-      <form action="/testing/logout" method="post">
+      <form action="/secondHands/logout" method="post">
          <button type="submit">로그아웃</button>
       </form>
       <%
       } else {
       %>
-      <form action="/testing/login">
+      <form action="/secondHands/login">
          <button type="submit">로그인</button>
       </form>
       <%
@@ -613,15 +613,22 @@ if (user != null && selectedUser != null) {
          
                 <td>${user.user_heat}</td>
                 <td>
-                    <!-- 삭제 버튼을 관리자일 경우에만 표시 -->
-                <form method="post" action="/testing/admindelete" onsubmit="return confirm('${user.user_nickname}' + ' 님을 회원탈퇴시킵니다.');">
-    <input type="hidden" name="user_id" value="${user.user_id}">
-    <input type="hidden" name="user_code" value="${user.user_code}">
-    <button type="submit">회원 탈퇴</button>
-</form>
-                </td>
-            </tr>
-        </c:forEach>
+               <!-- 관리자인 경우 "관리자" 텍스트를 표시, 아닌 경우 삭제 버튼 표시 -->
+            <c:choose>
+                <c:when test="${'admin' eq user.user_id}">
+                  <span style="font-weight: bold; ">관리자 계정</span>
+                </c:when>
+                <c:otherwise>
+                    <form method="post" action="/secondHands/admindelete" onsubmit="return confirm('${user.user_nickname}' + ' 님을 회원탈퇴시킵니다.');">
+                        <input type="hidden" name="user_id" value="${user.user_id}">
+                        <input type="hidden" name="user_code" value="${user.user_code}">
+                        <button type="submit">회원 탈퇴</button>
+                    </form>
+                </c:otherwise>
+            </c:choose>
+        </td>
+    </tr>
+</c:forEach>
     </table>
 
 
@@ -651,7 +658,7 @@ if (user != null && selectedUser != null) {
                     <td>${products.board_Price}</td>
                     <td>${products.board_Click }</td>
 					<td>
-					  <form action="/testing/products/adminBoardDelete" method="post"  onsubmit="return confirm(' 게시글 중 '+' ${products.board_Title}' + '을(를) 삭제합니다 .');">
+					  <form action="/secondHands/products/adminBoardDelete" method="post"  onsubmit="return confirm(' 게시글 중 '+' ${products.board_Title}' + '을(를) 삭제합니다 .');">
                   	 <input
                         type="hidden" name="boardId" value="${products.board_Id}">
                      <button type="submit">게시글 삭제</button>

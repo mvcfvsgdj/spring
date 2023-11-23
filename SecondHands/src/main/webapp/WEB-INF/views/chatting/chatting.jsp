@@ -37,7 +37,7 @@ window.onload = function() {
         $('#chatArea').show();
         $('#message').focus();
 
-        wsocket = new WebSocket("ws://localhost:8090/testing/chat-sh");
+        wsocket = new WebSocket("ws://localhost:8090/secondHands/chat-sh");
         wsocket.onopen = onOpen;
         wsocket.onmessage = onMessage;
         wsocket.onclose = onClose;

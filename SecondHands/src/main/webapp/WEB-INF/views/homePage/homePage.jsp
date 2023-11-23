@@ -284,6 +284,24 @@ header.menu-open h2 {
    transition: background-color 0.3s, color 0.3s;
 }
 
+#loginAlertButton1 {
+   background-color: #ff6f0f;
+   color: white;
+   padding: 15px 20px;
+   border: none;
+   border-radius: 10px;
+   font-size: 18px;
+   font-weight: bold;
+   cursor: pointer;
+   transition: background-color 0.3s, color 0.3s;
+}
+
+
+#loginAlertButton1:hover {
+   background-color: #d55500;
+   color: white;
+}
+
 .main-middle div form button:hover {
    background-color: #d55500;
    color: white;
@@ -415,7 +433,6 @@ footer a:hover {
    margin-top: -1px;
 }
 
-
 .localsubBtn:hover {
    background-color: #d55500;
 }
@@ -476,7 +493,7 @@ footer a:hover {
 
 
    <header>
-      <form action="/testing/homePage">
+      <form action="/secondHands/homePage">
          <button type="submit">Second Hands</button>
       </form>
       <div class="menu-icon">&#9776;</div>
@@ -484,19 +501,20 @@ footer a:hover {
       <div class="menu-container">
          <ul>
 
-         <%
-if (user != null && selectedUser != null) {
-   LoginDTO firstSelectedUser = selectedUser;
-   if ("admin".equals(firstSelectedUser.getUser_id())) {
-%>
-  
-        <li>
-            <form action="/testing/admin" method="post">
-            <button type="submit">관리자 페이지</button>
-        </form>
-   </li>     <%
-         }
-         %>
+            <%
+            if (user != null && selectedUser != null) {
+               LoginDTO firstSelectedUser = selectedUser;
+               if ("admin".equals(firstSelectedUser.getUser_id())) {
+            %>
+
+            <li>
+               <form action="/secondHands/admin" method="post">
+                  <button type="submit">관리자 페이지</button>
+               </form>
+            </li>
+            <%
+            }
+            %>
             <li><img
                src="${path}/images/<%=firstSelectedUser.getUser_image()%>"
                style="border-radius: 50%; width: 100px; height: 100px;">
@@ -506,14 +524,14 @@ if (user != null && selectedUser != null) {
                   <%=firstSelectedUser.getUser_nickname()%>님
                </h2></li>
             <li>
-               <form action="/testing/myPage" method="post">
+               <form action="/secondHands/myPage" method="post">
                   <input type="hidden" name="user_code"
                      value="<%=firstSelectedUser.getUser_code()%>">
                   <button type="submit">마이페이지</button>
                </form>
             </li>
-                 <li>
-               <form action="/testing/chattingList" method="post">
+            <li>
+               <form action="/secondHands/chattingList" method="post">
                   <input type="hidden" name="buy_code" placeholder="채팅 코드 입력"
                      value="<%=firstSelectedUser.getUser_code()%>">
                   <button type="submit">채팅 ${fn:length(chatList)} 개</button>
@@ -522,23 +540,23 @@ if (user != null && selectedUser != null) {
                </form>
             </li>
             <li>
-               <form action="/testing/sellProducts">
+               <form action="/secondHands/sellProducts">
                   <button type="submit">판매내역</button>
                </form>
             </li>
             <li>
-               <form action="/testing/showOrder">
+               <form action="/secondHands/showOrder">
                   <button type="submit">구매내역</button>
                </form>
             </li>
-       
+
             <li>
-               <form action="/testing/qna">
+               <form action="/secondHands/qna">
                   <button type="submit">문의하기</button>
                </form>
             </li>
             <li>
-               <form action="/testing/logout" method="post">
+               <form action="/secondHands/logout" method="post">
                   <button type="submit">로그아웃</button>
                </form>
             </li>
@@ -547,7 +565,7 @@ if (user != null && selectedUser != null) {
             %>
             <li><h2>로그인이 필요한 서비스입니다.</h2></li>
             <li>
-               <form action="/testing/login">
+               <form action="/secondHands/login">
                   <button type="submit">가입 및 로그인</button>
                </form>
             </li>
@@ -557,7 +575,7 @@ if (user != null && selectedUser != null) {
          </ul>
       </div>
 
-      <form action="/testing/scrollHome">
+      <form action="/secondHands/scrollHome">
          <button type="submit">중고거래</button>
       </form>
 
@@ -565,7 +583,7 @@ if (user != null && selectedUser != null) {
       <%
       if (user != null && selectedUser != null) {
       %>
-      <form action="/testing/localproductList" method="post">
+      <form action="/secondHands/localproductList" method="post">
          <input type="hidden" name="newLocation" value="${detail_loc}" />
          <button id="localTransactionButton" type="submit">동네거래</button>
       </form>
@@ -586,7 +604,7 @@ if (user != null && selectedUser != null) {
       <script>
         document.getElementById("loginAlertButton").addEventListener("click", function() {
             alert("로그인이 필요한 서비스 입니다.");
-            window.location.href = "/testing/login"; 
+            window.location.href = "/secondHands/login"; 
         });
     </script>
       <%
@@ -626,7 +644,7 @@ if (user != null && selectedUser != null) {
       <script>
          document.getElementById("find-me1").addEventListener("click", function() {
             alert("로그인이 필요한 서비스 입니다.");
-            window.location.href = "/testing/login"; 
+            window.location.href = "/secondHands/login"; 
         });
          </script>
       <%
@@ -639,13 +657,13 @@ if (user != null && selectedUser != null) {
       if (user != null && selectedUser != null) {
          LoginDTO firstSelectedUser = selectedUser;
       %>
-      <form action="/testing/logout" method="post">
+      <form action="/secondHands/logout" method="post">
          <button type="submit">로그아웃</button>
       </form>
       <%
       } else {
       %>
-      <form action="/testing/login">
+      <form action="/secondHands/login">
          <button type="submit">로그인</button>
       </form>
       <%
@@ -673,8 +691,8 @@ if (user != null && selectedUser != null) {
          <%
          } else {
          %><p>지금 저희와 함께하세요.</p>
-         <form id="saveForm" method="post" action="/testing/saveForm">
-            <a class="link2" href="/testing/shSaveUser">회원가입</a>
+         <form id="saveForm" method="post" action="/secondHands/saveForm">
+            <a class="link2" href="/secondHands/shSaveUser">회원가입</a>
          </form>
 
          <%
@@ -706,11 +724,38 @@ if (user != null && selectedUser != null) {
             동네 주민들과 가깝고 따뜻한 거래를<br> 지금 경험해보세요.
          </p>
 
-         <form action="/testing/localproductList" method="post">
+         <%
+         if (user != null && selectedUser != null) {
+         %>
+         <form action="/secondHands/localproductList" method="post">
             <input type="hidden" name="newLocation" value="${detail_loc}" />
-            <button id="localTransactionButton" type="submit">동네거래</button>
+            <button id="localTransactionButton1" type="submit">동네거래</button>
          </form>
-         <form action="/testing/scrollHome">
+         <script>
+    document.getElementById("localTransactionButton1").addEventListener("click", function(e) {
+        var newLocationValue = document.getElementsByName("newLocation")[0].value;
+        if (newLocationValue.trim() === "") {
+            e.preventDefault(); // 폼 전송을 막음
+            alert("동네인증을 먼저 진행해주세요.");
+            // 여기에 동네인증 관련 코드 추가
+        }
+    });
+</script>
+         <%
+         } else {
+         %>
+         <button id="loginAlertButton1" type="button"
+            onclick="redirectToLogin()">동네거래</button>
+         <script>
+    function redirectToLogin() {
+        alert("로그인이 필요한 서비스입니다.");
+        window.location.href = "/secondHands/login";
+    }
+</script>
+         <%
+         }
+         %>
+         <form action="/secondHands/scrollHome">
             <button type="submit">중고거래</button>
          </form>
 

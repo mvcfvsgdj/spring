@@ -578,7 +578,7 @@ $(document).ready(function () {
 
       $.ajax({
          type : "POST",
-         url : "/testing/isUserIdExists",
+         url : "/secondHands/isUserIdExists",
          data : {
             user_id : userId
          },
@@ -611,7 +611,7 @@ $(document).ready(function () {
 
          $.ajax({
             type : 'GET',
-            url : 'testing/mailCheck',
+            url : 'secondHands/mailCheck',
             data : {
                email : email
             }, /* 데이터를 객체로 보내도록 수정 */
@@ -688,11 +688,11 @@ $(document).ready(function () {
  	<header>
 
 
-		<form action="/testing/homePage">
+		<form action="/secondHands/homePage">
 			<button type="submit" >Second Hands</button>
 		</form>
 	
-		 <form action="/testing/login">
+		 <form action="/secondHands/login">
          <button id="myBtn" type="submit">로그인</button>
       </form>
 
@@ -700,7 +700,7 @@ $(document).ready(function () {
 	</header>
    <div class="main-top">
 
-      <form id="saveForm" method="post" action="/testing/saveForm">
+      <form id="saveForm" method="post" action="/secondHands/saveForm">
          <div style="text-align: center;">
             <!-- Add this div for centering -->
             <h2>회원가입</h2>
@@ -741,7 +741,7 @@ $(document).ready(function () {
          <button type="button" onclick="findAddr()">주소찾기</button>
 
          <br> <input type="date" id="user_birth" name="user_birth"
-            placeholder="생년월일 6자리 입력해주세요" onfocus="this.placeholder = ''">
+             min="1900-01-01" max="2015-01-01" onfocus="this.placeholder = ''">
          <input type="hidden" id="user_image" name="user_image"
             value="${profile_image != null ? profile_image : '기본_이미지.jpg'}">
          <input type="hidden" id="user_heat" name="user_heat" value="36.5">
@@ -766,7 +766,7 @@ $(document).ready(function () {
 
    <!-- 
    <div>Address</div>
-   <form id="addressForm" method="post" action="/testing/addressForm">
+   <form id="addressForm" method="post" action="/secondHands/addressForm">
    </form>
 
  -->

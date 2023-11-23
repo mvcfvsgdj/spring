@@ -110,8 +110,9 @@ header.menu-open h2 {
 
 .header-btn {
    display: flex;
-   margin: 0px 0px 0px 500px;
+   margin: 0px 0px 0px 0px;
 }
+
 
 header.menu-open {
    flex-direction: column;
@@ -398,22 +399,14 @@ header.menu-open h2 {
    <header>
       <div class="header-logo">
          <div class="menu-icon">&#9776;</div>
-         <form action="/testing/homePage">
+         <form action="/secondHands/homePage">
             <button type="submit">Second Hands</button>
          </form>
       </div>
 
       <div class="menu-container">
          <ul>
-                     <% if ("admin".equals(selectedUser.getUser_id())) {
-%>
-      <li>
-            <form action="/testing/admin" method="post">
-            <button type="submit">관리자 페이지</button>
-        </form>
-   </li>     <%
-         }
-         %>
+  
             <li>
                <% if (user != null && selectedUser != null) {
       LoginDTO firstSelectedUser = selectedUser; // Assuming you want the first user in the list
@@ -427,14 +420,14 @@ header.menu-open h2 {
                </h2>
             </li>
             <li>
-               <form action="/testing/myPage" method="post">
+               <form action="/secondHands/myPage" method="post">
                   <input type="hidden" name="user_code"
                      value="<%=firstSelectedUser.getUser_code()%>">
                   <button type="submit">마이페이지</button>
                </form>
             </li>
             <li>
-               <form action="/testing/chattingList" method="post">
+               <form action="/secondHands/chattingList" method="post">
                   <input type="hidden" name="buy_code" placeholder="채팅 코드 입력"
                      value="<%=firstSelectedUser.getUser_code()%>">
                   <button type="submit">채팅 ${fn:length(chatList)} 개</button>
@@ -443,27 +436,27 @@ header.menu-open h2 {
                </form>
             </li>
             <li>
-               <form action="/testing/products/add">
+               <form action="/secondHands/products/add">
                   <button type="submit">게시글작성</button>
                </form>
             </li>
                 <li>
-               <form action="/testing/sellProducts">
+               <form action="/secondHands/sellProducts">
                   <button type="submit">판매내역</button>
                </form>
             </li>
             <li>
-               <form action="/testing/showOrder">
+               <form action="/secondHands/showOrder">
                   <button type="submit">주문내역</button>
                </form>
             </li>
             <li>
-               <form action="/testing/qna">
+               <form action="/secondHands/qna">
                   <button type="submit">문의하기</button>
                </form>
             </li>
             <li>
-               <form action="/testing/logout" method="post">
+               <form action="/secondHands/logout" method="post">
                   <button type="submit">로그아웃</button>
                </form>
             </li>
@@ -472,7 +465,7 @@ header.menu-open h2 {
             %>
             <li><h2>로그인이 필요한 서비스입니다.</h2></li>
             <li>
-               <form action="/testing/login">
+               <form action="/secondHands/login">
                   <button type="submit">가입 및 로그인</button>
                </form>
             </li>
@@ -483,13 +476,13 @@ header.menu-open h2 {
          </ul>
       </div>
       <div class="header-btn">
-         <form action="/testing/scrollHome">
+         <form action="/secondHands/scrollHome">
             <button type="submit">중고거래</button>
          </form>
          <%
       if (user != null && selectedUser != null) {
       %>
-         <form action="/testing/localproductList" method="post">
+         <form action="/secondHands/localproductList" method="post">
             <input type="hidden" name="newLocation" value="${detail_loc}" />
             <button id="localTransactionButton" type="submit">동네거래</button>
          </form>
@@ -510,7 +503,7 @@ header.menu-open h2 {
          <script>
         document.getElementById("loginAlertButton").addEventListener("click", function() {
             alert("로그인이 필요한 서비스 입니다.");
-            window.location.href = "/testing/login"; 
+            window.location.href = "/secondHands/login"; 
         });
     </script>
          <%
@@ -521,14 +514,14 @@ header.menu-open h2 {
       if (user != null && selectedUser != null) {
       %>
       <div class="header-btn2">
-         <form action="/testing/logout" method="post">
+         <form action="/secondHands/logout" method="post">
             <button type="submit">로그아웃</button>
          </form>
       </div>
       <%
       } else {
       %>
-      <form action="/testing/login">
+      <form action="/secondHands/login">
          <button type="submit">로그인</button>
       </form>
       <%
@@ -546,8 +539,8 @@ header.menu-open h2 {
          |
          <button id="srLike">관심상품</button>
          |
-             <form action="/testing/products/add">
-                  <button type="submit">게시글작성</button>
+             <form action="/secondHands/products/add"  onsubmit="return checkLogin()">
+                  <button type="submit"  >게시글작성</button>
                </form>
          <div class="search">
             <input type="text" id="srSearch" value="" placeholder="검색어 입력">
@@ -665,7 +658,7 @@ header.menu-open h2 {
                                    
                    <%if(user != null){%>
                    <h2 class="card_title">   
-                   <a class="card_a" href="/testing/products/detail?boardId=<%="${item.board_id}" %>&user_code=<%="${item.user_code}"%>">
+                   <a class="card_a" href="/secondHands/products/detail?boardId=<%="${item.board_id}" %>&user_code=<%="${item.user_code}"%>">
                    <%="${item.board_title}"%> </a></h2>
                   <%}else{%>
                   <h2 class="card_title"><a class="card_a" onclick = "goLogin()"> <%="${item.board_title}"%> </a></h2>
@@ -695,7 +688,18 @@ header.menu-open h2 {
     // 로그인 alert(상품 상세 확인 시 로그인 필요)
      function goLogin(){
         alert("로그인이 필요한 서비스 입니다.");
+     
      }
+    
+     function checkLogin() {
+         <% if (user == null) { %>
+             alert("로그인이 필요한 서비스입니다.");
+             return false; // 폼 제출 방지
+         <% } %>
+         return true; // 폼 제출 허용
+     }
+    
+    
     //ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 관심상품 기능
     //좋아요 Insert
    function likeEvent(boardId) {

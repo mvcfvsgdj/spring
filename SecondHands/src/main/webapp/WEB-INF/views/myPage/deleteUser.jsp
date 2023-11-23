@@ -24,7 +24,7 @@ List<ProductDTO> products = (List<ProductDTO>) session.getAttribute("products");
         LoginDTO selectedUser = selectedUserList; 
 %>
 
-    <form action="/testing/delete" method="post">
+    <form action="/secondHands/delete" method="post">
         <input type="text" name="user_code" value="<%= selectedUser.getUser_code() %>">
         <input type="text" name="user_id" value="<%= selectedUser.getUser_id() %>">
 
@@ -39,7 +39,7 @@ List<ProductDTO> products = (List<ProductDTO>) session.getAttribute("products");
     }
 %>
 
-<form action="/testing/myPage">
+<form action="/secondHands/myPage">
     <button type="submit">이전으로</button>
 </form>
 

@@ -32,26 +32,26 @@ console.log("ddd=" ${userid});
 	alert("로그인이 필요한 서비스입니다.");
 	let result = confirm("로그인 페이지로 이동하시겠습니까?");
 	if(result){
-		window.location.href='/testing/login';
+		window.location.href='/secondHands/login';
 	}
 </c:if>
 
 
 function prevPage(){
 	if(${handler.currentPage} > ${handler.grpSize}){
-		window.location.href='/testing/qna?p=${handler.grpStartPage-1 }';
+		window.location.href='/secondHands/qna?p=${handler.grpStartPage-1 }';
 	}else if(${handler.currentPage} <= ${handler.grpSize}){
 		alert("첫 페이지입니다.");
-		window.location.href='/testing/qna?p=${handler.grpStartPage }';
+		window.location.href='/secondHands/qna?p=${handler.grpStartPage }';
 	}
 }
 
 function nextPage(){
 	if(${handler.grpEndPage} < ${handler.totalPage}){
-		window.location.href='/testing/qna?p=${handler.grpEndPage+1 }';
+		window.location.href='/secondHands/qna?p=${handler.grpEndPage+1 }';
 	}else if(${handler.grpEndPage} == ${handler.totalPage}){
 		alert("마지막 페이지입니다.");
-		window.location.href='/testing/qna?p=${handler.grpEndPage }';
+		window.location.href='/secondHands/qna?p=${handler.grpEndPage }';
 	}
 }
 
@@ -61,7 +61,7 @@ function secret(){
 		alert("로그인이 필요한 서비스입니다.");
 		let result = confirm("로그인 페이지로 이동하시겠습니까?");
 		if(result){
-			window.location.href='/testing/login';
+			window.location.href='/secondHands/login';
 		}
 	}else{
 		alert("dslfj");
@@ -88,7 +88,7 @@ function secret(){
 							<td>${list.q_id}
 							</td>
 							<td>
-								<form action="/testing/qna" method="POST">
+								<form action="/secondHands/qna" method="POST">
 									<input type="hidden" value="${list.q_code}" name = "code" />
 									<input type="submit" value="${list.q_title}" id= "title"/>
 								</form>
@@ -103,7 +103,7 @@ function secret(){
 							<td>${list.q_id}
 							</td>
 							<td>
-								<form action="/testing/qna" method="POST">
+								<form action="/secondHands/qna" method="POST">
 									<input type="hidden" value="${list.q_code}" name = "code" />
 									<input type="submit" value="비밀글" id= "title" onclick="return secret()"/>
 								</form>
@@ -122,19 +122,19 @@ function secret(){
 
 <div>
 	<c:set var = "index" value="${handler.grpStartPage }"/>
-		<input type="button" value="<<" onclick="window.location.href='/testing/qna?p=1'">
+		<input type="button" value="<<" onclick="window.location.href='/secondHands/qna?p=1'">
 		<input type="button" value="<" onclick="prevPage()">
 	
 	<c:forEach begin="${handler.grpStartPage }" end="${handler.grpEndPage }" var = "i">
-		<a href = "/testing/qna?p=${i }">[${i}]</a>
+		<a href = "/secondHands/qna?p=${i }">[${i}]</a>
 	</c:forEach>
 		<input type="button" value=">" onclick="nextPage()">
-		<input type="button" value=">>" onclick="window.location.href='/testing/qna?p=${handler.totalPage}'">
+		<input type="button" value=">>" onclick="window.location.href='/secondHands/qna?p=${handler.totalPage}'">
 </div>
 
 
 <div>
-	<input type="button" value="글등록" onclick="window.location.href='/testing/qna/reg'">
+	<input type="button" value="글등록" onclick="window.location.href='/secondHands/qna/reg'">
 </div>
 
 

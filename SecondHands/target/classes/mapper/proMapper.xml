@@ -173,8 +173,8 @@
 
    <!-- 좋아요 부분 -->
    <insert id="insertLike" parameterType="ProductDTO">
-      INSERT INTO 
-      (like_id, board_id, user_id)
+      INSERT INTO board_like
+      ( board_id, user_id)
       VALUES (#{boardId},
       #{userId})
    </insert>
