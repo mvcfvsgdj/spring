@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sh.login.LoginMapper">
+   <select id="checklogin" parameterType="LoginDTO"
+      resultType="LoginDTO">
+      SELECT * FROM user_tbl WHERE user_id = #{user_id} AND
+      user_pw = #{user_pw}
+   </select>
+
+   <select id="selectAllU" parameterType="LoginDTO"
+      resultType="LoginDTO">
+      SELECT * FROM user_tbl WHERE user_id = #{user_id}
+   </select>
+   
+   <!-- 관리자용 -->
+   <select id="selectAll" resultType="LoginDTO">
+      SELECT * FROM user_tbl
+   </select>
+
+   <select id="selectUserById" parameterType="String" resultType="LoginDTO">
+      SELECT * FROM user_tbl WHERE user_id = #{userId}
+   </select>
+
+   <update id="updateUser" parameterType="LoginDTO">
+      UPDATE user_tbl
+      SET
+      user_pw = #{user_pw},
+      address = #{address},
+      phone_num = #{phone_num},
+      member_post = #{member_post},
+      member_addr = #{member_addr},
+      detailed_address = #{detailed_address},
+      user_nickname = #{user_nickname}
+      WHERE user_id = #{user_id}
+   </update>
+   
+   <!-- 회원 이미지 수정 -->
+   <update id="updateUserImg" parameterType="LoginDTO">
+      UPDATE user_tbl
+      SET
+      user_image = #{user_image}
+      WHERE user_id = #{user_id}
+   </update>
+
+   <delete id="deleteUser" parameterType="LoginDTO">
+      DELETE FROM user_tbl WHERE user_id = #{user_id}
+   </delete>
+
+   <select id="selectHeat" parameterType="String" resultType="String">
+      SELECT user_heat FROM user_tbl WHERE user_code = #{user_code}
+   </select>
+
+   <select id="selectHeatU" parameterType="String" resultType="String">
+      SELECT user_nickname FROM user_tbl WHERE user_code = #{user_code}
+   </select>
+
+   <update id="updateHeat" parameterType="String">
+      UPDATE user_tbl
+      SET
+      user_heat = #{user_heat, jdbcType=VARCHAR}
+      WHERE user_code = #{user_code, jdbcType=VARCHAR}
+   </update>
+
+   <insert id="saveHeat" parameterType="LoginDTO">
+      INSERT INTO heat_tbl ( user_code, user_heat, heat_date, check_heat, board_id)
+      VALUES ( #{user_code}, #{user_heat}, CURRENT_TIMESTAMP, #{check_heat}, #{board_id})
+   </insert>
+
+   <select id="getHeatByUserCode" parameterType="String" resultType="HeatChartDTO">
+      SELECT * FROM heat_tbl WHERE user_code = #{user_code, jdbcType=VARCHAR}
+   </select>
+   
+   <select id="getCheckHeatByUserCode" parameterType="String" resultType="String">
+      SELECT board_id FROM heat_tbl WHERE user_code = #{user_code, jdbcType=VARCHAR}
+   </select>
+   
+   <select id="getCheckHeatByBoardId" parameterType="String" resultType="String">
+      SELECT check_heat FROM heat_tbl WHERE board_id = #{board_id, jdbcType=VARCHAR}
+   </select>
+</mapper>
