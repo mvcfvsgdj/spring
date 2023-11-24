@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sh.scrollMapper">
+
+   <!-- 레코드 개수 -->
+   <select id="getTotalCnt" resultType="int">
+       <![CDATA[
+       SELECT COUNT(*) FROM user_board
+       ]]>
+   </select>
+
+
+   <!-- 시간순 정렬 -->
+   <select id="getListTime" resultType="ScrollDTO">
+ <![CDATA[
+    SELECT 
+        @rownum := @rownum + 1 AS num,
+        board_id,
+        board_title,
+        board_date,
+        user_nickname,
+        loc_code,
+        detail_loc,
+        board_price,
+        board_click,
+        board_img,
+        user_code
+    FROM user_board, (SELECT @rownum := 0) r
+    ORDER BY board_date DESC
+    LIMIT #{startIndex}, #{pageSize}
+    ]]>
+   </select>
+
+  <!-- 인기순(조회수) 정렬 -->
+   <select id="getListClick" resultType="ScrollDTO">
+<![CDATA[
+    SELECT 
+        @rownum := @rownum + 1 AS num,
+        board_id,
+        board_title,
+        board_date,
+        user_nickname,
+        loc_code,
+        detail_loc,
+        board_price,
+        board_click,
+        board_img,
+        user_code
+    FROM user_board, (SELECT @rownum := 0) r
+    ORDER BY board_click DESC
+    LIMIT #{startIndex}, #{pageSize}
+    ]]>
+   </select>
+   
+   <!-- 검색 기능 -->
+   <select id="getSearchList" resultType="ScrollDTO"
+      parameterType="string">
+      select * from user_board where replace(board_title, ' ', '') like '%' ||
+      replace(#{searchTerm}, ' ', '') || '%'
+      or replace(board_text, ' ', '') like '%' || replace(#{searchTerm}, ' ',
+      '') || '%'
+   </select>
+   
+   <!-- 관심상품 목록 -->
+   <select id="getLikeList" resultType="ScrollDTO">
+    <![CDATA[
+    SELECT 
+        @rownum := @rownum + 1 AS num,
+        b.board_id,
+        b.board_title,
+        b.board_date,
+        b.user_nickname,
+        b.loc_code,
+        b.detail_loc,
+        b.board_price,
+        b.board_click,
+        b.board_img,
+        b.board_text
+    FROM 
+        board_like l
+    JOIN 
+        user_board b ON l.BOARD_ID = b.BOARD_ID
+    CROSS JOIN 
+        (SELECT @rownum := 0) r
+    WHERE 
+        l.USER_ID = #{userId}
+    ORDER BY 
+        b.board_date DESC
+    ]]>
+   </select>
+   
+   <!-- 동네거래 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+   <!-- 동네(시간순 정렬) -->
+   <select id="localListTime" resultType="ScrollDTO">
+   <![CDATA[
+    SELECT 
+        @rownum := @rownum + 1 AS num,
+        numbered.sort,
+        numbered.board_id,
+        numbered.board_title,
+        numbered.board_date,
+        numbered.user_nickname,
+        numbered.loc_code,
+        numbered.detail_loc,
+        numbered.board_price,
+        numbered.board_click,
+        numbered.board_img,
+        numbered.user_code
+    FROM (
+        SELECT 
+            ROW_NUMBER() OVER (ORDER BY board_date DESC) AS sort,
+            board_id,
+            board_title,
+            board_date,
+            user_nickname,
+            loc_code,
+            detail_loc,
+            board_price,
+            board_click,
+            board_img,
+            user_code
+        FROM user_board
+        WHERE detail_loc = #{detail_loc}
+    ) AS numbered, (SELECT @rownum := 0) r
+    WHERE num BETWEEN #{startIndex} AND #{endIndex}
+    ]]>
+   </select>
+   
+   <!-- 인기순(조회수) 정렬 (MySQL) -->
+   <select id="getListClick" resultType="ScrollDTO">
+       <![CDATA[
+       SELECT 
+           @rownum := @rownum + 1 AS num,
+           numbered.sort,
+           numbered.board_id,
+           numbered.board_title,
+           numbered.board_date,
+           numbered.user_nickname,
+           numbered.loc_code,
+           numbered.detail_loc,
+           numbered.board_price,
+           numbered.board_click,
+           numbered.board_img,
+           numbered.user_code
+       FROM (
+           SELECT 
+               ROW_NUMBER() OVER (ORDER BY board_click DESC) AS sort,
+               board_id,
+               board_title,
+               board_date,
+               user_nickname,
+               loc_code,
+               detail_loc,
+               board_price,
+               board_click,
+               board_img,
+               user_code
+           FROM user_board
+           WHERE detail_loc = #{detail_loc}
+       ) AS numbered, (SELECT @rownum := 0) r
+       WHERE num BETWEEN #{startIndex} AND #{endIndex}
+       ]]>
+   </select>
+
+   <!-- 동네거래 레코드 개수 -->
+   <select id="localTotalCnt" resultType="int">
+      SELECT count(*) FROM
+      user_board where detail_loc = #{location}
+   </select>
+   
+   <!-- 판매중인 물건 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+   <select id="SellProducts" resultType="ScrollDTO">
+         select * from user_board where user_code = #{user_code} ORDER BY board_date DESC
+   </select>
+</mapper>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias alias="Test" type="com.test.car.Test"/>
+        <typeAlias alias="cate" type="com.test.product.cate"/>
+          <typeAlias alias="Product" type="com.test.product.Product"/>
+ 
+    </typeAliases>    
+</configuration>

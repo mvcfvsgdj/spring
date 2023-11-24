@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sh.QnaMapper">
+
+
+   <select id="getListPage" parameterType="QnaDTO"
+      resultType="QnaDTO">
+      select *
+      from (select rownum num,q_code, q_id, q_title, q_contents,
+      q_date,q_time,q_check,q_writer
+      from qna_board)
+      where num between
+      #{startPage} and #{endPage}
+   </select>
+
+   <select id="getListOne" parameterType="QnaDTO"
+      resultType="QnaDTO">
+      select * from qna_board where q_code = #{q_code}
+   </select>
+
+   <select id="getTotalCount" resultType="int">
+      select count(*) from
+      qna_board
+   </select>
+
+   <insert id="insert" parameterType="QnaDTO">
+      INSERT INTO qna_board
+      VALUES (
+      #{q_id},
+      #{q_title},
+      #{q_contents},
+      DATE_FORMAT(NOW(), '%y/%m/%d'),
+      DATE_FORMAT(NOW(), '%H:%i'),
+      #{q_check},
+      #{q_writer}
+      );
+   </insert>
+
+   <update id="update" parameterType="QnaDTO">
+      update qna_board
+      set q_title = #{q_title},
+      q_contents = #{q_contents},
+      q_check = #{q_check}
+      where q_code = #{q_code}
+   </update>
+
+   <delete id="delete" parameterType="String">
+      delete from qna_board where q_code=#{q_code}
+   </delete>
+
+</mapper>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.batis.scrollMapper">
+    <select id="getTotalCnt" resultType="int">
+       SELECT count(*) FROM user_board
+    </select>
+    
+    
+    <select id="getListScroll" resultType="ScrollDTO">
+       select * from (select  rownum num, board_id, board_title, board_date, user_nickname, loc_code, detail_loc, board_price, board_click, board_img from user_board) 
+       where num  between 1 AND #{itemNum}
+    </select>
+</mapper>

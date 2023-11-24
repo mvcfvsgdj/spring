@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sh.order.OrderMapper">
+
+   <insert id="insertOrder" parameterType="OrderDTO">
+      INSERT INTO order_tbl (
+         user_code,
+         user_id,
+         user_nickname,
+         phone_num,
+         board_id,
+         board_title,
+         board_price,
+         member_post,
+         member_addr,
+         detailed_address,
+         delivery_req,
+         order_date,
+         sell_code
+      )
+      VALUES (
+         #{user_code},
+         #{user_id},
+         #{user_nickname},
+         #{phone_num},
+         #{board_id},
+         #{board_title},
+         #{board_price},
+         #{member_post},
+         #{member_addr},
+         #{detailed_address},
+         #{delivery_req},
+         CURRENT_DATE,
+         #{sell_code}
+      )
+   </insert>
+
+
+
+<select id="selectAll" resultType="OrderDTO" parameterType="String">
+    SELECT *
+    FROM order_tbl
+    WHERE user_id = #{user_id}
+</select>
+
+
+<select id="selectBoardId" resultType="String" parameterType="String">
+    SELECT board_id
+    FROM heat_tbl
+    WHERE board_id = #{board_id}
+</select>
+
+  <delete id="deleteProduct5" parameterType="String">
+      DELETE FROM order_tbl
+      WHERE user_id = #{user_id}
+
+
+   </delete>
+</mapper>

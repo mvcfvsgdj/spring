@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sh.scrollMapper">
+	<select id="getTotalCnt" resultType="int">
+		SELECT count(*) FROM
+		user_board
+	</select>
+
+
+	<!-- 시간순 정렬 -->
+	<select id="getListTime" resultType="ScrollDTO">
+		select * from (select
+		ROW_NUMBER() OVER (ORDER BY board_date DESC) AS num, board_id,
+		board_title, board_date, user_nickname, loc_code, detail_loc,
+		board_price, board_click, board_img, board_text from user_board)
+		where
+		num between
+		1 AND #{itemNum}
+	</select>
+
+
+	<!-- 인기순(조회수) 정렬 -->
+	<select id="getListClick" resultType="ScrollDTO">
+		select * from (select
+		ROW_NUMBER() OVER (ORDER BY board_click DESC) AS num, board_id,
+		board_title, board_date, user_nickname, loc_code, detail_loc,
+		board_price, board_click, board_img, board_text from user_board)
+		where
+		num between
+		1 AND #{itemNum}
+	</select>
+
+	<select id="getSearchList" resultType="ScrollDTO"
+		parameterType="string">
+		select * from user_board where replace(board_title, ' ', '') like '%' ||
+		replace(#{searchTerm}, ' ', '') || '%'
+		or replace(board_text, ' ', '') like '%' || replace(#{searchTerm}, ' ',
+		'') || '%'
+	</select>
+	
+	<!-- 관심상품 목록 -->
+	<select id="getLikeList" resultType="ScrollDTO">
+		select
+		ROW_NUMBER() OVER (ORDER BY board_date DESC) AS num, b.board_id,
+		b.board_title, b.board_date, b.user_nickname, b.loc_code, b.detail_loc,
+		b.board_price, b.board_click, b.board_img, b.board_text
+		from board_like l
+		join  user_board b
+		on l.BOARD_ID = b.BOARD_ID
+		where l.USER_ID = #{userId}
+	</select>
+
+</mapper>
