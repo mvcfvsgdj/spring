@@ -5,6 +5,7 @@
 <%@ page import="com.sh.login.domain.LoginDTO"%>
 <%@ page import="com.sh.order.domain.OrderDTO"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+ <html xmlns:th="http://www.thymeleaf.org">
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -407,6 +408,9 @@ footer a:hover {
 
 
 
+
+
+
    <c:set var="user" value="${sessionScope.user}" />
    <c:set var="selectedUserList" value="${sessionScope.selectedUser}" />
 
@@ -442,7 +446,7 @@ footer a:hover {
          }
          %>
                <li><img
-                  src="${path}}/images/<%=firstSelectedUser.getUser_image()%>"
+                  src="${path}/images/<%=firstSelectedUser.getUser_image()%>"
                   style="border-radius: 50%; width: 100px; height: 100px;">
                   <h2>
                      <%
@@ -613,6 +617,21 @@ footer a:hover {
       }
    </script>
 
+
+
+카카오페이 결제가 정상적으로 완료되었습니다.
+ 
+결제일시:     [[${info.approved_at}]]<br/>
+주문번호:    [[${info.partner_order_id}]]<br/>
+상품명:    [[${info.item_name}]]<br/>
+상품수량:    [[${info.quantity}]]<br/>
+결제금액:    [[${info.amount.total}]]<br/>
+결제방법:    [[${info.payment_method_type}]]<br/>
+
+ 
+ 
+ 
+<h2>[[${info}]]</h2>
 
 
 

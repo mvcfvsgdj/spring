@@ -639,7 +639,7 @@ border-radius: 12px;
           list.forEach(  ( item) => { 
                str += `         
                    <article class="card_wrap">
-                <div class="card_image" style="background-image: url('${path}}/images/<%="${item.board_img}" %>')"></div>
+                <div class="card_image" style="background-image: url('${path}/images/<%="${item.board_img}" %>')"></div>
                    <h2 class="card_title">    <a class="card_a" href="${path}/products/detail?boardId=<%="${item.board_id}" %>&user_code=<%="${item.user_code}"%>">
                      <%="${item.board_title}"%>
                      </a></h2>

@@ -11,7 +11,12 @@
 
 <h1> kakaoPay api 이용하기 </h1>
  
-<form method="post" action="/prac/kakaoPay">
+	<form method="post" action="/prac/kakaoPay">
+        <input type="text"  name="partner_order_id" >
+        <input type="text"  name="partner_user_id" >;
+        <input type="text"  name="item_name">
+        <input type="text"  name="quantity">
+        <input type="text"  name="total_amount">
     <button>카카오페이로 결제하기</button>
 </form>
 

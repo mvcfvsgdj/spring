@@ -23,7 +23,7 @@ public class KakaoPay {
     private KakaoPayReadyVO kakaoPayReadyVO;
     private KakaoPayApprovalVO kakaoPayApprovalVO;
     
-    public String kakaoPayReady() {
+    public String kakaoPayReady( OrderDTO order) {
  
         RestTemplate restTemplate = new RestTemplate();
  
@@ -36,12 +36,12 @@ public class KakaoPay {
         // 서버로 요청할 Body
         MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();
         params.add("cid", "TC0ONETIME");
-        params.add("partner_order_id", "1001");
-        params.add("partner_user_id", "gorany");
-        params.add("item_name", "갤럭시S9");
-        params.add("quantity", "1");
-        params.add("total_amount", "400000");
-        params.add("tax_free_amount", "100");
+        params.add("partner_order_id",  order.getPartner_order_id());
+        params.add("partner_user_id", order.getPartner_user_id());
+        params.add("item_name", order.getItem_name());
+        params.add("quantity", order.getQuantity());
+        params.add("total_amount", order.getTotal_amount());
+        params.add("tax_free_amount", "0");
         params.add("approval_url", "http://localhost:8090/prac/kakaoPaySuccess");
         params.add("cancel_url", "http://localhost:8090/prac/kakaoPayCancel");
         params.add("fail_url", "http://localhost:8090/prac/kakaoPaySuccessFail");
@@ -70,7 +70,7 @@ public class KakaoPay {
         
     }
     
-    public KakaoPayApprovalVO kakaoPayInfo(String pg_token) {
+    public KakaoPayApprovalVO kakaoPayInfo(String pg_token  , OrderDTO order) {
     	 
         log.info("KakaoPayInfoVO............................................");
         log.info("-----------------------------");
@@ -87,10 +87,10 @@ public class KakaoPay {
         MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();
         params.add("cid", "TC0ONETIME");
         params.add("tid", kakaoPayReadyVO.getTid());
-        params.add("partner_order_id", "1001");
-        params.add("partner_user_id", "gorany");
+        params.add("partner_order_id",  order.getPartner_order_id() );
+        params.add("partner_user_id", order.getPartner_user_id() );
         params.add("pg_token", pg_token);
-        params.add("total_amount", "400000");
+        params.add("total_amount", order.getTotal_amount() );
         
         HttpEntity<MultiValueMap<String, String>> body = new HttpEntity<MultiValueMap<String, String>>(params, headers);
         

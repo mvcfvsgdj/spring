@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: hbi1
+Build-Jdk: 11.0.18
+Implementation-Title: kakaopay-sample
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.kakao.pay.sample
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://projects.spring.io/spring-boot/kakaopay-sampl
+ e/
+Created-By: Maven Integration for Eclipse
+

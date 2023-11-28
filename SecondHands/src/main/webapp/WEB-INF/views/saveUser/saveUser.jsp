@@ -607,6 +607,7 @@ $(document).ready(function () {
 
 <script>
    var code = ""; /*인증번호 저장할 곳*/
+   
    $(document).ready(function() {
       $('#auth_btn').click(function() {
          var email = $('#address').val(); /*입력한 이메일*/
