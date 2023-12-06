@@ -223,26 +223,26 @@ header.menu-open h2 {
    margin: 0 auto;
        word-break: break-all;
    border-collapse: collapse;
-   background-color: white; /* Set background color to white */
+   background-color: white;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-   /* Add a subtle shadow effect */
+
 }
 
 .main-top th, .main-top td {
   width:150px;
-   border: 1px solid #ddd; /* Light gray border color */
-   padding: 12px;
+   border: 1px solid #ddd;
+   padding: 3px;
    text-align: center;
 }
 
 .main-top th {
    background-color: #f2f2f2;
-   /* Light gray background color for header cells */
+
 }
 
 .main-top td {
    background-color: #fdfdfd;
-   /* Slightly off-white background color for data cells */
+
 }
 
 header.menu-open {
@@ -436,7 +436,7 @@ if (user != null && selectedUser != null) {
          }
          %>
             <li><img
-               src="${path}}/images/<%=firstSelectedUser.getUser_image()%>"
+               src="${path}/images/<%=firstSelectedUser.getUser_image()%>"
                style="border-radius: 50%; width: 100px; height: 100px;">
                <h2>
                   Welcome,
@@ -585,17 +585,17 @@ if (user != null && selectedUser != null) {
 <table border="1" id="userTable">
   
         <tr>
-            <th>회원코드</th>
-            <th>아이디</th>
-            <th>닉네임</th>
-            <th>이메일</th>
-            <th>전화번호</th>
-            <th>주소</th>
-            <th>우편번호</th>
-            <th>상세주소</th>
-            <th>생년월일</th>
+            <th style="width: 5%;">회원코드</th>
+            <th style="width: 10%;">아이디</th>
+            <th style="width: 8%;">닉네임</th>
+            <th style="width: 17%;">이메일</th>
+            <th style="width: 11%;">전화번호</th>
+            <th style="width: 18%;">주소</th>
+            <th style="width: 8%;">우편번호</th>
+            <th style="width: 8%;">상세주소</th>
+            <th style="width: 10%;">생년월일</th>
     
-            <th>온도</th>
+            <th style="width: 5%;">온도</th>
             <th>관리</th>
         </tr>
 

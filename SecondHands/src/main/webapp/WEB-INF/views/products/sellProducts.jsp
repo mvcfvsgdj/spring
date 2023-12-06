@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
      <%@ page import="com.sh.login.domain.LoginDTO"%>
           <%@ page import="com.sh.product.domain.ProductDTO"%>
@@ -14,8 +14,8 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <style>
 * {
-	box-sizing: border-box;
-	/*outline: 1px solid gray;*/
+   box-sizing: border-box;
+   /*outline: 1px solid gray;*/
 }
 
 
@@ -34,58 +34,58 @@
 }
 
 .sell_image_box {
-	width: 150px;
-	padding: 10px;
+   width: 150px;
+   padding: 10px;
 }
 
 .sell_image {
-	width: 120px;
-	height: 120px;
-	border-radius: 10px;
-	background-color: rgb(245, 239, 239);
-	background-size: cover;
+   width: 120px;
+   height: 120px;
+   border-radius: 10px;
+   background-color: rgb(245, 239, 239);
+   background-size: cover;
 }
 
 .sell_content_box {
-	width: 100%;
-	padding: 15px;
+   width: 100%;
+   padding: 15px;
 }
 
 .sell_Title_box {
-	font-size: 20px;
-	font-weight: bold;
-	margin-bottom: 5px;
+   font-size: 20px;
+   font-weight: bold;
+   margin-bottom: 5px;
 }
 
 .sell_address {
-	color: gray;
-	font-size: 15px;
-	margin-bottom: 7px;
+   color: gray;
+   font-size: 15px;
+   margin-bottom: 7px;
 }
 
 .sell_price {
-	font-size: 20px;
-	font-weight: bold;
-	margin-bottom: 7px;
+   font-size: 20px;
+   font-weight: bold;
+   margin-bottom: 7px;
 }
 
 .sell_bottom {
-	color: gray;
-	position: relative;
+   color: gray;
+   position: relative;
 }
 
 .sellup_btn {
-	height: 40px;
-	width: 90px;
-	position: absolute;
-	right: 0px;
-	bottom: 0px;
-	border-radius: 5px;
+   height: 40px;
+   width: 90px;
+   position: absolute;
+   right: 0px;
+   bottom: 0px;
+   border-radius: 5px;
    background-color: #ff6f0f;
       border-radius: 4px;
       cursor: pointer;
-	color: white;
-	font-weight: bold;
+   color: white;
+   font-weight: bold;
  transition: background-color 0.3s, color 0.3s;
 }
 
@@ -94,11 +94,11 @@
 }
 
 .sell_a {
-	text-decoration: none;
-	color: black;
-	font-weight: bold;
-	overflow: hidden;
-	text-overflow: ellipsis;
+   text-decoration: none;
+   color: black;
+   font-weight: bold;
+   overflow: hidden;
+   text-overflow: ellipsis;
 }
 </style>
 <style>
@@ -273,9 +273,9 @@ header.menu-open h2 {
    /*box-shadow: 0px 0px 5px #ccc;
    background-color: #fff;
    border-radius: 8px; */
-	width: 1000px;
-	height: 2000px;
-	margin: 0 auto;
+   width: 1000px;
+   height: 2000px;
+   margin: 0 auto;
 }
 .main-top div {
    width: 50%;
@@ -392,7 +392,7 @@ button[type="submit"][form="saveForm"]:hover {
 
 
 #saveForm form button{
-	width: 50px;
+   width: 50px;
 }
 
 #saveForm {
@@ -486,16 +486,16 @@ footer a:hover {
    if (user != null && selectedUser != null) {
       LoginDTO firstSelectedUser = selectedUser; // Assuming you want the first user in the list
    %>
-	<header>
-		<div class="header-logo">
-			<div class="menu-icon">&#9776;</div>
-			<form action="${path}/homePage">
-			<button type="submit" >Second Hands</button>
-		</form>
-		</div>
+   <header>
+      <div class="header-logo">
+         <div class="menu-icon">&#9776;</div>
+         <form action="${path}/homePage">
+         <button type="submit" >Second Hands</button>
+      </form>
+      </div>
 
-		<div class="menu-container">
-			<ul>
+      <div class="menu-container">
+         <ul>
                      <% if ("admin".equals(selectedUser.getUser_id())) {
 %>
      
@@ -506,124 +506,114 @@ footer a:hover {
    </li>     <%
          }
          %>
-				<li>
-				   <img src="${path}}/images/<%=firstSelectedUser.getUser_image()%>" style="border-radius: 50%; width: 100px; height: 100px;">
-						<h2>
-						<%
-						if (user != null && selectedUser != null) {
-						%>
-						Welcome,
-						<%=firstSelectedUser.getUser_nickname()%>님
-					</h2>
-				</li>
-				<li>
-				            <form action="${path}/myPage" method="post">
+            <li>
+               <img src="${path}/images/<%=firstSelectedUser.getUser_image()%>" style="border-radius: 50%; width: 100px; height: 100px;">
+                  <h2>
+                  <%
+                  if (user != null && selectedUser != null) {
+                  %>
+                  Welcome,
+                  <%=firstSelectedUser.getUser_nickname()%>님
+               </h2>
+            </li>
+            <li>
+                        <form action="${path}/myPage" method="post">
                <input type="hidden" name="user_code" value="<%=firstSelectedUser.getUser_code()%>">
                   <button type="submit">마이페이지</button>
                </form>
-				</li>
-				           		<li>
-			<form action="${path}/chattingList" method="post">
-						<input type="hidden" name="buy_code" placeholder="채팅 코드 입력"
-							value="<%=firstSelectedUser.getUser_code()%>">
-						<button type="submit">채팅 ${fn:length(chatList)} 개</button>
+            </li>
+                             <li>
+         <form action="${path}/chattingList" method="post">
+                  <input type="hidden" name="buy_code" placeholder="채팅 코드 입력"
+                     value="<%=firstSelectedUser.getUser_code()%>">
+                  <button type="submit">채팅 ${fn:length(chatList)} 개</button>
 
 
-					</form>
+               </form>
 </li>
                        <li>
               <form action="${path}/products/add">
       <button type="submit">게시글작성</button>
-   			</form>
+            </form>
    </li>
               <li>
                <form action="${path}/sellProducts">
                   <button type="submit">판매내역</button>
                </form>
             </li>
-				<li>
-					<form action="${path}/showOrder">
-						<button type="submit">구매내역</button>
-					</form>
-				</li>
-				<li>
-					<form action="${path}/qna">
-						<button type="submit">문의하기</button>
-					</form>
-				</li>
-				<li>
-					<form action="${path}/logout" method="post">
-						<button type="submit">로그아웃</button>
-					</form>
-				</li>
-				<%
-				} else {
-				%>
-				<li><h2>로그인이 필요한 서비스입니다.</h2></li>
-				<li>
-					<form action="${path}/login">
-						<button type="submit">가입 및 로그인</button>
-					</form>
-				</li>
-				<%
-				}
-				%>
-				
-			</ul>
-		</div>
-		<div class="header-btn">
-			 <form action="${path}/scrollHome">
+            <li>
+               <form action="${path}/showOrder">
+                  <button type="submit">구매내역</button>
+               </form>
+            </li>
+            <li>
+               <form action="${path}/qna">
+                  <button type="submit">문의하기</button>
+               </form>
+            </li>
+            <li>
+               <form action="${path}/logout" method="post">
+                  <button type="submit">로그아웃</button>
+               </form>
+            </li>
+            <%
+            } else {
+            %>
+            <li><h2>로그인이 필요한 서비스입니다.</h2></li>
+            <li>
+               <form action="${path}/login">
+                  <button type="submit">가입 및 로그인</button>
+               </form>
+            </li>
+            <%
+            }
+            %>
+            
+         </ul>
+      </div>
+      <div class="header-btn">
+          <form action="${path}/scrollHome">
          <button type="submit">중고거래</button>
       </form>
-			  <form action="${path}/localproductList" method="post">
+           <form action="${path}/localproductList" method="post">
                <input type="hidden" name="newLocation" value="${detail_loc}" />
          <button type="submit">동네거래</button>
       </form>
-		</div>
-		<%
-		if (user != null && selectedUser != null) {
-		%>
-		<div class="header-btn2">
-			<form action="${path}/logout" method="post">
-				<button type="submit">로그아웃</button>
-			</form>
-		</div>
-		<%
-		} else {
-		%>
-		<form action="${path}/login">
-			<button type="submit">로그인</button>
-		</form>
-		<%
-		}
-		%>
-	
-	
-	</header>
+      </div>
+      <%
+      if (user != null && selectedUser != null) {
+      %>
+      <div class="header-btn2">
+         <form action="${path}/logout" method="post">
+            <button type="submit">로그아웃</button>
+         </form>
+      </div>
+      <%
+      } else {
+      %>
+      <form action="${path}/login">
+         <button type="submit">로그인</button>
+      </form>
+      <%
+      }
+      %>
+   
+   
+   </header>
 
 
 
-		<div style="width: 650px; margin: 0px auto">
-			<h2>나의 판매목록</h2>
-		</div>
-		
-		
-		
-		<div class="product_wrap">
-
-		</div>
-		
-		     <button id="myBtn" title="Go to top">Top</button>
-     <footer>
-      &copy; 2023 에이콘아카데미 최종프로젝트 <br>
-      <p><a href="https://github.com/dhdl2389">조장: 김재열</a> |
-      <a href="https://github.com/mvcfvsgdj">조원: 김민규 </a> |
-      <a href="https://github.com/kevinbj0">조원: 김병진 </a> |
-      <a href="https://github.com/LeeJungHoon1">조원: 이정훈 </a> |
-      <a href="https://github.com/lepio1999">조원: 허재혁 </a></p>
+      <div style="width: 650px; margin: 0px auto">
+         <h2>나의 판매목록</h2>
+      </div>
       
       
-   </footer>
+      
+      <div class="product_wrap">
+      </div>
+      
+           <button id="myBtn" title="Go to top">Top</button>
+
 </body>
 <script>
     let user_code = "${user.user_code}";
@@ -632,78 +622,78 @@ footer a:hover {
     
     //끌어올리기
     function upEvent(boardId) {
-		if (!loading) {
-			loading = true;
-			$.ajax({
-				url: "${path}}/products/upEvent",
-				type: "POST",
-		        data: {
-		        	boardId: boardId
-		        },
-				success: function(data) {
-					console.log("끌올");
-					loading = false;
-					loadPage();
-				},
-				error: function(error) {
-					console.log("Error:", error);
-					loading = false;
-				}
-			});
-		}
-	}
+      if (!loading) {
+         loading = true;
+         $.ajax({
+            url: "${path}/products/upEvent",
+            type: "POST",
+              data: {
+                 boardId: boardId
+              },
+            success: function(data) {
+               console.log("끌올");
+               loading = false;
+               loadPage();
+            },
+            error: function(error) {
+               console.log("Error:", error);
+               loading = false;
+            }
+         });
+      }
+   }
     //페이지 로드
     function loadPage() {
-		if (!loading) {
-			loading = true;
-			$.ajax({
-				url: "${path}}/sellList?user_code="+user_code,
-				type: "GET",
-				success: function(data) {
-					console.log("성공");
-					let list = data;
-					console.log(list);
-					let sql = pageToString(list);
-					$(".product_wrap").empty();
-					$(".product_wrap").append(sql);
-				   	
-					loading = false;
-				},
-				error: function(error) {
-					console.log("Error:", error);
-					loading = false;
-				}
-			});
-		}
-	}
+      if (!loading) {
+         loading = true;
+         $.ajax({
+            url: "${path}/sellList?user_code="+user_code,
+            type: "GET",
+            success: function(data) {
+               console.log("성공");
+               let list = data;
+               console.log(list);
+               let sql = pageToString(list);
+               $(".product_wrap").empty();
+               $(".product_wrap").append(sql);
+                  
+               loading = false;
+            },
+            error: function(error) {
+               console.log("Error:", error);
+               loading = false;
+            }
+         });
+      }
+   }
     
     //str문 생성
-  	function  pageToString(list){
-	   	 let str = "";
-	   	 list.forEach(  ( item) => { 
-	   			str += `     	 
-	    	      <div class="sell_Wrap">
-	    	        <div class="sell_image_box">
-	    	          <div class="sell_image" style="background-image: url('${path}}/images/<%="${item.board_img}" %>')"></div>
-	    	        </div>
-	    	        <div class="sell_content_box">
-	    	          <div class="sell_Title_box">
+     function  pageToString(list){
+          let str = "";
+          list.forEach(  ( item) => { 
+               str += `         
+                <div class="sell_Wrap">
+                  <div class="sell_image_box">
+                    <div class="sell_image" style="background-image: url('${path}/images/<%="${item.board_img}" %>')"></div>
+                  </div>
+                  <div class="sell_content_box">
+                    <div class="sell_Title_box">
                    <a class="sell_a" href="${path}/products/detail?boardId=<%="${item.board_id}" %>&user_code=<%="${item.user_code}"%>">
                    <%="${item.board_title}"%> </a></div>
-	    	          <div class="sell_address"><%="${item.loc_code}"%>/<%="${item.detail_loc}"%> | <%="${item.board_date}"%></div>
-	    	          <div class="sell_price"><%="${item.board_price}"%> 원</div>
-	    	          <div class="sell_bottom">
-	    	            조회 <%="${item.board_click}"%><button id = '<%="${item.board_id}"%>' class = "sellup_btn" onclick = "upEvent('<%="${item.board_id}"%>')">끌어올리기</button>
-	    	          </div>
-	    	        </div>
-	    	      </div>
-	   			`;
-		});
+                    <div class="sell_address"><%="${item.loc_code}"%>/<%="${item.detail_loc}"%> | <%="${item.board_date}"%></div>
+                    <div class="sell_price"><%="${item.board_price}"%> 원</div>
+                    <div class="sell_bottom">
+                      조회 <%="${item.board_click}"%><button id = '<%="${item.board_id}"%>' class = "sellup_btn" onclick = "upEvent('<%="${item.board_id}"%>')">끌어올리기</button>
+                    </div>
+                  </div>
+                </div>
+               `;
+      });
        return str;
-	}
+   }
 </script>
-	<%
-		}
-		%>
-	
+   <%
+      }
+      %>
+   
 </html>

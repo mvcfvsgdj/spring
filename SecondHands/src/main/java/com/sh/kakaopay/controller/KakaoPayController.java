@@ -102,7 +102,7 @@ public class KakaoPayController {
       System.out.println("보드id" + board_id);
    //   service.registerOrder(orderDTO);
       System.out.println("오더41341243" + orderDTO);
-      System.out.println("111111111111111111111111111111111111111111111111111111111111111111");
+  
       //
       this.order =orderDTO;
      
@@ -114,7 +114,7 @@ public class KakaoPayController {
    @GetMapping("/kakaoPaySuccess")
    public String kakaoPaySuccess(@RequestParam("pg_token") String pg_token, String board_id, String board_title,
          String user_nickname, String board_price, Model model ) {
-   System.out.println("33333333333333333333333333333333333333333333333333");
+  
       log.info("kakaoPaySuccess pg_token : " + pg_token);
        model.addAttribute("info"+kakaopay.kakaoPayInfo(pg_token, order)); 
 
@@ -124,7 +124,7 @@ public class KakaoPayController {
       productService.deleteProduct2(order.getBoard_id());
       productService.deleteProduct(order.getBoard_id());
       
-      System.out.println("33333333333333333333333333333333333333333333333333");
+    
 
       
       //model.addAttribute("info", kakaopay.kakaoPayInfo(pg_token, board_id, board_title, user_nickname, board_price));

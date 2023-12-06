@@ -30,11 +30,10 @@ public class KakaoPayService {
 
     public String kakaoPayReady(OrderDTO order) {
  
-       System.out.println("22222222222222222222222222222222222222222222");
+    
         RestTemplate restTemplate = new RestTemplate();
         
-        //https://online-pay.kakao.com/mockup/v1/3d0da5a6ec1358544ab89523e1a42bd6cf3f1bc0b3eb4a89f430cdc8452b4f25/info?board_id=116&board_title=%EA%B3%B5%EA%B8%B0%EA%B3%84+%ED%8C%90%EB%A7%A4%ED%95%A9%EB%8B%88%EB%8B%A4&user_nickname=%EC%84%9C%EC%9A%B8%EC%9D%B8&board_price=12800&member_addr=%EA%B4%91%EC%A3%BC+%EB%82%A8%EA%B5%AC+2%EC%88%9C%ED%99%98%EB%A1%9C+1508&member_post=61738&detailed_address=sdaf&delivery_req=%ED%8A%B9%EB%B3%84+%EC%9A%94%EC%B2%AD+%EC%97%86%EC%9D%8C
- 
+   
         // 서버로 요청할 Header
         HttpHeaders headers = new HttpHeaders();
         headers.add("Authorization", "KakaoAK " + "6269aa4d1550235e3d6bc1d57d6fd461");
@@ -49,10 +48,10 @@ public class KakaoPayService {
         params.add("item_name", order.getBoard_title());
         params.add("quantity", "1");
         params.add("total_amount", String.valueOf(order.getBoard_price()));
-        params.add("tax_free_amount", "0");
+        params.add("tax_free_amount", "0"); 
         params.add("approval_url", "http://localhost:8090/kakaoPaySuccess");
-        params.add("cancel_url", "http://localhost:8090/products");
-        params.add("fail_url", "http://localhost:8090/products");
+        params.add("cancel_url", "http://localhost:8090/homePage");
+        params.add("fail_url", "http://localhost:8090/homePage");
  
         System.out.println("아이디"+order.getBoard_id());
         System.out.println("아이디"+order.getUser_nickname());
@@ -90,7 +89,7 @@ public class KakaoPayService {
         headers.add("Authorization", "KakaoAK " + "6269aa4d1550235e3d6bc1d57d6fd461");
         headers.add("Accept", MediaType.APPLICATION_JSON_UTF8_VALUE);
         headers.add("Content-Type", MediaType.APPLICATION_FORM_URLENCODED_VALUE + ";charset=UTF-8");
-        System.out.println("핸ㄴ"+headers);
+       
  
         // 서버로 요청할 Body
         MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();

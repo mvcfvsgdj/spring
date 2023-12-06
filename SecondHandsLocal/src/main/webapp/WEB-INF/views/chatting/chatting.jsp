@@ -4,6 +4,7 @@
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
    
       <%@ page import="java.util.*" %>
+      <c:set var="path" value="${pageContext.request.contextPath}" />
       
    
 <!DOCTYPE html>
@@ -11,13 +12,16 @@
 <head>
 <meta charset="utf-8">
 <title>채팅</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gamja+Flower&family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 <script
    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 
 window.onload = function() {
     var messageArea = document.getElementById('chatArea'); // 채팅창 영역 선택
-    var messageText = "----------------------------------- 입장버튼을 누르면 채팅에 접속됩니다!! ------------------------------------------"; // 출력할 메시지
+    var messageText = "-------------------------------------- 입장버튼을 누르면 채팅에 접속됩니다!! --------------------------------------"; // 출력할 메시지
     
     var messageElement = document.createElement('div'); // 새로운 <div> 엘리먼트 생성
     messageElement.textContent = messageText; // 메시지 설정
@@ -37,7 +41,8 @@ window.onload = function() {
         $('#chatArea').show();
         $('#message').focus();
 
-        wsocket = new WebSocket("ws://localhost:8090/testing/chat-sh");
+        wsocket = new WebSocket("ws://localhost:8090${path}/chat-sh");
+        //wsocket = new WebSocket("ws://43.201.65.22:8080${path}/chat-sh");
         wsocket.onopen = onOpen;
         wsocket.onmessage = onMessage;
         wsocket.onclose = onClose;
@@ -53,7 +58,7 @@ window.onload = function() {
     // 연결이 열릴 때 호출될 함수
     function onOpen(evt) {
     var messageArea = document.getElementById('chatArea'); // 채팅 창 영역 선택
-    var messageText = "------------------------------------------------- 연결되었습니다 ------------------------------------------------------"; // 출력할 메시지
+    var messageText = "----------------------------------------------- 연결되었습니다 -----------------------------------------------"; // 출력할 메시지
     
     var messageElement = document.createElement('div'); // 새로운 <div> 엘리먼트 생성
     messageElement.textContent = messageText; // 메시지 설정
@@ -65,18 +70,24 @@ window.onload = function() {
 }
 
     // 메시지를 받았을 때 호출될 함수
-        function onMessage(evt) {
-            console.log(evt);
-            var data = evt.data;
-            if (data.substring(0, 4) == "msg:") {
-                var messageParts = data.substring(4).split(":");
-                var sender = messageParts[0];
-                var messageContent = messageParts[1];
-                if (sender == selectedNickname || sender == $("#targetNickname").val()) {
-                    appendRecvMessage(messageContent, sender);
-                }
-            }
+ function onMessage(evt) {
+    // 받은 이벤트 로그
+    console.log(evt);
+    
+    var data = evt.data;
+    // 받은 데이터가 'msg:'로 시작하는지 확인
+    if (data.substring(0, 4) == "msg:") {
+        // 'msg:' 이후의 데이터를 ':'를 기준으로 분리하여 배열에 저장
+        var messageParts = data.substring(4).split(":");
+        var sender = messageParts[0]; // 메시지 보낸 사람
+        var messageContent = messageParts[1]; // 메시지 내용
+
+        // chatCode가 일치할때만 보내고 받은 메시지 보임
+        if (sender == $("#chatCode").val()) {
+            appendRecvMessage(messageContent, sender); // 받은 메시지를 출력
         }
+    }
+}
 
     // 연결이 닫혔을 때 호출될 함수
     function onClose(evt) {
@@ -88,6 +99,7 @@ window.onload = function() {
         var nickname = $("#nickname").val();
         var msg = $("#message").val();
         var targetNickname = $("#targetNickname").val(); // 상대방의 이름
+        var chatCode = $("#chatCode").val()
 
         // '입장' 버튼을 누르지 않았을 때 안내 메시지 출력
         if ($('#connectBtn').is(':visible')) {
@@ -95,11 +107,12 @@ window.onload = function() {
             appendEntryMessage(entryMessage); // 채팅창에 안내 메시지 추가
             return; // 메시지 전송을 중단
         }
-
+		
+        
         if (targetNickname && msg) {
-            wsocket.send("msg:" + nickname + ":" + msg);
+            wsocket.send("msg:" + chatCode + ":" + msg);
             $("#message").val("");
-            appendSendMessage(nickname, msg);
+            appendSendMessage(chatCode, msg);
         }
     }
 
@@ -151,148 +164,161 @@ window.onload = function() {
     }
 
     // 대화창 스크롤을 아래로 이동
-    function scrollTop() {
-        var chatAreaHeight = $("#chatArea").height();
-        var maxScroll = $("#chatMessageArea").height() - chatAreaHeight;
-        $("#chatArea").scrollTop(maxScroll);
-    }
+function scrollTop() {
+    var chatArea = document.getElementById('chatArea');
+    chatArea.scrollTop = chatArea.scrollHeight;
+}
     
+    
+
+    
+
 
 </script>
 <style>
-    #chatArea {
-        width: 800px;
-        height: 646px;
-        overflow-y: auto;
-        border-bottom: 1px solid black;
-        margin: 0 auto;
-        position: absolute;
-        top: 106px;
-        background-color: #474747;
-    }
-    
 
-    .send {
-        text-align: right;
-        padding: 10px;
-        word-break: break-all;
-        color: white;
-        
-        
-        
-    }
-    .recv {
-           color: white;
-        text-align: left;
-        padding: 10px;
-          word-break: break-all;
-        
-    }
-    .recvNickname{
-            word-break: break-all;
-           margin-left: 40px;
+body {
+   background-color: #474747;
+   padding-top: 30px;
+font-family: 'Dongle', sans-serif;   
+font-size: 25px;
+}
 
-           
-    }
-    
-    .sendBox{
-            word-break: break-all;
-            width: 300px;
-           margin-left: 450px;
-           background-color: #ff6f0f;
-           padding: 10px;
-           border-radius: 30px;
-    
-    }
-    
-    .recvBox{
-            word-break: break-all;
-            width: 300px;
-           margin-left: 20px;
-           background-color: #ff6f0f;
-           padding: 10px;
-           border-radius: 30px;
-    
-                                      
-                           
-                
-    
-    }
+#chatArea {
+   width: 800px;
+   height: 646px;
+   overflow-y: auto;
+       border-bottom: 2px solid black;
+   margin: 0 auto;
+   position: absolute;
+   top: 106px;
+   background-color: white;
+}
 
-    .chatMessageBox{
-            margin-top: 20px;
-            margin: 0 auto;
-            width: 800px;
-            position: absolute;
-            bottom: -31px;
+.send {
+   text-align: right;
+   padding: 10px;
+   word-break: break-all;
+   color: white;
+}
 
+.recv {
+   text-align: left;
+   padding: 5px;
+   word-break: break-all;
+}
 
-       
-    }
-    .chatArea_header{
-    height: 100px;
-    padding: 30px;
-    }
-   .board_Img{
+.recvNickname {
+   word-break: break-all;
+   margin-left: 25px;
+   color: black;
+}
+
+.sendBox {
+   word-break: break-all;
+   width: 300px;
+   margin-left: 450px;
+   background-color: #ff6f0f;
+   padding: 10px;
+   border-radius: 10px;
+}
+
+.recvBox {
+   color:white;
+   word-break: break-all;
+   width: 300px;
+   margin-left: 20px;
+   background-color: #ff6f0f;
+   padding: 10px;
+   border-radius: 10px;
+}
+
+.chatMessageBox {
+   margin-top: 20px;
+   margin: 0 auto;
+   width: 800px;
+   position: absolute;
+   bottom: -31px;
+}
+
+.chatArea_header {
+   height: 100px;
+   padding: 30px;
+}
+
+.board_Img {
    width: 80px;
    height: 80px;
    margin-top: 10px;
    margin-left: 20px;
    border-radius: 50%;
+   border: 1px solid white;
+}
 
-   }
-   .chatArea_header_info{
-       position: absolute;
-       left: 0px;
-       width: 800px;
-       top: 0px;
-       color: white;
-       display: flex;
-       border-bottom: 1px solid black;
+.chatArea_header_info {
+   position: absolute;
+   left: 0px;
+   width: 800px;
+   top: 0px;
+   color: white;
+   display: flex;
+   border-bottom: 2px solid black;
+   height: 99px;
+}
 
-       
+.chattingMainBox {
+   position: relative;
+   width: 800px;
+   margin: 0 auto;
+   height: 850px;
+   border-radius: 50px;
+   background-color: white; /* Try changing this */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1.1);
    
-   }
-   .chattingMainBox{
-       position: relative;
-       width: 800px;
-       margin: 0 auto;
-       height: 850px;
-       background-color: #474747;
-       border-radius: 50px;
-       
-       
-       
-   
-   }
-   .board_Details{
-   margin-top: 10px;
+}
+
+.board_Details {
+   margin-top: 4px;
    margin-left: 15px;
    padding: 10px;
-   }
-   
-   #message{
+   color: black;
+}
+
+.target_heat {
+    color: orange;
+    font-weight: bolder;
+    margin-left: 315px;
+    font-size: 40px;
+}
+
+
+#message {
    width: 600px;
    height: 30px;
    margin-left: 30px;
    font-size: 20px;
-   }
-   .chatMessageBoxButton{
+   border-radius: 8px;
+}
+
+.chatMessageBoxButton {
    margin-left: 20px;
    width: 50px;
    height: 30px;
-   }
-   .chatMessageBox{
+}
+
+.chatMessageBox {
    height: 100px;
-   }
-   
-   #myBtn:hover {
+}
+
+#myBtn:hover {
    background-color: #d55500; /* 마우스를 올렸을 때의 배경 색상을 흰색으로 변경 */
    color: white; /* 마우스를 올렸을 때의 텍스트 색상을 주황색으로 변경 */
 }
-.chatting_table{
-width: 1000px;
+
+.chatting_table {
+   width: 1000px;
 }
+
 .chatMessageBoxButton {
    background-color: #ff6f0f;
    color: #fff;
@@ -304,12 +330,11 @@ width: 1000px;
 
 .chatMessageBoxButton:hover {
    background-color: #d55500;
-}    
+}
 
 /* 빨간색 안내 메시지에 대한 스타일 지정 */
-
-
 </style>
+
 </head>
 <body>
 
@@ -335,6 +360,8 @@ width: 1000px;
 
 <input type="hidden" id=my_heat value="${my_heatCheck ? my_heat : target_heat}">
 <input type="hidden" id="target_heat" value="${target_heatCheck ? my_heat : target_heat}">
+<input type="hidden" id="chatCode" value="${chatCode}">
+
 
 
 
@@ -343,14 +370,21 @@ width: 1000px;
 <img class="board_Img" src= "<c:url value=" images/${board_Img}"/>">
     <div class="board_Details">
         <div class="board_Title">상품명: ${board_Title}</div>
-        <div class="board_Price">가격: ${board_Price}</div>
-            <div class="target_heat">온도: ${target_heatCheck ? my_heat : target_heat}℃</div>
+<div class="board_Price" id="board_Price_check"> 
+  <% if ("0".equals(request.getAttribute("board_Price"))) { %>
+    나눔🧡
+  <% } else { %>
+    가격:<%= request.getAttribute("board_Price") %>원
+  <% } %>
+</div>
     </div>
    
    
    </div>
    
 <div id="chatArea">
+            <div class="target_heat">${TargetNickNameCheck ? nickName : targetNickName}님 : ${target_heatCheck ? my_heat : target_heat}℃</div>
+
     <!-- 채팅창의 맨 위에 메시지가 표시될 위치입니다 -->
     <div id="connectionMessage" style="margin-bottom: 10px;"></div>
 

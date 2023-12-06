@@ -162,7 +162,7 @@ header.menu-open h2 {
 }
 
 .menu-container Button:hover {
-   background-color: white; 
+   background-color: #f9f9f9;
    color: #ff6f0f;
 }
 
@@ -434,7 +434,6 @@ width: 1000px;
 <%
    LoginDTO user = (LoginDTO) session.getAttribute("user");
    LoginDTO selectedUser = (LoginDTO) session.getAttribute("selectedUser");
-   List<Object> chatList = (List<Object>) request.getAttribute("chatList"); // chatList 추가
    if (user != null && selectedUser != null) {
       LoginDTO firstSelectedUser = selectedUser;
    %>
@@ -463,7 +462,7 @@ width: 1000px;
          }
          %>
             <li>
-              <img src="${path}}/images/<%=firstSelectedUser.getUser_image()%>" style="border-radius: 50%; width: 100px; height: 100px;">
+              <img src="${path}/images/<%=firstSelectedUser.getUser_image()%>" style="border-radius: 50%; width: 100px; height: 100px;">
                <h2>
                   <%
                   if (user != null && selectedUser != null) {
@@ -570,6 +569,7 @@ width: 1000px;
         <th>판매자 닉네임</th>
         <th>채팅하기</th>
         <th>채팅삭제</th>
+        <th> </th>
     </tr>
    <c:forEach items="${chatList}" var="chat" varStatus="loop">
         <tr>
@@ -577,7 +577,7 @@ width: 1000px;
             <td>${chat.board_Title}</td>
             <td>${chat.user_nickname}</td>
             <td>
-<form action="${path}/inchat" method="Get" target="_blank" id="chatForm">
+         <form action="${path}/inchat" method="Get" target="_blank" id="chatForm">
                     <input type="hidden" name="chat_code" value="${chat.chat_code}" />
                     <input type="hidden" name="sell_code" value="${chat.sell_code}" />
                     <input type="hidden" name="buy_code" value="${chat.buy_code}" />
@@ -600,7 +600,19 @@ width: 1000px;
                     <button type="submit">채팅 삭제</button>
                 </form>
             </td>
+            <td>
+            <c:choose>
+    <c:when test="${selectedUserList.getUser_code() eq chat.sell_code}">
+        <p>신청 받은 채팅</p>
+    </c:when>
+    <c:otherwise>
+        <p>신청 한 채팅</p>
+    </c:otherwise>
+</c:choose>
+            
+            </td>
         </tr>
+        
     </c:forEach>
    </table>
 </div>

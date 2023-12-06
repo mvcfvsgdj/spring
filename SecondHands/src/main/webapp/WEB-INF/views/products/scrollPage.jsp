@@ -57,9 +57,9 @@ header h2 {
 }
 
 .menu-icon {
-    justify-content: center;
-    align-items: center;
-    display: flex;
+   justify-content: center;
+   align-items: center;
+   display: flex;
    order: -1;
    font-size: 24px;
    cursor: pointer;
@@ -112,7 +112,6 @@ header.menu-open h2 {
    display: flex;
    margin: 0px 0px 0px 0px;
 }
-
 
 header.menu-open {
    flex-direction: column;
@@ -196,7 +195,7 @@ header.menu-open h2 {
 
 #sort button {
    margin: 0px 6px 0px 6px;
-   width:101px;
+   width: 101px;
    padding: 4px;
    font-weight: bold;
    background-color: white;
@@ -406,7 +405,7 @@ header.menu-open h2 {
 
       <div class="menu-container">
          <ul>
-  
+
             <li>
                <% if (user != null && selectedUser != null) {
       LoginDTO firstSelectedUser = selectedUser; // Assuming you want the first user in the list
@@ -440,7 +439,7 @@ header.menu-open h2 {
                   <button type="submit">게시글작성</button>
                </form>
             </li>
-                <li>
+            <li>
                <form action="${path}/sellProducts">
                   <button type="submit">판매내역</button>
                </form>
@@ -539,9 +538,9 @@ header.menu-open h2 {
          |
          <button id="srLike">관심상품</button>
          |
-             <form action="${path}/products/add"  onsubmit="return checkLogin()">
-                  <button type="submit"  >게시글작성</button>
-               </form>
+         <form action="${path}/products/add" onsubmit="return checkLogin()">
+            <button type="submit">게시글작성</button>
+         </form>
          <div class="search">
             <input type="text" id="srSearch" value="" placeholder="검색어 입력">
             <img
@@ -559,7 +558,7 @@ header.menu-open h2 {
    <button id="topButton" title="Go to top">Top</button>
 
    <script>
-    let sort_mode = ".getListTime"; // 정렬 기본값 : 최신순, 인기순 정렬 : ".getListClick"
+   let sort_mode = ".getListTime"; // 정렬 기본값 : 최신순, 인기순 정렬 : ".getListClick"
     let userId = "${user.user_id}";
     
    let HeightY; //페이지당 나오는 아이템들 높이합
@@ -633,6 +632,8 @@ header.menu-open h2 {
             url: "scroll?page=" + pageNumber + "&mode=" + sort_mode,
             type: "GET",
             success: function(data) {
+               
+               console.log("데이터" + data);
                let list = data.list;
                totalPage = data.totalPage;
                let sql = pageToString(list);
@@ -650,9 +651,13 @@ header.menu-open h2 {
     
     //str문 생성
      function  pageToString(list){
+       
+        console.log( "list"  +list) ;
+         
           let str = "";
           list.forEach(  ( item) => { 
-               str += `         
+             
+               str += `        
                    <article class="card_wrap">
                 <div class="card_image" style="background-image: url('${path}/images/<%="${item.board_img}" %>')"></div>
                                    
@@ -663,16 +668,31 @@ header.menu-open h2 {
                   <%}else{%>
                   <h2 class="card_title"><a class="card_a" onclick = "goLogin()"> <%="${item.board_title}"%> </a></h2>
                        <%}%>
-                       
-                <div class = "card_date"><%="${item.board_date}"%> </div>
-                <div class="card_price"><%="${item.board_price}"%> 원</div>
-                <div class="card_address"><%="${item.loc_code}"%>/<%="${item.detail_loc}"%></div>
-                <div class="card_count">
+                  <div class = "card_date"><%="${item.board_date}"%> </div>
+
+
+       
+                  <div class="card_price"><%= "${item.board_price}" %> 원</div>
+                
+                 
+          
+                 <div class="card_address"><%="${item.loc_code}"%>/<%="${item.detail_loc}"%></div>
+                 <div class="card_count">
                  조회 <%="${item.board_click}"%>
                    <button id = '<%="${item.board_id}"%>' class="card_like" onclick = "likeEvent('<%="${item.board_id}"%>')"></button>
-                  </div>
-                </article>
-               `;
+                  </div>                  
+                 `;
+               
+                let bP=`<%="${item.board_price}"%>` ;
+                
+               
+               if(  bP== 0){
+                  str += "[나눔]";
+               }
+                
+               str+= ` </article>`;
+              
+               
                //item.board_date 안들어감
                
       });
@@ -692,10 +712,10 @@ header.menu-open h2 {
      }
     
      function checkLogin() {
-         <% if (user == null) { %>
+         <%if (user == null) {%>
              alert("로그인이 필요한 서비스입니다.");
              return false; // 폼 제출 방지
-         <% } %>
+         <%}%>
          return true; // 폼 제출 허용
      }
     

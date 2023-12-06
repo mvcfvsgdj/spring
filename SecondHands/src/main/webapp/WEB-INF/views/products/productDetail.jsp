@@ -312,7 +312,7 @@ header.menu-open h2 {
 }
 
 .buy_product {
-   margin-top: 20px;
+   margin-top: -15px;
    align-items: center;
    display: flex;
    justify-content: center;
@@ -725,10 +725,8 @@ footer a:hover {
 
 
    <!-- 로그인한 유저 코드와 게시글 작성한 유저 코드가 일치할시 수정/삭제버튼이 나옴 -->
-   <c:set var="owner"
-      value="${product.user_code  == selectedUser.user_code}"></c:set>
-
-
+   <c:set var="owner" value="${product.user_code  == selectedUser.user_code}"></c:set>
+   <c:set var="nanoom" value="${product.board_Price  == 0}"></c:set>
 
    <div class="main-top">
       <div id="saveForm">
@@ -809,11 +807,11 @@ footer a:hover {
 
             <c:if test="${not empty isCodeValid and isCodeValid eq false}">
                <p
-                  style="font-size: 13px; margin-left: 150px; font-weight: bold; color: red;">이미
+                  style="font-size: 13px; margin: 0px 0px 0px 220px; font-weight: bold; color: red;">이미
                   신청한 채팅입니다.</p>
             </c:if>
 
-            <c:if test="${selectedUser.user_code ne product.user_code}">
+            <c:if test="${selectedUser.user_code ne product.user_code && product.board_Price != 0}">
                <div class="buy_product">
                   <form action="${path}/order">
                      <input type="hidden" name="boardId" value="${product.board_Id}">
@@ -826,6 +824,42 @@ footer a:hover {
                      </div>
                      <button type="submit">상품 구매</button>
                   </form>
+
+
+                  <div class="chat_likes">
+                     <form action="${path}/checkCode" method="post">
+                        <input type="hidden" name="buy_code"
+                           value="${selectedUser.user_code}" required><br>
+                        <input type="hidden" name="sell_code"
+                           value="${product.user_code}" required><br> <input
+                           type="hidden" name="board_id" value="${product.board_Id}"
+                           required><br>
+                       <input type="hidden" name="board_Title" value="${product.board_Title}" required><br> 
+                           <input type="hidden" name="user_nickname" value="${product.user_nickname}" required><br>
+                           <input type="hidden" name="board_Price" value="${product.board_Price}" required><br>
+                            <input type="hidden" name="board_Img" value="${product.board_Img}" required><br>
+                           
+                        <button type="submit">채팅신청하기</button>
+
+                     </form>
+                     <form action="${path}/scrollHome">
+         <button type="submit">리스트로 돌아가기</button>
+      </form>
+                     <div class="like1">
+                        <button id="like">관심 버튼</button>
+       
+                     </div>
+         
+                  </div>
+               </div>
+            </c:if>
+            
+            <!--  나눔항목 일 경우 -->
+            
+
+            <c:if test="${selectedUser.user_code ne product.user_code && product.board_Price == 0}">
+               <div class="buy_product">
+
 
 
                   <div class="chat_likes">
@@ -903,7 +937,7 @@ footer a:hover {
                   </div>
           
                </c:if>
-             
+
 
             </div>
          </div>
